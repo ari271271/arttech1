@@ -1,1 +1,33 @@
-<p>proje works!</p>
+<div class="projects-page-container">
+    <h1>Projelerimiz</h1> 
+
+    <div class="projects-grid">
+        
+        <div class="project-card" *ngFor="let project of projects; let i = index" [class.even-project]="i % 2 !== 0">
+            
+            <div class="project-image">
+                <img [src]="project.imageUrl" alt="{{ project.title }}">
+            </div>
+            
+            <div class="project-info">
+                <h2>{{ project.title }}</h2> 
+                
+                <p class="description">
+                    <span *ngIf="!project.isExpanded">
+                        {{ project.shortDescription }}
+                    </span>
+                    <span *ngIf="project.isExpanded">
+                        {{ project.description }}
+                    </span>
+                </p>
+
+                <button 
+                    *ngIf="project.description.length > MAX_LENGTH" 
+                    (click)="toggleDescription(project)" 
+                    class="read-more-button">
+                    {{ project.isExpanded ? 'Kapat' : 'Devamını Oku' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
