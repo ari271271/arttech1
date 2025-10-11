@@ -1,11 +1,14 @@
 <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid justify-content-center">
-
+    <div class="container-fluid ">
+  <button class="navbar-toggler" (click)="toggleMenu()">☰</button>
       <!-- Logo alanı -->
       <a class="navbar-brand d-flex align-items-center logo-link" href="#"></a>
 
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+     
+
+      <!-- Menü Alanı -->
+      <div class="collapse navbar-collapse desktop-menu " id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" routerLink="">AnaSayfa</a>
           <a class="nav-link" href="#">Hakkımızda</a>
@@ -18,7 +21,19 @@
           <a class="nav-link" href="#">İletişim</a>
         </div>
       </div>
-
+   <div *ngIf="menuOpen" @slideInOut class="mobile-menu">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" routerLink="">AnaSayfa</a>
+          <a class="nav-link" href="#">Hakkımızda</a>
+          <a class="nav-link" routerLink="/Proje">Projeler</a>
+          <a class="nav-link" href="#">Hedefler</a>
+          <a class="nav-link" href="#">Yarışmalar</a>
+          <a class="nav-link" routerLink="/Basvuru">Başvuru</a>
+          <a class="nav-link" href="#">Sponsorlar</a>
+          <a class="nav-link" href="#">Öneri/Şikayet</a>
+          <a class="nav-link" href="#">İletişim</a>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
@@ -31,24 +46,18 @@
   <div class="footer-container">
 
     <div class="footer-section">
-      <h3>İletişim</h3>
-      <p>Örnek Mahallesi, Bilim ve Teknoloji Cd. No:123, Gaziantep</p>
-      <p>+90 555 123 45 67</p>
-      <p>info@arttech.com</p>
+      <h5>İletişim</h5>
+      <p>05367030726</p>  
     </div>
-
     <div class="footer-section">
-      <h3>Çalışma Saatleri</h3>
-      <p>Pazartesi - Cuma: 09:00 - 18:00</p>
-    </div>
-
-    <div class="footer-section">
-      <h3>Sosyal Medya</h3>
+      <h5>Bizi Takip edin</h5>
       <div class="social-icons">
-        <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
-        <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
-        <a href="#"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
-        <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+        <a href="https://www.instagram.com/arttechofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram fa-beat"></i></a>
+        <a
+          href="https://www.linkedin.com/in/yunus-ethem-ta%C5%9F-a37a9633a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwU5%2FmgyTRMCZ84kicu0nqg%3D%3D"><i
+            class="fa-brands fa-square-linkedin fa-beat"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp fa-beat"></i></a>
+       
       </div>
     </div>
 
