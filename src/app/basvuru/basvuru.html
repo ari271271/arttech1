@@ -7,16 +7,22 @@
   <link rel="stylesheet" href="basvuru.css">
 </head>
 <body>
-  <div class="container fade-in">
+  <div class="container">
 
     <!-- Sol Kısım: Başvuru Formları -->
     <div class="form-tabs">
+      <!-- Radio butonlar (gizli) -->
+      <input type="radio" name="tab" id="uyelikTab" checked>
+      <input type="radio" name="tab" id="yarismaTab">
+
+      <!-- Tab butonları -->
       <div class="tab-buttons">
-        <button class="tab-btn active" onclick="openTab(event, 'uyelik')">Üyelik Başvurusu</button>
-        <button class="tab-btn" onclick="openTab(event, 'yarisma')">Yarışma Başvurusu</button>
+        <label for="uyelikTab" class="tab-btn">Üyelik Başvurusu</label>
+        <label for="yarismaTab" class="tab-btn">Yarışma Başvurusu</label>
       </div>
 
-      <div id="uyelik" class="tab-form active">
+      <!-- Üyelik Formu -->
+      <div class="tab-form" id="uyelik">
         <h2>Üyelik Başvuru Formu</h2>
         <form>
           <label for="name">Ad Soyad</label>
@@ -40,7 +46,8 @@
         </form>
       </div>
 
-      <div id="yarisma" class="tab-form">
+      <!-- Yarışma Formu -->
+      <div class="tab-form" id="yarisma">
         <h2>Yarışma Başvuru Formu</h2>
         <form>
           <label for="projectName">Proje Adı</label>
@@ -60,7 +67,7 @@
       </div>
     </div>
 
-    <!-- Sağ Kısım: Kulüp Hakkında + Projeler -->
+    <!-- Sağ Kısım: Kulüp Hakkında -->
     <div class="info-section">
       <h2>Kulübümüz Hakkında</h2>
       <p>
@@ -69,27 +76,8 @@
         Takım çalışması, problem çözme ve yaratıcılığı teşvik eden bir ortam sunuyoruz.
         Yarışmalara katılma fırsatlarıyla CV’lerini güçlendirebilirler.
       </p>
-
-      <!-- Proje Slider -->
-      <div class="projects-slider">
-        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
-        <div class="slides">
-          <div class="project-card">
-            <img src="project1.jpg" alt="Proje 1">
-            <div class="project-info"><h3>Akıllı Ev Sistemi</h3></div>
-          </div>
-          <div class="project-card">
-            <img src="project2.jpg" alt="Proje 2">
-            <div class="project-info"><h3>Yapay Zeka Robotu</h3></div>
-          </div>
-          <div class="project-card">
-            <img src="project3.jpg" alt="Proje 3">
-            <div class="project-info"><h3>Ses Kontrollü Devre</h3></div>
-          </div>
-        </div>
-        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
-      </div>
     </div>
+
   </div>
 
   <!-- Neden Katılmalısın Bölümü -->
@@ -103,26 +91,5 @@
     </div>
   </section>
 
-  <script>
-    function openTab(evt, formId) {
-      const forms = document.querySelectorAll('.tab-form');
-      const buttons = document.querySelectorAll('.tab-btn');
-      forms.forEach(f => f.classList.remove('active'));
-      buttons.forEach(b => b.classList.remove('active'));
-      document.getElementById(formId).classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
-
-    let slideIndex = 0;
-    const slides = document.querySelector('.slides');
-    const cards = document.querySelectorAll('.project-card');
-
-    function moveSlide(direction) {
-      slideIndex += direction;
-      if (slideIndex < 0) slideIndex = cards.length - 1;
-      if (slideIndex >= cards.length) slideIndex = 0;
-      slides.style.transform = translateX(-${slideIndex * 195}px);
-    }
-  </script>
 </body>
 </html>
