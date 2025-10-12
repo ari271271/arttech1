@@ -32,14 +32,13 @@ body {
   transition:0.3s;
 }
 
-/* Tab hover efekti */
 .tab-btn:hover {
   background:#000; 
   color:#fff; 
   border:1px solid #000;
 }
 
-/* Aktif tab: arka plan siyah, yazı beyaz */
+/* Aktif tab */
 #uyelikTab:checked ~ .tab-buttons label[for="uyelikTab"],
 #yarismaTab:checked ~ .tab-buttons label[for="yarismaTab"] {
   background:#000; 
@@ -47,7 +46,6 @@ body {
   border:1px solid #000;
 }
 
-/* Aktif tab form gösterimi */
 #uyelikTab:checked ~ .tab-form#uyelik,
 #yarismaTab:checked ~ .tab-form#yarisma { display: block; }
 
@@ -81,7 +79,7 @@ body {
 .tab-form button { background:#000; color:#fff; border:none; padding:12px 20px; width:100%; border-radius:8px; font-size:15px; cursor:pointer; transition:0.3s; font-weight:600; }
 .tab-form button:hover { background:#4a90e2; }
 
-/* Kulübümüz Hakkında Kenarlıklı */
+/* Kulüp Hakkında */
 .info-section-border {
   border: 3px solid #4a90e2;
   border-radius: 12px;
@@ -98,34 +96,60 @@ body {
 .info-section h2 { text-align:center; margin-bottom:10px; color:black; }
 .info-section p { text-align:justify; color:#333; line-height:1.6; }
 
-/* Projeler Bölümü */
-.projects-section { padding:60px 20px; max-width:1200px; margin:0 auto; }
-.projects-section h2 { text-align:center; font-size:28px; margin-bottom:40px; color:#4a90e2; }
-.projects-container {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
+/* Slider */
+.projects-slider {
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
 }
+
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
 .project-card {
+  min-width: 200px; 
+  margin-right: 15px;
   background:#fff;
   border-radius:12px;
-  padding:15px;
-  width:220px;
+  padding:10px;
   text-align:center;
   box-shadow:0 6px 18px rgba(0,0,0,0.1);
-  transition:0.3s;
+  flex-shrink: 0;
 }
+
 .project-card img {
   width:100%;
-  height:140px;
+  height:120px;
   object-fit:cover;
-  border-radius:10px;
-  margin-bottom:10px;
+  border-radius:8px;
+  margin-bottom:8px;
 }
+
 .project-card h3 { color:#000; margin-bottom:6px; }
 .project-card p { color:#555; font-size:14px; line-height:1.4; }
 .project-card:hover { transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
+
+.projects-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:#000;
+  color:#fff;
+  border:none;
+  font-size:24px;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:50%;
+  z-index:10;
+  opacity:0.7;
+  transition:0.3s;
+}
+
+.projects-slider button:hover { opacity:1; }
+.projects-slider .prev { left:0; }
+.projects-slider .next { right:0; }
 
 /* Neden Katılmalısın */
 .why-join-section { display:flex; justify-content:center; padding:60px 20px; margin:60px auto; }
@@ -140,6 +164,6 @@ body {
 @media screen and (max-width:900px) {
   .container { flex-direction:column; align-items:center; }
   .form-tabs, .info-section-border { max-width:90%; }
-  .projects-container { flex-direction:column; align-items:center; }
+  .projects-slider .slider-track { flex-direction:column; align-items:center; }
   .why-join-box { max-width:90%; }
 }

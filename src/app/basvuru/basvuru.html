@@ -9,8 +9,7 @@
 <body>
 
   <div class="container">
-
-    <!-- Sol Kısım: Başvuru Formları -->
+    <!-- Formlar -->
     <div class="form-tabs">
       <input type="radio" name="tab" id="uyelikTab" checked>
       <input type="radio" name="tab" id="yarismaTab">
@@ -64,44 +63,45 @@
       </div>
     </div>
 
-    <!-- Sağ Kısım: Kulüp Hakkında -->
+    <!-- Kulüp Hakkında ve Projeler -->
     <div class="info-section-border">
       <div class="info-section">
         <h2>Kulübümüz Hakkında</h2>
         <p>
           Yenilik, teknoloji ve üretkenlik bizim tutkumuz. Fikirlerini gerçeğe dönüştürmek, yarışmalara katılmak ve CV’ni güçlendirmek için seni bekliyoruz!
         </p>
+
+        <!-- Slider -->
+        <div class="projects-slider">
+          <button class="prev">&#10094;</button>
+          <div class="slider-track">
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/ses.png" alt="Xsound">
+              <h3>Xsound</h3>
+              <p>Yapay zekâ destekli akıllı kulaklık teknolojisi.</p>
+            </div>
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/aerowave.png" alt="AeroWave">
+              <h3>AeroWave</h3>
+              <p>Modern hava araçları için yenilikçi anten teknolojisi.</p>
+            </div>
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/skyclean.png" alt="SkyCleaner">
+              <h3>SkyCleaner</h3>
+              <p>Drone tabanlı çevre temizleme çözümü.</p>
+            </div>
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/skyquard.png" alt="SkyQuard">
+              <h3>SkyQuard</h3>
+              <p>Hava sahası güvenliği ve izleme sistemi.</p>
+            </div>
+          </div>
+          <button class="next">&#10095;</button>
+        </div>
+
       </div>
     </div>
-
   </div>
-
-  <!-- Projeler Bölümü -->
-  <section class="projects-section">
-    <h2>Projelerimiz</h2>
-    <div class="projects-container">
-      <div class="project-card">
-        <img src="C:\Users\belin\OneDrive\Desktop\ses.png" alt="Xsound">
-        <h3>Xsound</h3>
-        <p>Yapay zekâ destekli akıllı kulaklık teknolojisi.</p>
-      </div>
-      <div class="project-card">
-        <img src="C:\Users\belin\OneDrive\Desktop\aerowave.png" alt="AeroWave">
-        <h3>AeroWave</h3>
-        <p>Modern hava araçları için yenilikçi anten teknolojisi.</p>
-      </div>
-      <div class="project-card">
-        <img src="C:\Users\belin\OneDrive\Desktop\skyclean.png" alt="SkyCleaner">
-        <h3>SkyCleaner</h3>
-        <p>Drone tabanlı çevre temizleme çözümü.</p>
-      </div>
-      <div class="project-card">
-        <img src="C:\Users\belin\OneDrive\Desktop\skyquard.png" alt="SkyQuard">
-        <h3>SkyQuard</h3>
-        <p>Hava sahası güvenliği ve izleme sistemi.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- Neden Katılmalısın Bölümü -->
   <section class="why-join-section">
@@ -114,5 +114,24 @@
     </div>
   </section>
 
+  <!-- Slider JS -->
+  <script>
+    const track = document.querySelector('.slider-track');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let index = 0;
+    const cardWidth = 220 + 15; // project-card width + margin
+
+    nextBtn.addEventListener('click', () => {
+      if(index < track.children.length - 3) index++;
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if(index > 0) index--;
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    });
+  </script>
 </body>
 </html>
