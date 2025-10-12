@@ -2,32 +2,45 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding:0;
 }
 
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Sayfa minimum ekran boyu kadar */
+  min-height: 100vh; 
+  padding: 40px;
 }
 
 header {
-  flex: 0 0 auto; /* Navbar boyutu sabit */
+  flex: 0 0 auto; 
 }
 
 .content {
-  flex: 1 0 auto; /* İçerik alanı büyür, footer en altta */
+  flex: 1 0 auto; 
+ padding-top: 150px;
+  min-height: 100vh;
+   background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
 }
 
 /* === Navbar Ayarları === */
 .navbar {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  width: 100%; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem;
   background: #444;
-  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+
 }
+
 
 .navbar-toggler {
   font-size: 1.5rem;
@@ -133,4 +146,72 @@ header {
   .footer-section {
     margin: 1rem 0;
   }
+}
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+}
+.navbar.scrolled .navbar-link {
+  color: #e74c3c; /* Color cuando navbar tiene scroll - CAMBIA ESTE COLOR */
+  text-shadow: none;
+  background-color: transparent; /* Remover fondo cuando hay scroll */
+}
+
+.navbar.scrolled .navbar-link:hover {
+  color: #c0392b; /* Color al hacer hover cuando hay scroll - CAMBIA ESTE COLOR */
+  background-color: rgba(231, 76, 60, 0.1); /* Fondo hover cuando hay scroll */
+}.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #3498db;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+/* Mobile Menu Toggle */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 4px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-toggle:hover {
+  transform: scale(1.1);
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .bar {
+  background-color: #2c3e50;
+}
+
+.navbar .bar {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación del menú hamburguesa */
+.navbar-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
