@@ -32,11 +32,7 @@ body {
   transition:0.3s;
 }
 
-.tab-btn:hover {
-  background:#000; 
-  color:#fff; 
-  border:1px solid #000;
-}
+.tab-btn:hover { background:#000; color:#fff; border:1px solid #000; }
 
 /* Aktif tab */
 #uyelikTab:checked ~ .tab-buttons label[for="uyelikTab"],
@@ -58,14 +54,7 @@ body {
   border-top:3px solid #4a90e2;
 }
 
-.tab-form h2 { 
-  text-align:center; 
-  margin-bottom:20px; 
-  color:black; 
-  font-size:22px; 
-  font-weight:600; 
-}
-
+.tab-form h2 { text-align:center; margin-bottom:20px; color:black; font-size:22px; font-weight:600; }
 .tab-form label { display:block; margin-bottom:6px; font-weight:500; color:#333; }
 .tab-form input, .tab-form textarea {
   width:100%; padding:10px; margin-bottom:15px; border-radius:6px;
@@ -97,56 +86,21 @@ body {
 .info-section p { text-align:justify; color:#333; line-height:1.6; }
 
 /* Slider */
-.projects-slider {
-  position: relative;
-  margin-top: 30px;
-  overflow: hidden;
-}
-
-.slider-track {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
-
+.projects-slider { position: relative; margin-top: 30px; overflow: hidden; }
+.slider-track { display: flex; transition: transform 0.4s ease-in-out; }
 .project-card {
-  min-width: 200px; 
-  margin-right: 15px;
-  background:#fff;
-  border-radius:12px;
-  padding:10px;
-  text-align:center;
-  box-shadow:0 6px 18px rgba(0,0,0,0.1);
-  flex-shrink: 0;
+  min-width: 200px; margin-right: 15px; background:#fff; border-radius:12px; padding:10px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.1); flex-shrink:0;
 }
-
-.project-card img {
-  width:100%;
-  height:120px;
-  object-fit:cover;
-  border-radius:8px;
-  margin-bottom:8px;
-}
-
+.project-card img { width:100%; height:120px; object-fit:cover; border-radius:8px; margin-bottom:8px; }
 .project-card h3 { color:#000; margin-bottom:6px; }
 .project-card p { color:#555; font-size:14px; line-height:1.4; }
 .project-card:hover { transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
 
 .projects-slider button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background:#000;
-  color:#fff;
-  border:none;
-  font-size:24px;
-  padding:8px 12px;
-  cursor:pointer;
-  border-radius:50%;
-  z-index:10;
-  opacity:0.7;
-  transition:0.3s;
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background:#000; color:#fff; border:none; font-size:24px; padding:8px 12px;
+  cursor:pointer; border-radius:50%; z-index:10; opacity:0.7; transition:0.3s;
 }
-
 .projects-slider button:hover { opacity:1; }
 .projects-slider .prev { left:0; }
 .projects-slider .next { right:0; }
@@ -164,6 +118,6 @@ body {
 @media screen and (max-width:900px) {
   .container { flex-direction:column; align-items:center; }
   .form-tabs, .info-section-border { max-width:90%; }
-  .projects-slider .slider-track { flex-direction:column; align-items:center; }
+  .projects-slider .slider-track { flex-direction:row; align-items:center; }
   .why-join-box { max-width:90%; }
 }

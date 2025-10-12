@@ -116,22 +116,30 @@
 
   <!-- Slider JS -->
   <script>
-    const track = document.querySelector('.slider-track');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
+    const track = document.querySelector('.projects-slider .slider-track');
+    const prevBtn = document.querySelector('.projects-slider .prev');
+    const nextBtn = document.querySelector('.projects-slider .next');
 
     let index = 0;
-    const cardWidth = 220 + 15; // project-card width + margin
+
+    function updateSlider() {
+      const cards = track.children;
+      const cardWidth = cards[0].offsetWidth + 15; // margin-right 15px
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
 
     nextBtn.addEventListener('click', () => {
-      if(index < track.children.length - 3) index++;
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
+      if(index < track.children.length - 1) index++;
+      updateSlider();
     });
 
     prevBtn.addEventListener('click', () => {
       if(index > 0) index--;
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
+      updateSlider();
     });
+
+    window.addEventListener('resize', updateSlider);
   </script>
+
 </body>
 </html>
