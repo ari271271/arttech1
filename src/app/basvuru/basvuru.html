@@ -7,21 +7,19 @@
   <link rel="stylesheet" href="basvuru.css">
 </head>
 <body>
+
   <div class="container">
 
     <!-- Sol Kısım: Başvuru Formları -->
     <div class="form-tabs">
-      <!-- Radio butonlar (gizli) -->
       <input type="radio" name="tab" id="uyelikTab" checked>
       <input type="radio" name="tab" id="yarismaTab">
 
-      <!-- Tab butonları -->
       <div class="tab-buttons">
         <label for="uyelikTab" class="tab-btn">Üyelik Başvurusu</label>
         <label for="yarismaTab" class="tab-btn">Yarışma Başvurusu</label>
       </div>
 
-      <!-- Üyelik Formu -->
       <div class="tab-form" id="uyelik">
         <h2>Üyelik Başvuru Formu</h2>
         <form>
@@ -46,7 +44,6 @@
         </form>
       </div>
 
-      <!-- Yarışma Formu -->
       <div class="tab-form" id="yarisma">
         <h2>Yarışma Başvuru Formu</h2>
         <form>
@@ -68,17 +65,43 @@
     </div>
 
     <!-- Sağ Kısım: Kulüp Hakkında -->
-    <div class="info-section">
-      <h2>Kulübümüz Hakkında</h2>
-      <p>
-        Teknolojiye, yeniliğe ve üretkenliğe inanıyoruz. Öğrencilerimizin fikirlerini gerçeğe dönüştürmek için buradayız.
-        Kulüp üyelerimiz farklı projelerde yer alarak hem teorik hem pratik deneyim kazanır.
-        Takım çalışması, problem çözme ve yaratıcılığı teşvik eden bir ortam sunuyoruz.
-        Yarışmalara katılma fırsatlarıyla CV’lerini güçlendirebilirler.
-      </p>
+    <div class="info-section-border">
+      <div class="info-section">
+        <h2>Kulübümüz Hakkında</h2>
+        <p>
+          Yenilik, teknoloji ve üretkenlik bizim tutkumuz. Fikirlerini gerçeğe dönüştürmek, yarışmalara katılmak ve CV’ni güçlendirmek için seni bekliyoruz!
+        </p>
+      </div>
     </div>
 
   </div>
+
+  <!-- Projeler Bölümü -->
+  <section class="projects-section">
+    <h2>Projelerimiz</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="C:\Users\belin\OneDrive\Desktop\ses.png" alt="Xsound">
+        <h3>Xsound</h3>
+        <p>Yapay zekâ destekli akıllı kulaklık teknolojisi.</p>
+      </div>
+      <div class="project-card">
+        <img src="C:\Users\belin\OneDrive\Desktop\aerowave.png" alt="AeroWave">
+        <h3>AeroWave</h3>
+        <p>Modern hava araçları için yenilikçi anten teknolojisi.</p>
+      </div>
+      <div class="project-card">
+        <img src="C:\Users\belin\OneDrive\Desktop\skyclean.png" alt="SkyCleaner">
+        <h3>SkyCleaner</h3>
+        <p>Drone tabanlı çevre temizleme çözümü.</p>
+      </div>
+      <div class="project-card">
+        <img src="C:\Users\belin\OneDrive\Desktop\skyquard.png" alt="SkyQuard">
+        <h3>SkyQuard</h3>
+        <p>Hava sahası güvenliği ve izleme sistemi.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Neden Katılmalısın Bölümü -->
   <section class="why-join-section">
