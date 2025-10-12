@@ -1,1 +1,128 @@
-<p>basvuru works!</p>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kulüp ve Yarışma Başvuru</title>
+  <link rel="stylesheet" href="basvuru.css">
+</head>
+<body>
+  <div class="container fade-in">
+
+    <!-- Sol Kısım: Başvuru Formları -->
+    <div class="form-tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openTab(event, 'uyelik')">Üyelik Başvurusu</button>
+        <button class="tab-btn" onclick="openTab(event, 'yarisma')">Yarışma Başvurusu</button>
+      </div>
+
+      <div id="uyelik" class="tab-form active">
+        <h2>Üyelik Başvuru Formu</h2>
+        <form>
+          <label for="name">Ad Soyad</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">E-posta</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="department">Bölüm</label>
+          <input type="text" id="department" name="department" required>
+
+          <label for="reason">Neden kulübümüze katılmak istiyorsun?</label>
+          <textarea id="reason" name="reason" rows="3" required></textarea>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="kvkk" required>
+            <label for="kvkk">Bilgilerimin doğruluğunu onaylıyorum.</label>
+          </div>
+
+          <button type="submit">Başvur</button>
+        </form>
+      </div>
+
+      <div id="yarisma" class="tab-form">
+        <h2>Yarışma Başvuru Formu</h2>
+        <form>
+          <label for="projectName">Proje Adı</label>
+          <input type="text" id="projectName" name="projectName" required>
+
+          <label for="projectGoal">Proje Amacı</label>
+          <textarea id="projectGoal" name="projectGoal" rows="2" required></textarea>
+
+          <label for="description">Proje Açıklaması</label>
+          <textarea id="description" name="description" rows="3" required></textarea>
+
+          <label for="email2">E-posta</label>
+          <input type="email" id="email2" name="email2" required>
+
+          <button type="submit">Başvur</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sağ Kısım: Kulüp Hakkında + Projeler -->
+    <div class="info-section">
+      <h2>Kulübümüz Hakkında</h2>
+      <p>
+        Teknolojiye, yeniliğe ve üretkenliğe inanıyoruz. Öğrencilerimizin fikirlerini gerçeğe dönüştürmek için buradayız.
+        Kulüp üyelerimiz farklı projelerde yer alarak hem teorik hem pratik deneyim kazanır.
+        Takım çalışması, problem çözme ve yaratıcılığı teşvik eden bir ortam sunuyoruz.
+        Yarışmalara katılma fırsatlarıyla CV’lerini güçlendirebilirler.
+      </p>
+
+      <!-- Proje Slider -->
+      <div class="projects-slider">
+        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slides">
+          <div class="project-card">
+            <img src="project1.jpg" alt="Proje 1">
+            <div class="project-info"><h3>Akıllı Ev Sistemi</h3></div>
+          </div>
+          <div class="project-card">
+            <img src="project2.jpg" alt="Proje 2">
+            <div class="project-info"><h3>Yapay Zeka Robotu</h3></div>
+          </div>
+          <div class="project-card">
+            <img src="project3.jpg" alt="Proje 3">
+            <div class="project-info"><h3>Ses Kontrollü Devre</h3></div>
+          </div>
+        </div>
+        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Neden Katılmalısın Bölümü -->
+  <section class="why-join-section">
+    <div class="why-join-box">
+      <h2>Neden Bizim Kulübümüze Katılmalısın?</h2>
+      <p>🚀 Gelişim: Yeni teknolojiler öğrenip kendini geliştirme fırsatı bulursun.</p>
+      <p>🤝 Takım Ruhu: Benzer ilgi alanlarına sahip öğrencilerle birlikte üretim yapabilirsin.</p>
+      <p>🏆 Fırsatlar: Yarışmalara katılabilir, projelerini sergileyebilir ve CV’ne değerli deneyimler ekleyebilirsin.</p>
+      <p>💡 İlham: Yeni projeler görerek fikir alabilir, kendi yaratıcı projelerini hayata geçirebilirsin.</p>
+    </div>
+  </section>
+
+  <script>
+    function openTab(evt, formId) {
+      const forms = document.querySelectorAll('.tab-form');
+      const buttons = document.querySelectorAll('.tab-btn');
+      forms.forEach(f => f.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(formId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const cards = document.querySelectorAll('.project-card');
+
+    function moveSlide(direction) {
+      slideIndex += direction;
+      if (slideIndex < 0) slideIndex = cards.length - 1;
+      if (slideIndex >= cards.length) slideIndex = 0;
+      slides.style.transform = translateX(-${slideIndex * 195}px);
+    }
+  </script>
+</body>
+</html>
