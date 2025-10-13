@@ -1,1 +1,145 @@
-<p>basvuru works!</p>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kulüp ve Yarışma Başvuru</title>
+  <link rel="stylesheet" href="basvuru.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Formlar -->
+    <div class="form-tabs">
+      <input type="radio" name="tab" id="uyelikTab" checked>
+      <input type="radio" name="tab" id="yarismaTab">
+
+      <div class="tab-buttons">
+        <label for="uyelikTab" class="tab-btn">Üyelik Başvurusu</label>
+        <label for="yarismaTab" class="tab-btn">Yarışma Başvurusu</label>
+      </div>
+
+      <div class="tab-form" id="uyelik">
+        <h2>Üyelik Başvuru Formu</h2>
+        <form>
+          <label for="name">Ad Soyad</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">E-posta</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="department">Bölüm</label>
+          <input type="text" id="department" name="department" required>
+
+          <label for="reason">Neden kulübümüze katılmak istiyorsun?</label>
+          <textarea id="reason" name="reason" rows="3" required></textarea>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="kvkk" required>
+            <label for="kvkk">Bilgilerimin doğruluğunu onaylıyorum.</label>
+          </div>
+
+          <button type="submit">Başvur</button>
+        </form>
+      </div>
+
+      <div class="tab-form" id="yarisma">
+        <h2>Yarışma Başvuru Formu</h2>
+        <form>
+          <label for="projectName">Proje Adı</label>
+          <input type="text" id="projectName" name="projectName" required>
+
+          <label for="projectGoal">Proje Amacı</label>
+          <textarea id="projectGoal" name="projectGoal" rows="2" required></textarea>
+
+          <label for="description">Proje Açıklaması</label>
+          <textarea id="description" name="description" rows="3" required></textarea>
+
+          <label for="email2">E-posta</label>
+          <input type="email" id="email2" name="email2" required>
+
+          <button type="submit">Başvur</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Kulüp Hakkında ve Projeler -->
+    <div class="info-section-border">
+      <div class="info-section">
+        <h2>Kulübümüz Hakkında</h2>
+        <p>
+          Yenilik, teknoloji ve üretkenlik bizim tutkumuz. Fikirlerini gerçeğe dönüştürmek, yarışmalara katılmak ve CV’ni güçlendirmek için seni bekliyoruz!
+        </p>
+
+        <!-- Slider -->
+        <div class="projects-slider">
+          <button class="prev">&#10094;</button>
+          <div class="slider-track">
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/ses.png" alt="Xsound">
+              <h3>Xsound</h3>
+              <p>Yapay zekâ destekli akıllı kulaklık teknolojisi.</p>
+            </div>
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/aerowave.png" alt="AeroWave">
+              <h3>AeroWave</h3>
+              <p>Modern hava araçları için yenilikçi anten teknolojisi.</p>
+            </div>
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/skyclean.png" alt="SkyCleaner">
+              <h3>SkyCleaner</h3>
+              <p>Drone tabanlı çevre temizleme çözümü.</p>
+            </div>
+            <div class="project-card">
+              <img src="C:/Users/belin/OneDrive/Desktop/skyquard.png" alt="SkyQuard">
+              <h3>SkyQuard</h3>
+              <p>Hava sahası güvenliği ve izleme sistemi.</p>
+            </div>
+          </div>
+          <button class="next">&#10095;</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Neden Katılmalısın Bölümü -->
+  <section class="why-join-section">
+    <div class="why-join-box">
+      <h2>Neden Bizim Kulübümüze Katılmalısın?</h2>
+      <p>🚀 Gelişim: Yeni teknolojiler öğrenip kendini geliştirme fırsatı bulursun.</p>
+      <p>🤝 Takım Ruhu: Benzer ilgi alanlarına sahip öğrencilerle birlikte üretim yapabilirsin.</p>
+      <p>🏆 Fırsatlar: Yarışmalara katılabilir, projelerini sergileyebilir ve CV’ne değerli deneyimler ekleyebilirsin.</p>
+      <p>💡 İlham: Yeni projeler görerek fikir alabilir, kendi yaratıcı projelerini hayata geçirebilirsin.</p>
+    </div>
+  </section>
+
+  <!-- Slider JS -->
+  <script>
+    const track = document.querySelector('.projects-slider .slider-track');
+    const prevBtn = document.querySelector('.projects-slider .prev');
+    const nextBtn = document.querySelector('.projects-slider .next');
+
+    let index = 0;
+
+    function updateSlider() {
+      const cards = track.children;
+      const cardWidth = cards[0].offsetWidth + 15; // margin-right 15px
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if(index < track.children.length - 1) index++;
+      updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if(index > 0) index--;
+      updateSlider();
+    });
+
+    window.addEventListener('resize', updateSlider);
+  </script>
+
+</body>
+</html>

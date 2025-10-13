@@ -1,15 +1,20 @@
 <header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid ">
-  <button class="navbar-toggler" (click)="toggleMenu()">☰</button>
-      <!-- Logo alanı -->
-      <a class="navbar-brand d-flex align-items-center logo-link" href="#"></a>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" [class.scrolled]="isNavbarScrolled()">
+    <div class="container-fluid">
 
-     
+    
+   <!-- Logo alanı -->
+     <a class="navbar-brand d-flex align-items-center logo-link" href="#"></a>
 
-      <!-- Menü Alanı -->
-      <div class="collapse navbar-collapse desktop-menu " id="navbarNavAltMarkup">
+      <!-- Mobil Menü Butonu -->
+      <button class="navbar-toggler" type="button" (click)="onMenuClick()">
+        ☰
+      </button>
+
+      <!-- Masaüstü Menü -->
+      <div class="collapse navbar-collapse desktop-menu" id="navbarNavAltMarkup">
         <div class="navbar-nav">
+<<<<<<< HEAD
           <a class="nav-link active" aria-current="page" routerLink="">AnaSayfa</a>
           <a class="nav-link" href="#">Hakkımızda</a>
           <a class="nav-link" routerLink="/Proje">Projeler</a>
@@ -19,21 +24,35 @@
           <a class="nav-link" href="#">Sponsorlar</a>
           <a class="nav-link" href="#">Öneri/Şikayet</a>
           <a class="nav-link" href="#">İletişim</a>
+=======
+          <a class="nav-link active" routerLink="" >AnaSayfa</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Hakkımızda</a>
+          <a class="nav-link" routerLink="/Proje" (click)="onMenuLinkClick()">Projeler</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Hedefler</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Yarışmalar</a>
+          <a class="nav-link" routerLink="/Basvuru" (click)="onMenuLinkClick()">Başvuru</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Sponsorlar</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Öneri / Şikayet</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">İletişim</a>
+>>>>>>> 10e8f6b8beccb564f439bd42893156fb557d0aa6
         </div>
       </div>
-   <div *ngIf="menuOpen" @slideInOut class="mobile-menu">
+
+      <!-- Mobil Menü -->
+      <div *ngIf="isMobileMenuActive()" class="mobile-menu">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" routerLink="">AnaSayfa</a>
-          <a class="nav-link" href="#">Hakkımızda</a>
-          <a class="nav-link" routerLink="/Proje">Projeler</a>
-          <a class="nav-link" href="#">Hedefler</a>
-          <a class="nav-link" href="#">Yarışmalar</a>
-          <a class="nav-link" routerLink="/Basvuru">Başvuru</a>
-          <a class="nav-link" href="#">Sponsorlar</a>
-          <a class="nav-link" href="#">Öneri/Şikayet</a>
-          <a class="nav-link" href="#">İletişim</a>
+          <a class="nav-link active" routerLink="/" (click)="onMenuLinkClick()">AnaSayfa</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Hakkımızda</a>
+          <a class="nav-link" routerLink="/Proje" (click)="onMenuLinkClick()">Projeler</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Hedefler</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Yarışmalar</a>
+          <a class="nav-link" routerLink="/Basvuru" (click)="onMenuLinkClick()">Başvuru</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Sponsorlar</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">Öneri / Şikayet</a>
+          <a class="nav-link" href="#" (click)="onMenuLinkClick()">İletişim</a>
         </div>
       </div>
+
     </div>
   </nav>
 </header>

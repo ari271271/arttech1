@@ -1,0 +1,123 @@
+/* Genel Ayarlar */
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Formlar */
+.form-tabs { max-width: 420px; width: 100%; }
+.form-tabs input[type="radio"] { display: none; }
+
+.tab-buttons { display:flex; justify-content:center; gap:10px; margin-bottom:15px; }
+.tab-btn {
+  background:#fff; 
+  color:#240a61;
+  border:1px solid #ccc; 
+  padding:10px 18px;
+  border-radius:12px; 
+  cursor:pointer; 
+  font-weight:600; 
+  transition:0.3s;
+}
+
+.tab-btn:hover { background:#240a61; color:#fff; border:1px solid #000; }
+
+/* Aktif tab */
+#uyelikTab:checked ~ .tab-buttons label[for="uyelikTab"],
+#yarismaTab:checked ~ .tab-buttons label[for="yarismaTab"] {
+  background:#240a61; 
+  color:#fff; 
+  border:1px solid #000;
+}
+
+#uyelikTab:checked ~ .tab-form#uyelik,
+#yarismaTab:checked ~ .tab-form#yarisma { display: block; }
+
+.tab-form {
+  display: none; 
+  background:#fff; 
+  padding:30px; 
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1); 
+  border-top:3px solid #240a61;
+}
+
+.tab-form h2 { text-align:center; margin-bottom:20px; color:black; font-size:22px; font-weight:600; }
+.tab-form label { display:block; margin-bottom:6px; font-weight:500; color:#333; }
+.tab-form input, .tab-form textarea {
+  width:100%; padding:10px; margin-bottom:15px; border-radius:6px;
+  border:1px solid #bbb; outline:none; background:#fafafa; color:#000; font-size:14px; transition:0.3s;
+}
+.tab-form input:focus, .tab-form textarea:focus { border-color:black; box-shadow:0 0 5px rgba(74,144,226,0.2); }
+
+.checkbox-group { display:flex; align-items:center; margin-bottom:18px; }
+.checkbox-group input[type="checkbox"] { margin-right:8px; accent-color:#240a61; }
+
+.tab-form button { background:#240a61; color:#fff; border:none; padding:12px 20px; width:100%; border-radius:8px; font-size:15px; cursor:pointer; transition:0.3s; font-weight:600; }
+.tab-form button:hover { background:#240a61;}
+
+/* Kulüp Hakkında */
+.info-section-border {
+  border: 3px solid #240a61;
+  border-radius: 12px;
+  padding: 5px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+.info-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.info-section h2 { text-align:center; margin-bottom:10px; color:black; }
+.info-section p { text-align:justify; color:#333; line-height:1.6; }
+
+/* Slider */
+.projects-slider { position: relative; margin-top: 30px; overflow: hidden; }
+.slider-track { display: flex; transition: transform 0.4s ease-in-out; }
+.project-card {
+  min-width: 200px; margin-right: 15px; background:#fff; border-radius:12px; padding:10px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.1); flex-shrink:0;
+}
+.project-card img { width:100%; height:120px; object-fit:cover; border-radius:8px; margin-bottom:8px; }
+.project-card h3 { color:#000; margin-bottom:6px; }
+.project-card p { color:#555; font-size:14px; line-height:1.4; }
+.project-card:hover { transform:translateY(-3px); box-shadow:0 10px 25px#240a61; }
+
+.projects-slider button {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background:#240a61; color:#fff; border:none; font-size:24px; padding:8px 12px;
+  cursor:pointer; border-radius:50%; z-index:10; opacity:0.7; transition:0.3s;
+}
+.projects-slider button:hover { opacity:1; }
+.projects-slider .prev { left:0; }
+.projects-slider .next { right:0; }
+
+/* Neden Katılmalısın */
+.why-join-section { display:flex; justify-content:center; padding:60px 20px; margin:60px auto; }
+.why-join-box {
+  background:#fff; padding:30px; max-width:700px; border-radius:12px;
+  box-shadow:0 6px 18px #240a61; text-align:left; line-height:1.6;
+}
+.why-join-box h2 { text-align:center; font-size:26px; margin-bottom:20px; }
+.why-join-box p { margin-bottom:12px; }
+
+/* Responsive */
+@media screen and (max-width:900px) {
+  .container { flex-direction:column; align-items:center; }
+  .form-tabs, .info-section-border { max-width:90%; }
+  .projects-slider .slider-track { flex-direction:row; align-items:center; }
+  .why-join-box { max-width:90%; }
+}
