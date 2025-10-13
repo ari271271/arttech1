@@ -110,10 +110,10 @@ html {
 }
 
 .btn-detail {
-    background-color: #28a745; 
+    background-color: #640e0e; 
     color: white;
 }
 
 .btn-detail:hover {
-    background-color: #1e7e34;
+    background-color: #bb3131;
 }
