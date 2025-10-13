@@ -4,8 +4,17 @@ import { Component } from '@angular/core';
   selector: 'app-yarismalar',
   imports: [],
   templateUrl: './yarismalar.html',
-  styleUrl: './yarismalar.css'
+  styleUrls: ['./yarismalar.css']
 })
+
+
 export class Yarismalar {
+
+  scrollToSection(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
 }

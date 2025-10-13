@@ -1,5 +1,5 @@
 import { Component, ElementRef, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // ✅ Standalone component'te gerekli
+import { CommonModule } from '@angular/common'; 
 
 interface Project {
   id: number;
@@ -13,8 +13,8 @@ interface Project {
 
 @Component({
   selector: 'app-proje',
-  standalone: true, // ✅ Bu çok önemli! Module yoksa bu satır şart
-  imports: [CommonModule], // ✅ *ngFor ve *ngIf gibi yapılar için gerekli
+  standalone: true, // standalne kullanıyoruz projede 
+  imports: [CommonModule], //  *ngFor ve *ngIf gibi yapılar için gerekli
   templateUrl: './proje.html',
   styleUrls: ['./proje.css']
 })
