@@ -1,0 +1,119 @@
+html {
+    scroll-behavior: smooth;
+}
+/* Genel Kapsayıcı ve Başlık */
+.yarismalar-container {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 2.1em;
+    color: #555; 
+    border-bottom: 3px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* (TEKNOFEST | TÜBİTAK | STARTUP) */
+
+.category-nav {
+    display: flex; /* Butonları yan yana sırala */
+    gap: 15px; /* Butonlar arasına boşluk koy */
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: #e9ecef; /* Hafif gri arka plan */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #240a61; 
+    
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-button:hover {
+    background-color: #2a74c2; 
+}
+
+/* BÖLÜMLERİN STİLİ */
+
+.competition-section {
+    padding-top: 80px; /* Sabit Menü altından geçiş için boşluk */
+    margin-top: -80px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.competition-section h2 {
+    font-size: 2em;
+    color: #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+/* YARIŞMA KARTLARI  */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.competition-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.competition-card:hover {
+    transform: translateY(-5px); /* Hafif yukarı kayma efekti */
+}
+
+.competition-card h3 {
+    color: #240a61;
+    margin-top: 0;
+}
+
+.btn-detail, .btn-notify {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-detail {
+    background-color: #28a745; 
+    color: white;
+}
+
+.btn-detail:hover {
+    background-color: #1e7e34;
+}
