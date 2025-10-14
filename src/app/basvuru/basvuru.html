@@ -9,273 +9,126 @@
 <body>
 
   <div class="container">
-    <!-- Formlar -->
-    <div class="form-tabs">
-      <input type="radio" name="tab" id="uyelikTab" checked>
-      <input type="radio" name="tab" id="yarismaTab">
 
-      <div class="tab-buttons">
-        <label for="uyelikTab" class="tab-btn">Üyelik Başvurusu</label>
-        <label for="yarismaTab" class="tab-btn">Yarışma Başvurusu</label>
-      </div>
+    <!-- Üst Satır: Başvuru Formu ve Hakkımızda -->
+    <div class="top-row">
+      <!-- Üyelik ve Yarışma Formları -->
+      <div class="form-tabs">
+        <input type="radio" id="uyelikTab" name="tab" checked>
+        <input type="radio" id="yarismaTab" name="tab">
 
-      <div class="tab-form" id="uyelik">
-        <h2>Üyelik Başvuru Formu</h2>
-        <form>
-          <label for="name">Ad Soyad</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="phone">Telefon Numarası</label>
-          <input type="tel" id="phone" name="phone" required>
-
-          <label for="email">E-posta</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="university">Üniversite Adı</label>
-          <input type="text" id="university" name="university" list="universities" required>
-          <datalist id="universities">
-            <!-- Tüm üniversite seçenekleri buraya eklendi -->
-            <option value="Abant İzzet Baysal Üniversitesi">
-            <option value="Abdullah Gül Üniversitesi">
-            <option value="Acıbadem Üniversitesi">
-            <option value="Adana Bilim ve Teknoloji Üniversitesi">
-            <option value="Adıyaman Üniversitesi">
-            <option value="Afyon Kocatepe Üniversitesi">
-            <option value="Afyonkarahisar Sağlık Bilimleri Üniversitesi">
-            <option value="Ağrı İbrahim Çeçen Üniversitesi">
-            <option value="Ahi Evran Üniversitesi">
-            <option value="Akdeniz Üniversitesi">
-            <option value="Aksaray Üniversitesi">
-            <option value="Anadolu Üniversitesi">
-            <option value="Ankara Üniversitesi">
-            <option value="Ankara Yıldırım Beyazıt Üniversitesi">
-            <option value="Atatürk Üniversitesi">
-            <option value="Balıkesir Üniversitesi">
-            <option value="Bartın Üniversitesi">
-            <option value="Batman Üniversitesi">
-            <option value="Boğaziçi Üniversitesi">
-            <option value="Çanakkale Onsekiz Mart Üniversitesi">
-            <option value="Çankaya Üniversitesi">
-            <option value="Çukurova Üniversitesi">
-            <option value="Dicle Üniversitesi">
-            <option value="Dokuz Eylül Üniversitesi">
-            <option value="Dumlupınar Üniversitesi">
-            <option value="Düzce Üniversitesi">
-            <option value="Ege Üniversitesi">
-            <option value="Erciyes Üniversitesi">
-            <option value="Erzincan Üniversitesi">
-            <option value="Erzurum Teknik Üniversitesi">
-            <option value="Eskişehir Osmangazi Üniversitesi">
-            <option value="Fırat Üniversitesi">
-            <option value="Galatasaray Üniversitesi">
-            <option value="Gaziantep Bilim ve Teknoloji Üniversitesi">
-            <option value="Gaziantep Üniversitesi">
-            <option value="Gaziosmanpaşa Üniversitesi">
-            <option value="Gebze Teknik Üniversitesi">
-            <option value="Giresun Üniversitesi">
-            <option value="Gümüşhane Üniversitesi">
-            <option value="Hacettepe Üniversitesi">
-            <option value="Hakkari Üniversitesi">
-            <option value="Harran Üniversitesi">
-            <option value="Hitit Üniversitesi">
-            <option value="Iğdır Üniversitesi">
-            <option value="İhsan Doğramacı Bilkent Üniversitesi">
-            <option value="İnönü Üniversitesi">
-            <option value="İstanbul 29 Mayıs Üniversitesi">
-            <option value="İstanbul Arel Üniversitesi">
-            <option value="İstanbul Aydın Üniversitesi">
-            <option value="İstanbul Bilgi Üniversitesi">
-            <option value="İstanbul Bilim Üniversitesi">
-            <option value="İstanbul Esenyurt Üniversitesi">
-            <option value="İstanbul Gelişim Üniversitesi">
-            <option value="İstanbul Kemerburgaz Üniversitesi">
-            <option value="İstanbul Kültür Üniversitesi">
-            <option value="İstanbul Medeniyet Üniversitesi">
-            <option value="İstanbul Medipol Üniversitesi">
-            <option value="İstanbul Sabahattin Zaim Üniversitesi">
-            <option value="İstanbul Şehir Üniversitesi">
-            <option value="İstanbul Teknik Üniversitesi">
-            <option value="İstanbul Ticaret Üniversitesi">
-            <option value="İstanbul Üniversitesi">
-            <option value="İzmir Ekonomi Üniversitesi">
-            <option value="İzmir Katip Çelebi Üniversitesi">
-            <option value="İzmir Üniversitesi">
-            <option value="İzmir Yüksek Teknoloji Enstitüsü">
-            <option value="Kadir Has Üniversitesi">
-            <option value="Kafkas Üniversitesi">
-            <option value="Kahramanmaraş Sütçü İmam Üniversitesi">
-            <option value="Karabük Üniversitesi">
-            <option value="Karadeniz Teknik Üniversitesi">
-            <option value="Karamanoğlu Mehmetbey Üniversitesi">
-            <option value="Kastamonu Üniversitesi">
-            <option value="Kırıkkale Üniversitesi">
-            <option value="Kırklareli Üniversitesi">
-            <option value="Kilis 7 Aralık Üniversitesi">
-            <option value="Kocaeli Üniversitesi">
-            <option value="Koç Üniversitesi">
-            <option value="KTO Karatay Üniversitesi">
-            <option value="Maltepe Üniversitesi">
-            <option value="Mardin Artuklu Üniversitesi">
-            <option value="Marmara Üniversitesi">
-            <option value="Mehmet Akif Ersoy Üniversitesi">
-            <option value="Melikşah Üniversitesi">
-            <option value="Mersin Üniversitesi">
-            <option value="Mevlana Üniversitesi">
-            <option value="Mimar Sinan Güzel Sanatlar Üniversitesi">
-            <option value="Muğla Sıtkı Koçman Üniversitesi">
-            <option value="Mustafa Kemal Üniversitesi">
-            <option value="Muş Alparslan Üniversitesi">
-            <option value="Namik Kemal Üniversitesi">
-            <option value="Necmettin Erbakan Üniversitesi">
-            <option value="Nevşehir Hacı Bektaş Veli Üniversitesi">
-            <option value="Niğde Üniversitesi">
-            <option value="Nişantaşı Üniversitesi">
-            <option value="Nuh Naci Yazgan Üniversitesi">
-            <option value="Okan Üniversitesi">
-            <option value="Ondokuz Mayıs Üniversitesi">
-            <option value="Ordu Üniversitesi">
-            <option value="Orta Doğu Teknik Üniversitesi">
-            <option value="Osmaniye Korkut Ata Üniversitesi">
-            <option value="Özyeğin Üniversitesi">
-            <option value="Pamukkale Üniversitesi">
-            <option value="Piri Reis Üniversitesi">
-            <option value="Recep Tayyip Erdoğan Üniversitesi">
-            <option value="Sabancı Üniversitesi">
-            <option value="Sakarya Üniversitesi">
-            <option value="Selçuk Üniversitesi">
-            <option value="Siirt Üniversitesi">
-            <option value="Sinop Üniversitesi">
-            <option value="Süleyman Demirel Üniversitesi">
-            <option value="Şırnak Üniversitesi">
-            <option value="Şifa Üniversitesi">
-            <option value="TED Üniversitesi">
-            <option value="TOBB Ekonomi ve Teknoloji Üniversitesi">
-            <option value="Toros Üniversitesi">
-            <option value="Trakya Üniversitesi">
-            <option value="Tunceli Üniversitesi">
-            <option value="Turgut Özal Üniversitesi">
-            <option value="Türk Hava Kurumu Üniversitesi">
-            <option value="Uludağ Üniversitesi">
-            <option value="Uşak Üniversitesi">
-            <option value="Yaşar Üniversitesi">
-            <option value="Yeditepe Üniversitesi">
-            <option value="Yeni Yüzyıl Üniversitesi">
-            <option value="Yıldız Teknik Üniversitesi">
-            <option value="Yüzüncü Yıl Üniversitesi">
-            <option value="Zirve Üniversitesi">
-          </datalist>
-
-          <label for="department">Bölüm</label>
-          <input type="text" id="department" name="department" required>
-
-          <label for="reason">Neden kulübümüze katılmak istiyorsun?</label>
-          <textarea id="reason" name="reason" rows="3" required></textarea>
-
-          <label class="checkbox-inline">
-            <input type="checkbox" id="kvkk" required> Bilgilerimin doğruluğunu onaylıyorum.
-          </label>
-
-          <button type="submit">Başvur</button>
-        </form>
-      </div>
-
-      <div class="tab-form" id="yarisma">
-        <h2>Yarışma Başvuru Formu</h2>
-        <form>
-          <label for="projectName">Proje Adı</label>
-          <input type="text" id="projectName" name="projectName" required>
-
-          <label for="projectGoal">Proje Amacı</label>
-          <textarea id="projectGoal" name="projectGoal" rows="2" required></textarea>
-
-          <label for="description">Proje Açıklaması</label>
-          <textarea id="description" name="description" rows="3" required></textarea>
-
-          <label for="email2">E-posta</label>
-          <input type="email" id="email2" name="email2" required>
-
-          <button type="submit">Başvur</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Kulüp Hakkında ve Projeler -->
-    <div class="info-section-border">
-      <div class="info-section">
-        <h2>Kulübümüz Hakkında</h2>
-        <p>
-          Yenilik, teknoloji ve üretkenlik bizim tutkumuz. Fikirlerini gerçeğe dönüştürmek, yarışmalara katılmak ve CV’ni güçlendirmek için seni bekliyoruz!
-        </p>
-
-        <!-- Slider -->
-        <div class="projects-slider">
-          <button class="prev">&#10094;</button>
-          <div class="slider-track">
-            <div class="project-card">
-              <img src="C:/Users/belin/OneDrive/Desktop/ses.png" alt="Xsound">
-              <h3>Xsound</h3>
-              <p>Yapay zekâ destekli akıllı kulaklık teknolojisi.</p>
-            </div>
-            <div class="project-card">
-              <img src="C:/Users/belin/OneDrive/Desktop/aerowave.png" alt="AeroWave">
-              <h3>AeroWave</h3>
-              <p>Modern hava araçları için yenilikçi anten teknolojisi.</p>
-            </div>
-            <div class="project-card">
-              <img src="C:/Users/belin/OneDrive/Desktop/skyclean.png" alt="SkyCleaner">
-              <h3>SkyCleaner</h3>
-              <p>Drone tabanlı çevre temizleme çözümü.</p>
-            </div>
-            <div class="project-card">
-              <img src="C:/Users/belin/OneDrive/Desktop/skyquard.png" alt="SkyQuard">
-              <h3>SkyQuard</h3>
-              <p>Hava sahası güvenliği ve izleme sistemi.</p>
-            </div>
-          </div>
-          <button class="next">&#10095;</button>
+        <div class="tab-buttons">
+          <label for="uyelikTab" class="tab-btn">Üyelik Başvurusu</label>
+          <label for="yarismaTab" class="tab-btn">Yarışma Başvurusu</label>
         </div>
 
+        <!-- Üyelik Formu -->
+        <div class="tab-form" id="uyelik">
+          <h2>Üyelik Başvuru Formu</h2>
+          <form>
+            <label for="fullname">Ad Soyad</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">E-posta</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Telefon Numarası</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="university">Üniversite</label>
+            <input list="universities" id="university" name="university" required>
+
+            <label for="department">Bölüm</label>
+            <input type="text" id="department" name="department" required>
+
+            <datalist id="universities">
+              <!-- Üniversite seçenekleri buraya -->
+            </datalist>
+
+            <button type="submit">Başvur</button>
+          </form>
+        </div>
+
+        <!-- Yarışma Formu -->
+        <div class="tab-form" id="yarisma">
+          <h2>Yarışma Başvuru Formu</h2>
+          <form>
+            <label for="projectName">Proje Adı</label>
+            <input type="text" id="projectName" name="projectName" required>
+
+            <label for="projectGoal">Proje Amacı</label>
+            <textarea id="projectGoal" name="projectGoal" rows="2" required></textarea>
+
+            <label for="description">Proje Açıklaması</label>
+            <textarea id="description" name="description" rows="3" required></textarea>
+
+            <label for="phone2">Telefon Numarası</label>
+            <input type="tel" id="phone2" name="phone2" required>
+
+            <label for="university2">Üniversite</label>
+            <input list="universities" id="university2" name="university2" required>
+
+            <label for="email2">E-posta</label>
+            <input type="email" id="email2" name="email2" required>
+
+            <button type="submit">Başvur</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Kulüp Hakkında -->
+      <div class="info-section-border">
+        <div class="info-section">
+          <h2>Kulüp Hakkında</h2>
+          <p>Teknolojiye ilgi duyan, üretmek isteyen öğrenciler için kurulmuş bir topluluğuz. 
+          Yarışmalara, projelere ve etkinliklere aktif katılım sağlayarak birlikte gelişiyoruz.</p>
+
+          <!-- Slayt Gösterimi -->
+          <div class="slider">
+            <div class="slides">
+              <img src="resimler/aerowave.jpeg" alt="Proje 1">
+              <img src="resimler/proj2.jpg" alt="Proje 2">
+              <img src="resimler/proj3.jpg" alt="Proje 3">
+              <img src="resimler/proj4.jpg" alt="Proje 4">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Neden Katılmalısın Bölümü -->
-  <section class="why-join-section">
-    <div class="why-join-box">
-      <h2>Neden Bizim Kulübümüze Katılmalısın?</h2>
-      <p>🚀 Gelişim: Yeni teknolojiler öğrenip kendini geliştirme fırsatı bulursun.</p>
-      <p>🤝 Takım Ruhu: Benzer ilgi alanlarına sahip öğrencilerle birlikte üretim yapabilirsin.</p>
-      <p>🏆 Fırsatlar: Yarışmalara katılabilir, projelerini sergileyebilir ve CV’ne değerli deneyimler ekleyebilirsin.</p>
-      <p>💡 İlham: Yeni projeler görerek fikir alabilir, kendi yaratıcı projelerini hayata geçirebilirsin.</p>
+    <!-- Alt Satır: Öneri & Şikayet Formu ve Yazısı -->
+    <div class="bottom-row">
+      <div class="feedback-section-border">
+        <div class="feedback-section">
+          <h2>Öneri & Şikayet</h2>
+          <form>
+            <label for="feedbackName">Ad Soyad</label>
+            <input type="text" id="feedbackName" name="feedbackName" required>
+
+            <label for="feedbackEmail">E-posta</label>
+            <input type="email" id="feedbackEmail" name="feedbackEmail" required>
+
+            <label for="feedbackMessage">Mesajınız</label>
+            <textarea id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea>
+
+            <button type="submit">Gönder</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="feedback-text">
+        <div class="info-section">
+          <p style="color:#b20000; font-weight:500; margin-bottom:15px;
+          border:solid rgba(124, 18, 18, 0.785)">
+          Değerli Üye Adaylarımız ve Üyelerimiz,
+          Sizlerin görüşleri bizim için çok değerli! Kulübümüzü daha iyi bir hale getirebilmemiz için öneri ve şikayetlerinizi paylaşmanız bizim için büyük önem taşıyor. Fikirleriniz ve geri bildirimleriniz sayesinde etkinliklerimizi, projelerimizi ve genel deneyiminizi sürekli geliştirebiliriz.
+          Lütfen düşüncelerinizi bizimle paylaşmaktan çekinmeyin – her bir öneri ve geri bildirim bizim için kıymetlidir.
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- Slider JS -->
-  <script>
-    const track = document.querySelector('.projects-slider .slider-track');
-    const prevBtn = document.querySelector('.projects-slider .prev');
-    const nextBtn = document.querySelector('.projects-slider .next');
-
-    let index = 0;
-
-    function updateSlider() {
-      const cards = track.children;
-      const cardWidth = cards[0].offsetWidth + 15; // margin-right 15px
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-      if(index < track.children.length - 1) index++;
-      updateSlider();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      if(index > 0) index--;
-      updateSlider();
-    });
-
-    window.addEventListener('resize', updateSlider);
-  </script>
+  </div>
 
 </body>
 </html>
