@@ -10,7 +10,7 @@
 
   <div class="container">
 
-    <!-- Üst Satır: Başvuru Formu ve Hakkımızda -->
+    <!-- Üst Satır: Başvuru Formları ve Kulüp Hakkında -->
     <div class="top-row">
       <!-- Üyelik ve Yarışma Formları -->
       <div class="form-tabs">
@@ -96,9 +96,27 @@
       </div>
     </div>
 
-    <!-- Alt Satır: Öneri & Şikayet Formu ve Yazısı -->
+    <!-- Alt Satır: Başvuru Formu ve Öneri & Şikayet Yan Yana -->
     <div class="bottom-row">
-      <div class="feedback-section-border">
+      <div class="form-tabs feedback-form-inline">
+        <div class="tab-form" id="uyelik-bottom">
+          <h2>Başvuru Formu</h2>
+          <form>
+            <label for="fullname2">Ad Soyad</label>
+            <input type="text" id="fullname2" name="fullname2" required>
+
+            <label for="email3">E-posta</label>
+            <input type="email" id="email3" name="email3" required>
+
+            <label for="phone3">Telefon Numarası</label>
+            <input type="tel" id="phone3" name="phone3" required>
+
+            <button type="submit">Başvur</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="feedback-section-border feedback-form-inline">
         <div class="feedback-section">
           <h2>Öneri & Şikayet</h2>
           <form>
@@ -115,17 +133,14 @@
           </form>
         </div>
       </div>
+    </div>
 
-      <div class="feedback-text">
-        <div class="info-section">
-          <p style="color:#b20000; font-weight:500; margin-bottom:15px;
-          border:solid rgba(124, 18, 18, 0.785)">
-          Değerli Üye Adaylarımız ve Üyelerimiz,
-          Sizlerin görüşleri bizim için çok değerli! Kulübümüzü daha iyi bir hale getirebilmemiz için öneri ve şikayetlerinizi paylaşmanız bizim için büyük önem taşıyor. Fikirleriniz ve geri bildirimleriniz sayesinde etkinliklerimizi, projelerimizi ve genel deneyiminizi sürekli geliştirebiliriz.
-          Lütfen düşüncelerinizi bizimle paylaşmaktan çekinmeyin – her bir öneri ve geri bildirim bizim için kıymetlidir.
-          </p>
-        </div>
-      </div>
+    <!-- Feedback Yazısı -->
+    <div class="feedback-text">
+      <p>Değerli Üye Adaylarımız ve Üyelerimiz, sizlerin görüşleri bizim için çok değerli!  
+      Kulübümüzü daha iyi bir hale getirebilmemiz için öneri ve şikayetlerinizi paylaşmanız büyük önem taşıyor.  
+      Fikirleriniz sayesinde etkinliklerimizi, projelerimizi ve genel deneyiminizi sürekli geliştirebiliriz.  
+      Lütfen düşüncelerinizi bizimle paylaşmaktan çekinmeyin – her bir öneri bizim için kıymetlidir.</p>
     </div>
 
   </div>

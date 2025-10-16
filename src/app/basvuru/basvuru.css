@@ -24,9 +24,9 @@ body {
 /* Alt Satır */
 .bottom-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  justify-content: flex-start;
+  gap: 60px; /* Başvuru ile öneri & şikayet arasındaki mesafe */
+  flex-wrap: wrap;
 }
 
 /* Formlar */
@@ -59,10 +59,17 @@ body {
 .tab-form {
   display: none; 
   background:#fff; 
-  padding:30px; 
+  padding:30px;
   border-radius:12px;
   box-shadow:0 8px 20px rgba(0,0,0,0.1); 
   border-top:3px solid #240a61;
+  margin-top: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab-form:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
 .tab-form h2 { text-align:center; margin-bottom:20px; color:black; font-size:22px; font-weight:600; }
@@ -82,16 +89,8 @@ body {
   border-radius: 12px;
   padding: 5px;
   max-width: 400px;
-  
-  /* Gölgeyi daha estetik yapıyoruz */
   box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 6px 15px rgba(36,10,97,0.1);
-
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: 50px;
 }
-
-
 
 .info-section {
   background: #fff;
@@ -113,17 +112,16 @@ body {
 
 .slides {
   display: flex;
-  width: 400%; /* 4 resim için */
+  width: 400%;
   animation: slideAnimation 16s infinite;
 }
 
 .slides img {
-  width: 25%; /* 4 resim için */
+  width: 25%;
   height: 200px;
   object-fit: cover;
 }
 
-/* Animasyon */
 @keyframes slideAnimation {
   0% { transform: translateX(0%); }
   20% { transform: translateX(0%); }
@@ -138,89 +136,61 @@ body {
 
 /* Öneri & Şikayet Formu */
 .feedback-section-border {
- 
-  border-radius: 20px;
-  padding: 5px;
-  max-width: 420px;
-  background: linear-gradient(135deg, #f0f0f0, #ffe6e6);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  text-align: center;
+  background:#fff; 
+  padding:60px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1); 
+  border-top:3px solid #240a61;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .feedback-section-border:hover {
-  transform: translateY(-5px);
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
-.feedback-section h2 { color: #b20000; font-size: 28px; margin-bottom: 15px; }
-.feedback-section label { display: block; margin-bottom: 6px; font-weight: 500; color: #333; }
-.feedback-section input, .feedback-section textarea {
-  width:100%;
-  padding:10px;
-  margin-bottom:15px;
-  border-radius:6px;
-  border:1px solid #872525;
-  outline:none;
-  background:#fafafa;
-  font-size:14px;
-  transition:0.3s;
-}
-.feedback-section input:focus, .feedback-section textarea:focus {
- 
-  box-shadow:0 0 5px rgba(178,0,0,0.2);
-}
-.feedback-section button {
-  background:#b20000;
-  color: #fafafa;
-  border:none;
-  padding:12px 20px;
-  width:100%;
-  border-radius:8px;
-  font-size:15px;
-  cursor:pointer;
-  transition:0.3s;
+
+.feedback-section h2 {
+  text-align:center;
+  margin-bottom:20px;
+  color:black;
+  font-size:22px;
   font-weight:600;
 }
-.feedback-section button:hover { background:#930000; }
-
-.feedback-text {
-  max-width: 400px;
+.feedback-section label {
+  display:block;
+  margin-bottom:6px;
+  font-weight:500;
+  color:#333;
 }
+.feedback-section input, .feedback-section textarea {
+  width:100%; padding:10px; margin-bottom:15px; border-radius:6px;
+  border:1px solid #bbb; outline:none; background:#fafafa; color:#000; font-size:14px; transition:0.3s;
+}
+.feedback-section input:focus, .feedback-section textarea:focus {
+  border-color:black; box-shadow:0 0 5px rgba(74,144,226,0.2);
+}
+.feedback-section button {
+  background:#240a61; color:#fff; border:none; padding:12px 20px; width:100%; border-radius:8px;
+  font-size:15px; cursor:pointer; transition:0.3s; font-weight:600;
+}
+.feedback-section button:hover { background:#240a61; }
+
+/* Feedback Yazısı */
 .feedback-text {
-  background: linear-gradient(135deg, rgba(0,0,0,0.15), #f9f3ff);
-  /* border: 2px solid #b20000;  <-- bunu kaldırdık */
-  border-radius: 0; /* kutu hissini azaltır */
+  max-width: 900px;
+  background: linear-gradient(135deg, #ffffff, #f0f4ff);
+  border-radius: 15px;
   padding: 25px;
-  box-shadow: none; /* istersen gölgeyi de kaldırdım */
-  color: blue;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  color: #222;
   line-height: 1.6;
   font-size: 15px;
-  max-width: 420px;
-  transition: 0.3s ease;
+  border: 3px solid #240a61; 
+  border-top: 6px solid #18063a;
+  margin-top: 80px;
 }
 
-.feedback-text:hover {
-  transform: none; /* yukarı kalkma efekti de kalktı */
-  box-shadow: none;
-  background: linear-gradient(135deg, #ffffff, #ffffff); /* sade beyaz */
-}
-
-.feedback-text p {
-  margin: 0;
-  font-weight: 500;
-  color: #222;
-  text-align: justify;
-}
-
-
-
-.feedback-text p {
-  margin: 0;
-  font-weight: 500;
-  color: #222;
-  text-align: justify;
-}
-
-
+/* Mobil Görünüm */
 @media screen and (max-width:900px) {
   .top-row, .bottom-row {
     flex-direction: column;
@@ -228,6 +198,6 @@ body {
   }
   .form-tabs, .info-section-border, .feedback-section-border, .feedback-text {
     max-width:90%;
-    flex: none;
+    margin-top: 20px;
   }
 }
