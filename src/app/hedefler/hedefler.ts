@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-hedefler',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './hedefler.html',
   styleUrl: './hedefler.css'
 })
