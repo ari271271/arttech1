@@ -2,9 +2,9 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary" [class.scrolled]="isNavbarScrolled()">
     <div class="container-fluid">
 
-    
-   <!-- Logo alanı -->
-     <a class="navbar-brand d-flex align-items-center logo-link" href="#"></a>
+
+      <!-- Logo alanı -->
+      <a class="navbar-brand d-flex align-items-center logo-link" href="#"></a>
 
       <!-- Mobil Menü Butonu -->
       <button class="navbar-toggler" type="button" (click)="onMenuClick()">
@@ -16,10 +16,10 @@
         <div class="navbar-nav">
 
           <a class="nav-link active" aria-current="page" routerLink="">AnaSayfa</a>
-          <a class="nav-link" href="#">Hakkımızda</a>
+          <a class="nav-link" routerLink="/hakkimizda">Hakkımızda</a>
           <a class="nav-link" routerLink="/Proje">Projeler</a>
-          <a class="nav-link" href="#">Hedefler</a>
-          <a class="nav-link" routerLink="/yarismalar">Yarışmalar</a>  <!--  bu kısmı düzenledim  -->
+          <a class="nav-link" routerLink="/hedefler">Hedefler</a>
+          <a class="nav-link" routerLink="/yarismalar">Yarışmalar</a> <!--  bu kısmı düzenledim  -->
           <a class="nav-link" routerLink="/Basvuru">Başvuru</a>
           <a class="nav-link" href="#">Sponsorlar</a>
           <a class="nav-link" href="#">Öneri/Şikayet</a>
@@ -45,37 +45,41 @@
 
     </div>
   </nav>
-</header>
+  </header>
 
 
-<div class="content">
-  <router-outlet></router-outlet>
-</div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 
-<footer class="site-footer">
-  <div class="footer-container">
+  <footer class="site-footer">
+    <div class="footer-container">
 
-    <div class="footer-section">
-      <h5>İletişim</h5>
-      <p>05367030726</p>  
-    </div>
-    <div class="footer-section">
+      <div class="footer-section">
+        <h5>İletişim</h5>
+        <a href="tel:+905551112233" class="phone-link">
+    <i class="fa fa-phone fa-beat"></i>
+  </a>
+      </div>
+  <div class=" footer-section social">
       <h5>Bizi Takip edin</h5>
       <div class="social-icons">
-        <a href="https://www.instagram.com/arttechofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram fa-beat"></i></a>
+        <a href="https://www.instagram.com/arttechofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+            class="fa-brands fa-instagram fa-beat"></i></a>
         <a
-          href="https://www.linkedin.com/in/yunus-ethem-ta%C5%9F-a37a9633a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwU5%2FmgyTRMCZ84kicu0nqg%3D%3D"><i
+          href="https://www.linkedin.com/company/arttech-startup-giri%C5%9Fim/about/"><i
             class="fa-brands fa-square-linkedin fa-beat"></i></a>
-        <a href="#"><i class="fa-brands fa-whatsapp fa-beat"></i></a>
-       
+        <a href="https://chat.whatsapp.com/G5rLGXwetyUJbWuJu2CVzH?mode=ems_copy_c"><i class="fa-brands fa-whatsapp fa-beat"></i></a>
+
       </div>
     </div>
+  
+    </div>
 
-  </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ArtTech. Tüm hakları saklıdır.</p>
+      <p>Web geliştirme: <a href="https://www.linkedin.com/in/ahmed-adnan-5a6719301/">AHMET ADNAN</a>& <a href="HİLAL BİRİNCİ">HİLAL BİRİNCİ</a>& <a href="https://www.linkedin.com/in/fatma-y%C4%B1ld%C4%B1r%C4%B1m-041570353/">FATMA YILDIRIM</a>& <a href="https://www.linkedin.com/in/belinay-kaymaz-56057129b/">BELİNAY KAYMAZ</a></p>
+    </div>
+  </footer>
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 ArtTech. Tüm hakları saklıdır.</p>
-  </div>
-</footer>
-
->
+  

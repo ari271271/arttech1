@@ -1,0 +1,81 @@
+
+html {
+    scroll-behavior: smooth;
+}
+.hedefler-container{
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px;
+}
+.intro-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+.page-title {
+    font-size: 2.1em;
+    color: #555; 
+    border-bottom: 3px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.goals-page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #133152;
+}
+
+h2 {
+    color: #133152;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #133152;
+    padding-bottom: 5px;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.goal-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.goal-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.goal-card h3 {
+    margin: 15px 0 10px;
+    color: #133152;
+}
+
+.goal-card p {
+    padding: 0 15px 15px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}

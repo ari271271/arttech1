@@ -2,7 +2,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
 .page-container {
@@ -18,9 +18,9 @@ header {
 
 .content {
   flex: 1 0 auto; 
- padding-top: 150px;
+  padding-top: 150px;
   min-height: 100vh;
-   background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
 }
 
 /* === Navbar Ayarları === */
@@ -38,9 +38,7 @@ header {
   -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease-in-out;
   z-index: 1000;
-
 }
-
 
 .navbar-toggler {
   font-size: 1.5rem;
@@ -55,6 +53,13 @@ header {
   height: 90px;
   background: url('/arttech.jpeg') center/cover no-repeat;
   border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Logo Hover Efekti */
+.logo-link:hover {
+  transform: translateY(-5px); /* Hafif yukarı kaydırma */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
 }
 
 .desktop-menu {
@@ -94,15 +99,15 @@ header {
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1200px;
+  flex-direction: column; /* Üst üste diz */
+  align-items: center;    /* Ortada hizala */
+  text-align: center;     /* Yazılar ortalansın */
   margin: 0 auto;
 }
 
 .footer-section {
-  flex: 1 1 250px;
-  margin: 1rem;
+  flex: 1 1 ;
+  margin: 0.2rem 0;
 }
 
 .footer-section h3 {
@@ -137,6 +142,13 @@ header {
   padding-top: 1rem;
 }
 
+.social {   
+  left: 1px;
+  text-align: center;
+  color: #777;
+  padding-top: 1rem;
+}
+
 /* Responsive Footer */
 @media (max-width: 768px) {
   .footer-container {
@@ -147,71 +159,31 @@ header {
     margin: 1rem 0;
   }
 }
-.navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 0;
-}
-.navbar.scrolled .navbar-link {
-  color: #e74c3c; /* Color cuando navbar tiene scroll - CAMBIA ESTE COLOR */
-  text-shadow: none;
-  background-color: transparent; /* Remover fondo cuando hay scroll */
-}
 
-.navbar.scrolled .navbar-link:hover {
-  color: #c0392b; /* Color al hacer hover cuando hay scroll - CAMBIA ESTE COLOR */
-  background-color: rgba(231, 76, 60, 0.1); /* Fondo hover cuando hay scroll */
-}.navbar-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: #3498db;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-/* Mobile Menu Toggle */
-.navbar-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 0.5rem;
-  gap: 4px;
-  transition: transform 0.2s ease;
-}
-
-.navbar-toggle:hover {
-  transform: scale(1.1);
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-.navbar.scrolled .bar {
-  background-color: #2c3e50;
-}
-
-.navbar .bar {
+/* === Butonların Stili ve Animasyon === */
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 30px;  /* Yuvarlak köşe */
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: #444;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;  /* Geçiş animasyonu */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Hafif gölge */
 }
 
-/* Animación del menú hamburguesa */
-.navbar-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+.nav-link:hover, 
+.nav-link:focus {
+  background-color: #133152;  /* Mavi renk geçişi */
+  color: #fff;  /* Beyaz metin */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Gölge artışı */
+  transform: translateY(-3px);  /* Hafif yukarı kayma efekti */
 }
 
-.navbar-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+.nav-link:active {
+  background-color: #1f4566;  /* Daha koyu mavi */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);  /* Tıklama sonrası biraz aşağı kayma */
 }
