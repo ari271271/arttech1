@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Homepage } from './homepage/home';
+import { Homepage } from './homepage/home.ts';
 import { Layout } from './layout/layout';
 import { Basvuru } from './basvuru/basvuru';
 import { Proje } from './proje/proje';
