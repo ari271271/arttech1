@@ -1,81 +1,303 @@
-
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 150px;
 }
-.hedefler-container{
-    max-width: 1200px;
-    margin: 0 auto; 
-    padding: 20px;
-}
-.intro-text {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 30px;
-}
-.page-title {
-    font-size: 2.1em;
-    color: #555; 
-    border-bottom: 3px solid #f0f0f0;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-.goals-page-container {
+
+/* Ana Kapsayıcı */
+.hedefler-container {
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-h1 {
+.hedefler-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #240a61, #640e0e, #240a61);
+    z-index: 1;
+}
+
+/* Başlık Bölümü */
+.hedefler-header {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    color: #133152;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
 }
 
-h2 {
-    color: #133152;
+.page-title {
+    font-size: 3em;
+    background: linear-gradient(135deg, #240a61, #640e0e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
     margin-bottom: 20px;
-    border-bottom: 2px solid #133152;
-    padding-bottom: 5px;
+    position: relative;
 }
 
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #240a61, #640e0e);
+    border-radius: 2px;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 30px auto 0;
+    text-align: justify;
+    font-weight: 400;
+}
+
+/* Bölüm Başlıkları */
+h2 {
+    font-size: 2.2em;
+    color: #240a61;
+    margin: 60px 0 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+h2::before {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, #240a61, #640e0e);
+    border-radius: 2px;
+}
+
+h2::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #240a61, transparent);
+}
+
+/* Grid Sistemi */
 .goals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
+.goals-grid-long-term {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Hedef Kartları */
 .goal-card {
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    position: relative;
+    border-left: 5px solid transparent;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.goal-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.goal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #240a61, #640e0e);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.goal-card h3 {
-    margin: 15px 0 10px;
-    color: #133152;
-}
-
-.goal-card p {
-    padding: 0 15px 15px;
-    color: #555;
-    line-height: 1.5;
+.goal-card:hover::before {
+    opacity: 1;
 }
 
 .goal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-left-color: #240a61;
+}
+
+/* Görsel Alanı */
+.goal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.goal-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Kart İçeriği */
+.goal-card-content {
+    padding: 25px 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.goal-card h3 {
+    margin: 0 0 15px;
+    color: #240a61;
+    font-size: 1.4em;
+    font-weight: 700;
+    position: relative;
+}
+
+.goal-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, #240a61, #640e0e);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.goal-card:hover h3::after {
+    width: 60px;
+}
+
+.goal-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1em;
+    margin: 15px 0 0;
+    text-align: justify;
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.goal-card:nth-child(1) { animation-delay: 0.1s; }
+.goal-card:nth-child(2) { animation-delay: 0.2s; }
+.goal-card:nth-child(3) { animation-delay: 0.3s; }
+.goal-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Tasarım */
+@media (max-width: 992px) {
+    .goals-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .goal-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hedefler-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 2.5em;
+    }
+    
+    .intro-text {
+        font-size: 1.1em;
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    h2::after {
+        display: none;
+    }
+    
+    .goals-grid,
+    .goals-grid-long-term {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .goal-card-content {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2em;
+    }
+    
+    .goal-card h3 {
+        font-size: 1.2em;
+    }
+    
+    .goal-card p {
+        font-size: 0.95em;
+    }
+}
+
+/* Erişilebilirlik */
+@media (prefers-reduced-motion: reduce) {
+    .goal-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Yüksek kontrast modu */
+@media (prefers-contrast: high) {
+    .goal-card {
+        border: 2px solid #333;
+    }
+    
+    .goal-card h3 {
+        color: #000;
+    }
 }
