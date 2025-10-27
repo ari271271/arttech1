@@ -3,31 +3,34 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-hakkimizda',
-  standalone: true,
-    imports: [RouterModule, CommonModule], 
- templateUrl: './hakkimizda.html',
-    styleUrls: ['./hakkimizda.css'] 
+  selector: 'app-hakkimizda',
+  standalone: true,
+  imports: [RouterModule, CommonModule], 
+  templateUrl: './hakkimizda.html',
+  styleUrls: ['./hakkimizda.css'] 
 })
-export class Hakkimizda {   team = [
-  { name: "Yunus Ethem Taş", title: "CEO (Chief Executive Officer)", photo: "/Yunus.jpeg" },
-  { name: "Nursezen Sağdıç", title: "COO (Chief Operating Officer)", photo: "/Nursezen.jpeg" },
-  { name: "Sena", title: "Finans Direktörü", photo: "/Sena.jpeg" },
-  { name: "Eda", title: "Endüstriyel Süreç ve Raporlama Koordinatörü", photo: "/Eda.jpeg" },
-  { name: "Ezgi", title: "Sosyal Medya Sorumlusu", photo: "/Ezgi.jpeg" },
-  { name: "Sidra", title: "Sosyal Medya Sorumlusu", photo: "/Sidra.jpg" },
-  { name: "Ahmet", title: "Yazılım Geliştirici & Teknik Destek", photo: "/Ahmet.jpeg" },
-  { name: "Zemzem", title: "Yazılım Kaptanı", photo: "/Zemzem.jpeg" },
-  { name: "Fehmi", title: "Elektronik Kaptanı", photo: "/Fehmi.jpeg" },
-  { name: "Bumin Kağan", title: "Mekanik Kaptanı", photo: "/Bumin.jpeg" },
-  { name: "Orhan", title: "Elektronik Asistanı (Elektronik Mühendisliği Öğrencisi)", photo: "/Orhan.jpeg" },
-  { name: "Mustafa", title: "Elektrik-Elektronik Destek Uzmanı", photo: "/Mustafa.jpeg" },
-  { name: "Büşra", title: "Hatay Temsilcisi", photo: "/Busra.jpeg" },
-  { name: "Ezel", title: "Laboratuvar Destek Üyesi", photo: "/Ezel.jpeg" },
-  { name: "Bedriye", title: "Elektrik-Elektronik Proje Asistanı", photo: "/Bedriye.jpeg" }
-];
-onImageError(event: Event) {
-  const imgElement = event.target as HTMLImageElement;
-  imgElement.src = '/varsayilan.jpg';
-}}
+export class Hakkimizda { 
+  // HTML'de team.slice() ile bölünen orijinal düz dizi
+  team = [
+    { name: "Yunus Ethem Taş", title: "CEO (Chief Executive Officer)", photo: "/Yunus.jpeg" },
+    { name: "Nursezen Sağdıç", title: "COO (Chief Operating Officer)", photo: "/Nursezen.jpeg" },
+    { name: "Sena", title: "Finans Direktörü", photo: "/Sena.jpeg" },
+    { name: "Eda", title: "Endüstriyel Süreç ve Raporlama Koordinatörü", photo: "/Eda.jpeg" },
+    { name: "Ezgi", title: "Sosyal Medya Sorumlusu", photo: "/Ezgi.jpeg" },
+    { name: "Sidra", title: "Sosyal Medya Sorumlusu", photo: "/Sidra.jpg" },
+    { name: "Ahmet", title: "Yazılım Geliştirici & Teknik Destek", photo: "/Ahmet.jpeg" },
+    { name: "Zemzem", title: "Yazılım Kaptanı", photo: "/Zemzem.jpeg" },
+    { name: "Fehmi", title: "Elektronik Kaptanı", photo: "/Fehmi.jpeg" },
+    { name: "Bumin Kağan", title: "Mekanik Kaptanı", photo: "/Bumin.jpeg" },
+    { name: "Orhan", title: "Elektronik Asistanı (Elektronik Mühendisliği Öğrencisi)", photo: "/Orhan.jpeg" },
+    { name: "Mustafa", title: "Elektrik-Elektronik Destek Uzmanı", photo: "/Mustafa.jpeg" },
+    { name: "Büşra", title: "Hatay Temsilcisi", photo: "/Busra.jpeg" },
+    { name: "Ezel", title: "Laboratuvar Destek Üyesi", photo: "/Ezel.jpeg" },
+    { name: "Bedriye", title: "Elektrik-Elektronik Proje Asistanı", photo: "/Bedriye.jpeg" }
+  ];
 
+  onImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.src = '/varsayilan.jpg';
+  }
+}
