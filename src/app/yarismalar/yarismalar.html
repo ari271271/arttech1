@@ -12,22 +12,30 @@
     </section>
 
     <section  class=".competition-section teknofest">
-        <h2 id="teknofest-yarismalari">TEKNOFEST Yarışmaları <i class="fas fa-rocket"></i></h2>
+        <h2 id="teknofest-yarismalari">TEKNOFEST Yarışmaları </h2>
         <!-- ika da yaparsak bu satırı açabiliriz -->
         <!-- <p class="section-description">Türkiye'nin en büyük teknoloji festivalinde yer almak için İHA,İDA,İKA gibi alanlarda projeler geliştiriyoruz. </p> -->
         
         <div class="card-grid" >
-            <div class="competition-card active">
-                <h3>İHA</h3>
+            <div class="competition-card competition-iha teknofest-card">
+                <div class="status-badge status-active">Aktif</div>
+                <h3>İHA - İnsansız Hava Aracı</h3>
                 <p>Otonom uçuş ve yapay zeka ile rota takibi, hedef tespiti ve görev icrası yapan insansız hava araçları geliştirerek havacılık ve uzay alanında sınırları zorluyoruz.</p>
-                <div class="details">Aşama: Proje geliştirme devam ediyor.</div>
-                <!-- <button class="btn btn-detail">Detaylı Bilgi</button>   detaylı bilgi eklemek istersek daha sonra bu butondan ekleyebiliriz -->
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+                <div class="details">Aşama: Proje geliştirme devam ediyor (%75)</div>
+                <!-- <button class="btn btn-detail">Detaylı Bilgi</button> -->
             </div>
             
-            <div class="competition-card upcoming">
-                <h3>İDA</h3>
+            <div class="competition-card competition-ida teknofest-card">
+                <div class="status-badge status-active">Aktif</div>
+                <h3>İDA - İnsansız Deniz Aracı</h3>
                 <p>Sensörler ve yapay zeka ile çevre algılama yeteneğine sahip, zorlu deniz koşullarında keşif ve operasyonel görevler için otonom deniz araçları tasarlıyoruz.</p>
-                <div class="details">Aşama: Proje geliştirme devam ediyor</div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="details">Aşama: Proje geliştirme devam ediyor (%60)</div>
                 <!-- <button class="btn btn-detail">Detaylı Bilgi</button> -->
             </div>
 
@@ -46,12 +54,15 @@
     <hr>
     
     <section id="tubitak-yarismalari" class="competition-section tubitak">
-        <h2 id="tubitak-yarismalari">TÜBİTAK Proje Yarışmaları <i class="fas fa-flask"></i></h2>
-        <div class="competition-card upcoming">
+        <h2 id="tubitak-yarismalari">TÜBİTAK Proje Yarışmaları  </h2>
+        <div class="competition-card tubitak-card">
+                <div class="status-badge status-upcoming">Değerlendirmede</div>
                 <h3>TÜBİTAK 1812 BİGG</h3>
                 <p>Girişimcilik ekosistemine katkı sağlamak amacıyla yenilikçi iş fikirlerimizi ticarileştirme yolunda TÜBİTAK BİGG programına başvurduk. Program kapsamında 5 farklı alanda teknoloji tabanlı çözümler geliştirdik.</p>
-                <div class="details">Aşama: Proje değerlendirme süreci devam etmektedir.</div>
-              
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 40%;"></div>
+                </div>
+                <div class="details">Aşama: Proje değerlendirme süreci devam etmektedir (%40)</div>
         </div>
    
     </section>
@@ -59,30 +70,46 @@
     <hr>
     
     <section id="startup-yarismalari" class="competition-section startup">
-        <h2 id="startup-yarismalari">Startup ve Girişim Yarışmaları <i class="fas fa-lightbulb"></i></h2>
+        <h2 id="startup-yarismalari">Startup ve Girişim Yarışmaları </h2>
          <div class="card-grid-startup" >
-            <div class="competition-card upcoming">
+            <div class="competition-card startup-card">
+                    <div class="status-badge status-completed">Tamamlandı</div>
                     <h3>Startup World Cup</h3>
                     <p>Uluslararası yatırımcılarla buluşma fırsatı sunan ve 1 milyon dolarlık büyük ödüle giden bu küresel yarışmanın Türkiye ayağı finallerinde yer alarak, projemizin global potansiyelini sergiledik.</p>
-                    <div class="details">Durum: Türkiye Finalleri Tamamlandı.</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="details">Durum: Türkiye Finalleri Başarıyla Tamamlandı</div>
             </div>
 
-            <div class="competition-card upcoming">
+            <div class="competition-card startup-card">
+                    <div class="status-badge status-completed">Tamamlandı</div>
                     <h3>Habitat Genç Girişimciler</h3>
                     <p>Genç girişimcileri destekleyen Habitat Fikir Yarışması'nda, projemizin sosyal etki ve sürdürülebilirlik potansiyelini değerlendiren yoğun bir programa katıldık.</p>
-                    <div class="details">Durum: Yarışma Süreci Tamamlandı.</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="details">Durum: Yarışma Süreci Başarıyla Tamamlandı</div>
             </div>
 
-            <div class="competition-card upcoming">
+            <div class="competition-card startup-card">
+                    <div class="status-badge status-completed">Tamamlandı</div>
                     <h3>Biruni Demoday</h3>
                     <p>Geleceğin teknolojilerini şekillendiren Biruni Teknopark'ın düzenlediği Demoday etkinliğinde, geliştirdiğimiz teknolojik çözümü yatırımcılar ve sektör liderleri önünde sunduk.</p>
-                    <div class="details">Durum: Sunum Başarıyla Gerçekleştirildi.</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="details">Durum: Sunum Başarıyla Gerçekleştirildi</div>
             </div>
 
-            <div class="competition-card upcoming">
-                    <h3>QSTP Ön Kuluçka Programı </h3>
+            <div class="competition-card startup-card">
+                    <div class="status-badge status-active">Aktif</div>
+                    <h3>QSTP Ön Kuluçka Programı</h3>
                     <p>Katar Bilim ve Teknoloji Parkı (QSTP) tarafından yürütülen bu prestijli ön kuluçka programına başvurumuz kabul edildi. Bu, projemizin uluslararası düzeyde tanınması için önemli bir adımdır.</p>
-                    <div class="details">Durum: Kabul Edildi! Katar'daki programa katılım hazırlıkları devam etmektedir.</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 30%;"></div>
+                    </div>
+                    <div class="details">Durum: Kabul Edildi! Katar'daki programa katılım hazırlıkları devam ediyor (%30)</div>
             </div>
         </div>
     </section>

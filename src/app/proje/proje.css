@@ -2,140 +2,475 @@
 .projects-page-container {
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-page-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #240a61, #640e0e, #240a61);
+    z-index: 1;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 50px;
-    color: #555;
-    font-size: 2.5em;
-    font-weight: 700;
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, #240a61, #640e0e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3em;
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #240a61, #640e0e);
+    border-radius: 2px;
+}
+
+/* Proje başlık bölümü */
+.projects-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.projects-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 20px;
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 /* GRİD YAPISI: Desktop'ta 2 sütun */
 .projects-grid {
     display: grid;
-    /* İki eşit genişlikte sütun */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 40px;
-    /* Elemanların yukarıya hizalanmasını sağlar */
-    /* align-items: stretch;  */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding: 20px 0;
 }
 
 /* PROJE KARTI */
 .project-card {
-    /* Kartın içindeki .project-image ve .project-info'yu yan yana hizalar */
-    display: flex; 
-    align-items: flex-start; /* İçerik eşit yüksekliğe yayılır */
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    overflow: visible;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    background-color: #f9f9f9;
-    min-height: 200px;
-    /* Animasyon kuralları */
-    transition: opacity 0.8s cubic-bezier(0.17,0.55,0.55,1), transform 0.8s cubic-bezier(0.17,0.55,0.55,1);
+    display: flex;
+    align-items: stretch;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    min-height: 160px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(50px) scale(0.95);
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #240a61, #640e0e);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    border-left-color: #240a61;
 }
 
 /* Even (Tek/Çift) Kartlar - Yerleşimi Ters Çevir */
 .project-card.even-project {
-    /* Görseli sağa, bilgiyi sola alır */
-    flex-direction: row-reverse; 
-    background-color: #ffffff;
+    flex-direction: row-reverse;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-left-color: #640e0e;
+}
+
+.project-card.even-project::before {
+    background: linear-gradient(90deg, #640e0e, #240a61);
 }
 
 /* GÖRSEL ALANI SARICISI */
 .project-image {
-    /* Flex oranları: Görsel 1.2, Bilgi 1.8 */
-    flex: 1.2; 
-    min-width: 150px;
+    flex: 1.1;
+    min-width: 120px;
     height: 100%;
     overflow: hidden;
+    position: relative;
+}
+
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(36, 10, 97, 0.1), rgba(100, 14, 14, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image::after {
+    opacity: 1;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    /* Resmi kırparak alan doldurur */
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
 }
 
 /* BİLGİ ALANI SARICISI */
 .project-info {
-    flex: 1.8;
-    padding: 15px 20px;
-    /* İçeriğin dikey olarak ortalanmasını sağlayabilir (opsiyonel) */
+    flex: 1.9;
+    padding: 15px 15px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    position: relative;
 }
 
 .project-info h2 {
-    color: #555;
+    color: #240a61;
     margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 1.4em;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    position: relative;
+    line-height: 1.2;
+}
+
+.project-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background: linear-gradient(90deg, #240a61, #640e0e);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.project-card:hover .project-info h2::after {
+    width: 45px;
 }
 
 .description {
-    line-height: 1.6; /* Satır aralığını biraz küçültelim */
+    line-height: 1.4;
     color: #555;
-    margin-top: 10px;
-    flex-grow: 1; /* Bilgi alanındaki kalan boşluğu doldurmaya çalışır */
-    /* font-size: 0.9em; Metin boyutunu biraz küçültelim */
+    margin-top: 8px;
+    flex-grow: 1;
+    font-size: 0.8em;
+    text-align: justify;
 }
 
 
 .project-card.animated {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
-/* --- Yeni buton stili ekle --- */
+/* --- Geliştirilmiş buton stili --- */
 .read-more-button {
-    background-color: transparent;
+    background: linear-gradient(135deg, #240a61, #640e0e);
     border: none;
-    color: #133152;
+    color: white;
     cursor: pointer;
-    text-align: left;
-    padding: 0;
-    margin-top: 10px;
-    font-size: 0.9em;
-    align-self: flex-start; /* Butonu sola hizala */
+    padding: 6px 12px;
+    margin: 0;
+    font-size: 0.7em;
+    font-weight: 600;
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(36, 10, 97, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
-/* RESPONSIVE: 768px ve altı (Mobil Görünüm) */
+.read-more-button i {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.read-more-button:hover i {
+    transform: translateY(-1px);
+}
+
+.read-more-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.read-more-button:hover::before {
+    left: 100%;
+}
+
+.read-more-button:hover {
+    background: linear-gradient(135deg, #640e0e, #240a61);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(36, 10, 97, 0.4);
+}
+
+/* Proje kategorisi göstergesi */
+.project-category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #240a61, #640e0e);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 12px;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(36, 10, 97, 0.3);
+}
+
+/* Proje etiketleri */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 8px 0;
+}
+
+.tag {
+    background: rgba(36, 10, 97, 0.1);
+    color: #240a61;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(36, 10, 97, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(36, 10, 97, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Proje aksiyonları */
+.project-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+/* Yükleme animasyonu */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.project-card.animated {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* RESPONSIVE TASARIM */
+@media (max-width: 992px) {
+    .projects-grid {
+        gap: 30px;
+    }
+    
+    .project-card {
+        min-height: 250px;
+    }
+    
+    .project-info {
+        padding: 25px 20px;
+    }
+    
+    .project-info h2 {
+        font-size: 1.4em;
+    }
+}
+
 @media (max-width: 768px) {
-    /* Grid'i 1 sütuna düşür */
+    .projects-page-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
-
-    /* Kart yönünü dikey (alt alta) yap */
+    
     .project-card,
     .project-card.even-project {
         flex-direction: column;
+        min-height: auto;
     }
-
-    /* .project-image {
+    
+    .project-image {
         min-width: 100%;
         max-height: 250px;
-    } */
-
-    .project-info {
-        padding: 20px;
-        text-align: center; /* Mobilde metni ortala */
+        flex: none;
     }
-
-    .project-info h2 {
+    
+    .project-info {
+        padding: 25px 20px;
         text-align: center;
     }
+    
+    .project-info h2 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    
+    .project-info h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .read-more-button {
+        align-self: center;
+        margin: 0;
+    }
+    
+    .project-actions {
+        justify-content: center;
+        padding-top: 20px;
+    }
+    
+    .project-tags {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .project-info {
+        padding: 20px 15px;
+    }
+    
+    .project-info h2 {
+        font-size: 1.3em;
+    }
+    
+    .description {
+        font-size: 0.95em;
+    }
+}
+
+/* Animasyon geliştirmeleri */
+@media (prefers-reduced-motion: no-preference) {
+    .project-card:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    
+    .project-card:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .project-card:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    
+    .project-card:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+}
+
+/* Erişilebilirlik */
+.read-more-button:focus {
+    outline: 3px solid rgba(36, 10, 97, 0.5);
+    outline-offset: 2px;
+}
+
+/* Yüksek kontrast modu */
+@media (prefers-contrast: high) {
+    .project-card {
+        border: 2px solid #333;
+    }
+    
+    .read-more-button {
+        border: 2px solid #240a61;
+    }
+}
+
+/* Hover efektleri için ek stiller */
+.project-card {
+    cursor: pointer;
+}
+
+.project-card:hover .project-info h2 {
+    color: #640e0e;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .description {
+    color: #333;
+    transition: color 0.3s ease;
 }

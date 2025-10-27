@@ -1,17 +1,29 @@
-<link rel="stylesheet" href="proje.css">
 <div class="projects-page-container">
-    <h1>Projelerimiz</h1> 
+    <header class="projects-header">
+        <h1>Projelerimiz</h1>
+        <p class="projects-subtitle">Teknoloji ve inovasyonla geleceği şekillendiren çözümlerimizi keşfedin</p>
+    </header>
 
     <div class="projects-grid">
-        
-        <div class="project-card" *ngFor="let project of projects; let i = index" [class.even-project]="i % 2 !== 0">
+        <article class="project-card" 
+                 *ngFor="let project of projects; let i = index" 
+                 [class.even-project]="i % 2 !== 0"
+                 [attr.data-category]="project.category">
+            
+            <div class="project-category">{{ project.category }}</div>
             
             <div class="project-image">
-                <img [src]="project.imageUrl" alt="{{ project.title }}">
+                <img [src]="project.imageUrl" 
+                     [alt]="project.title + ' projesi görseli'"
+                     loading="lazy">
             </div>
             
             <div class="project-info">
-                <h2>{{ project.title }}</h2> 
+                <h2>{{ project.title }}</h2>
+                
+                <div class="project-tags" *ngIf="project.tags">
+                    <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+                </div>
                 
                 <p class="description">
                     <span *ngIf="!project.isExpanded">
@@ -22,13 +34,18 @@
                     </span>
                 </p>
 
-                <button 
-                    *ngIf="project.description.length > MAX_LENGTH" 
-                    (click)="toggleDescription(project)" 
-                    class="read-more-button">
-                    {{ project.isExpanded ? 'Kapat' : 'Devamını Oku' }}
-                </button>
+                <div class="project-actions">
+                    <button 
+                        *ngIf="project.description.length > MAX_LENGTH" 
+                        (click)="toggleDescription(project)" 
+                        class="read-more-button"
+                        [attr.aria-expanded]="project.isExpanded"
+                        [attr.aria-label]="project.isExpanded ? project.title + ' projesinin açıklamasını kapat' : project.title + ' projesinin devamını oku'">
+                        <i class="fas" [class.fa-chevron-up]="project.isExpanded" [class.fa-chevron-down]="!project.isExpanded"></i>
+                        {{ project.isExpanded ? 'Daha Az' : 'Devamını Oku' }}
+                    </button>
+                </div>
             </div>
-        </div>
+        </article>
     </div>
 </div>
