@@ -1,1 +1,13 @@
-jkedbfcholıue
+<div class="team-section">
+  <h1>Ekibimiz</h1>
+  <p class="subtitle">ArtTech'i geleceğe taşıyan güçlü kadro</p>
+
+  <div class="team-grid">
+    <div class="team-card" *ngFor="let member of team">
+      <img [src]="member.photo"  (error)="onImageError($event)"  [alt]="member.name" class="team-photo" />
+      <h3>{{ member.name }}</h3>
+      <p class="role">{{ member.title }}</p>
+   
+    </div>
+  </div>
+</div>
