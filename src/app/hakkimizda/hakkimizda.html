@@ -1,3 +1,20 @@
+<!-- MİSYON VE VİZYON BÖLÜMÜ -->
+<div class="mission-vision-section">
+    <div class="mission-vision-container">
+        <div class="mission-section">
+            <h2>MİSYONUMUZ</h2>
+            <p>ArtTech'in misyonu, sanat ve teknolojiyi birleştirerek yaratıcılığı ve inovasyonu toplumun her kesimine taşımaktır. Biz, yalnızca projeler üretmekle kalmayıp, insanların fikirlerini özgürce ifade edebileceği, deneyimleyebileceği ve geliştirebileceği bir ekosistem yaratıyoruz.</p>
+            <p>Topluluğumuz, sanatın duygusal gücü ile teknolojinin dönüştürücü etkisini bir araya getirerek, sadece estetik değil, aynı zamanda anlam ve etki yaratan çözümler üretir. Biz, genç yetenekleri ilham verici liderler, problem çözücüler ve geleceğin vizyonerleri olarak yetiştiririz.</p>
+        </div>
+        
+        <div class="vision-section">
+            <h2>VİZYONUMUZ</h2>
+            <p>ArtTech'in vizyonu, sanat ve teknolojinin kesişiminde global ölçekte etkili, öncü bir topluluk olmaktır. Biz, yaratıcı fikirlerin özgürce geliştiği, yenilikçi projelerin hayata geçtiği ve bireylerin kendi potansiyellerini keşfederek topluma değer kattığı bir ekosistem oluşturmayı hedefliyoruz.</p>
+            <p>ArtTech ile her proje, bir fikirden başlayıp gerçek dünyada somut etki yaratan bir harekete dönüşür. Amacımız, geleceğin yaratıcı liderlerini yetiştirmek ve dünyayı daha yenilikçi, daha ilham verici bir yer hâline getirmektir.</p>
+        </div>
+    </div>
+</div>
+
 <!-- BAŞLIK VE ALT YAZI KAPSAYICISI -->
 <div class="team-header">
     <h1>EKİBİMİZ</h1>
@@ -33,7 +50,7 @@
         </div>
 
         <div class="team-row member-row">
-            <div class="team-card" *ngFor="let member of team.slice(7, 15)">
+            <div class="team-card" *ngFor="let member of team.slice(9, 17)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
