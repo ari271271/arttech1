@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./hakkimizda.css'] 
 })
 export class Hakkimizda {   team = [
-    { name: "BAYRAM BALA", title: "danışmanımız", photo: "/Bayram.jpeg" },
+    { name: "BAYRAM BALA", title: "Danışman Hocamız", photo: "/Bayram.jpeg" },
   { name: "Yunus Ethem Taş", title: "CEO (Chief Executive Officer)", photo: "/Yunus.jpeg" },
   { name: "Nursezen Sağdıç", title: "COO (Chief Operating Officer)", photo: "/Nursezen.jpeg" },
   { name: "Sena", title: "Finans Direktörü", photo: "/Sena.jpeg" },
