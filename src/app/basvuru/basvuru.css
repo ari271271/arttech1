@@ -1,258 +1,620 @@
-/* Genel Stiller */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Modern Application Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-    color: #222;
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 20px;
-    gap: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
+.application-container {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
 }
 
-/* --- Üst Satır (3 Sütunlu Yan Yana Düzen) --- */
-.top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+              url('/arttech.jpg') center/cover;
+  padding: 100px 20px 80px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Forms Section */
+.forms-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #718096;
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Form Cards */
+.form-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.form-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.card-header h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.card-header p {
+  color: #718096;
+  font-size: 1rem;
+}
+
+/* Form Styles */
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit Buttons */
+.submit-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.membership-btn {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+.membership-btn:hover {
+  background: linear-gradient(135deg, #38a169, #2f855a);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(72, 187, 120, 0.3);
+}
+
+.competition-btn {
+  background: linear-gradient(135deg, #ed8936, #dd6b20);
+  color: white;
+}
+
+.competition-btn:hover {
+  background: linear-gradient(135deg, #dd6b20, #c05621);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(237, 137, 54, 0.3);
+}
+
+/* Feedback Section */
+.feedback-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.feedback-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.feedback-form-wrapper {
+  background: #f8fafc;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.feedback-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.feedback-btn:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.feedback-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+}
+
+.info-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 20px;
+  background: #2d3748;
+  color: white;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #f7fafc;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Gallery */
+.about-gallery {
+  position: relative;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 20px 15px 15px;
+  font-weight: 500;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .feedback-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .forms-grid {
+    grid-template-columns: 1fr;
     gap: 30px;
-    flex-wrap: wrap;
+  }
+  
+  .form-card {
+    padding: 30px 25px;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .stats {
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Form Kartları ve Bilgi Alanı için Genel Stil */
-.form-card,
-.info-section-border,
-.feedback-section-border { /* feedback-section-border da eklendi */
-    flex: 1 1 300px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    position: relative; /* z-index için gerekli */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-top: 3px solid #240a61;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s; /* z-index transition kaldırıldı */
-    min-height: 400px;
-    overflow: visible !important;
-    width: 150px;
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 80px 15px 60px;
+  }
+  
+  .forms-section,
+  .feedback-section,
+  .about-section {
+    padding: 60px 15px;
+  }
+  
+  .form-card {
+    padding: 25px 20px;
+  }
+  
+  .feedback-form-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
 }
 
-
-.form-card:hover,
-.info-section-border:hover,
-.feedback-section-border:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    z-index: 10; 
+/* Form validation styles */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: #e53e3e;
+  background-color: #fed7d7;
 }
 
-/* Form Stilleri */
-.form-card h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: black;
-    font-size: 22px;
-    font-weight: 600;
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+  border-color: #38a169;
+  background-color: #f0fff4;
 }
 
-.form-card label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-    color: #333;
+/* Loading states */
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
 }
 
-.form-card input,
-.form-card textarea,
-.feedback-section-border input,
-.feedback-section-border textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #bbb;
-    outline: none;
-    background: #fafafa;
-    color: #000;
-    font-size: 14px;
-    transition: 0.3s;
+.submit-btn:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-.form-card input:focus,
-.form-card textarea:focus,
-.feedback-section-border input:focus,
-.feedback-section-border textarea:focus {
-    border-color: #240a61;
-    box-shadow: 0 0 5px rgba(36, 10, 97, 0.3);
+/* Success Message Styles */
+.success-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
 }
 
-.form-card button,
-.feedback-section-border button {
-    background: #240a61;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    width: 100%;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 600;
-    margin-top: 10px;
+.success-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
 }
 
-.form-card button:hover,
-.feedback-section-border button:hover {
-    background: #18063a;
+.success-content i {
+  font-size: 3rem;
+  color: #48bb78;
+  margin-bottom: 20px;
 }
 
-/* --- Kulüp Hakkında (Info/Slider) --- */
-.info-section-border {
-    border: 3px solid #240a61;
-    padding: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 6px 15px rgba(36, 10, 97, 0.1);
-    border-top: 3px solid #240a61;
-    min-height: 400px;
-    overflow: visible;
+.success-content p {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin-bottom: 25px;
+  line-height: 1.6;
 }
 
-.info-section {
-    background: #fff;
-    padding: 0;
-    border-radius: 8px;
+.success-content button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.info-section h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: black;
-    font-size: 22px;
+.success-content button:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-2px);
 }
 
-.info-section p {
-    text-align: justify;
-    color: #333;
-    line-height: 1.6;
-    padding-bottom: 10px;
+/* Animation Classes */
+.animate-in {
+  animation: fadeInUp 0.6s ease-out;
 }
 
-/* --- Slayt Alanı - Fotolar daha küçük ve estetik --- */
-.slider {
-    width: 100%;
-    height: 300px; /* Sabit yükseklik korunuyor */
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: 15px;
-    position: relative;
-    border: 1px solid #ccc;
-    background: #fff;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.slides {
-    display: flex;
-    width: 100%; /* Tüm fotoğraflar yan yana sığacak */
-    align-items: center;
-    height: 100%;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.slides img {
-    width: 25%; 
-    height: 100%;
-    /* YENİ EKLEME: Tüm görsellerin aynı en boy oranında olmasını sağlar */
-    aspect-ratio: 16/9; /* Veya 1/1, 4/3 gibi istediğiniz oranı ayarlayabilirsiniz */
-    /* DEĞİŞTİRİLDİ: Kutuyu tam doldurmak için cover kullanıldı (kesilmeler olabilir) */
-    object-fit: cover; 
-    max-width: 100%;
-    display: block;
-    background: #fff;
-    border-radius: 10px;
-    position: relative; /* z-index için gerekli */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover geçişleri */
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
 
-.slides img:hover {
-    transform: scale(1.05); /* Üzerine gelince biraz büyüsün */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Daha belirgin gölge */
-    z-index: 10; /* Ön plana çıksın */
+/* Enhanced hover effects */
+.form-card {
+  transform-origin: center;
 }
 
-/* Slider animasyonu tamamen kaldırıldı */
-/* @keyframes slideAnimation { ... } */
-
-
-/* --- Alt Satır (Tek Eleman İçin Düzenleme) --- */
-.bottom-row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+.form-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.3s ease;
 }
 
-/* Alt satırdaki kalan Öneri & Şikayet bölümü */
-.feedback-form-inline {
-    flex: 0 1 600px;
-    min-width: 300px;
+.gallery-item {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.feedback-section-border {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-top: 3px solid #240a61;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Feedback Yazısı */
-.feedback-text {
-    max-width: 100%;
-    background: linear-gradient(135deg, #ffffff, #f0f4ff);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    color: #222;
-    line-height: 1.6;
-    font-size: 15px;
-    border: 3px solid #240a61;
-    border-left: 6px solid #18063a;
-    margin-top: 30px;
-}
-
-/* --- Mobil Görünüm --- */
-
-@media screen and (max-width: 1050px) {
-    .top-row {
-        justify-content: space-around;
-    }
-    .form-card,
-    .info-section-border {
-        flex: 1 1 calc(50% - 15px);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .container { padding: 30px 15px; gap: 30px; }
-    .top-row, .bottom-row {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .form-card, .info-section-border, .feedback-form-inline, .feedback-section-border {
-        flex: 1 1 100%;
-        min-width: unset;
-        max-width: 100%;
-        padding: 20px;
-    }
-    /* Mobilde her satırda sadece bir görsel göstermek için genişlik %100 yapıldı */
-    .slides img {
-        width: 100%; 
-        aspect-ratio: 16/9; /* Mobilde de aynı en boy oranı */
-    }
+.gallery-item:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }

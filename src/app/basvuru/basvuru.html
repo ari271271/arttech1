@@ -1,40 +1,225 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kulüp ve Yarışma Başvuru</title>
-    <link rel="stylesheet" href="basvuru.css"> 
-</head>
-<body>
+<div class="application-container">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">ArtTech'e Katılın</h1>
+      <p class="hero-subtitle">Teknolojiye tutkulu, yenilikçi projeler geliştirmek isteyen öğrenciler için kapılarımız açık!</p>
+    </div>
+  </div>
 
-    <div class="container">
+  <!-- Application Forms Section -->
+  <div class="forms-section">
+    <div class="section-header">
+      <h2>Başvuru Formları</h2>
+      <p>Size uygun başvuru türünü seçin ve formu doldurun</p>
+    </div>
 
-        <!-- Üst Satır: Üyelik, Yarışma ve Öneri & Şikayet (Yan Yana) -->
-        <div class="top-row">
+    <div class="forms-grid">
+      <!-- Membership Application -->
+      <div class="form-card membership-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Üyelik Başvurusu</h3>
+          <p>Kulübümüze katılın ve teknoloji dünyasında yerinizi alın</p>
+        </div>
+        
+        <form class="application-form" action="https://formspree.io/f/xvgwnnoz" method="POST" (submit)="onSubmit($event, 'membership')">
+          <input type="hidden" name="form_type" value="membership">
+          
+          <div class="form-group">
+            <label for="fullname">Ad Soyad *</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Adınız ve soyadınız">
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-posta *</label>
+            <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefon Numarası *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="0555 123 45 67">
+          </div>
+
+          <div class="form-group">
+            <label for="university">Üniversite *</label>
+            <input list="universities" id="university" name="university" required placeholder="Üniversitenizi seçin...">
+          </div>
+
+          <div class="form-group">
+            <label for="department">Bölüm *</label>
+            <input type="text" id="department" name="department" required placeholder="Bölümünüz">
+          </div>
+
+          <button type="submit" class="submit-btn membership-btn">
+            <i class="fas fa-paper-plane"></i>
+            Üyelik Başvurusu Yap
+          </button>
+        </form>
+      </div>
+
+      <!-- Competition Application -->
+      <div class="form-card competition-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Yarışma Başvurusu</h3>
+          <p>Projenizle yarışmalara katılın ve yeteneklerinizi sergileyin</p>
+        </div>
+        
+        <form class="application-form" action="https://formspree.io/f/xvgwnnoz" method="POST" (submit)="onSubmit($event, 'competition')">
+          <input type="hidden" name="form_type" value="competition">
+          
+          <div class="form-group">
+            <label for="projectName">Proje Adı *</label>
+            <input type="text" id="projectName" name="projectName" required placeholder="Projenizin adı">
+          </div>
+
+          <div class="form-group">
+            <label for="projectGoal">Proje Amacı *</label>
+            <textarea id="projectGoal" name="projectGoal" rows="3" required placeholder="Projenizin amacını kısaca açıklayın..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Proje Açıklaması *</label>
+            <textarea id="description" name="description" rows="4" required placeholder="Projenizi detaylı olarak açıklayın..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="phone2">Telefon Numarası *</label>
+            <input type="tel" id="phone2" name="phone2" required placeholder="0555 123 45 67">
+          </div>
+
+          <div class="form-group">
+            <label for="university2">Üniversite *</label>
+            <input list="universities" id="university2" name="university2" required placeholder="Üniversitenizi seçin...">
+          </div>
+
+          <div class="form-group">
+            <label for="email2">E-posta *</label>
+            <input type="email" id="email2" name="email2" required placeholder="ornek@email.com">
+          </div>
+
+          <button type="submit" class="submit-btn competition-btn">
+            <i class="fas fa-rocket"></i>
+            Yarışmaya Başvur
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Section -->
+  <div class="feedback-section" id="onerivesikayet">
+    <div class="section-header">
+      <h2>Öneri & Şikayet</h2>
+      <p>Görüşleriniz bizim için değerli! Önerilerinizi ve şikayetlerinizi paylaşın.</p>
+    </div>
+    
+    <div class="feedback-container">
+      <div class="feedback-form-wrapper">
+        <form class="feedback-form" action="https://formspree.io/f/xvgwnnoz" method="POST" (submit)="onSubmit($event, 'feedback')">
+          <input type="hidden" name="form_type" value="feedback">
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="feedbackName">Ad Soyad *</label>
+              <input type="text" id="feedbackName" name="feedbackName" required placeholder="Adınız ve soyadınız">
+            </div>
             
-            <!-- Üyelik Formu -->
-            <div class="form-card" id="uyelik">
-                <h2>Üyelik Başvurusu</h2>
-                <form action="https://formspree.io/f/xvgwnnoz" method="POST">
-                    <label for="fullname">Ad Soyad</label>
-                    <input type="text" id="fullname" name="fullname" required>
+            <div class="form-group">
+              <label for="feedbackEmail">E-posta *</label>
+              <input type="email" id="feedbackEmail" name="feedbackEmail" required placeholder="ornek@email.com">
+            </div>
+          </div>
 
-                    <label for="email">E-posta</label>
-                    <input type="email" id="email" name="email" required>
+          <div class="form-group">
+            <label for="feedbackMessage">Mesajınız *</label>
+            <textarea id="feedbackMessage" name="feedbackMessage" rows="5" required placeholder="Önerinizi veya şikayetinizi detaylı olarak yazın..."></textarea>
+          </div>
 
-                    <label for="phone">Telefon Numarası</label>
-                    <input type="tel" id="phone" name="phone" required>
+          <button type="submit" class="submit-btn feedback-btn">
+            <i class="fas fa-paper-plane"></i>
+            Mesajı Gönder
+          </button>
+        </form>
+      </div>
+      
+      <div class="feedback-info">
+        <div class="info-card">
+          <h4>Neden Önemli?</h4>
+          <p>Sizlerin görüşleri sayesinde kulübümüzü sürekli geliştiriyoruz. Her öneri ve şikayet bizim için değerlidir.</p>
+        </div>
+        
+        <div class="info-card">
+          <h4>Hızlı Yanıt</h4>
+          <p>Mesajlarınıza en kısa sürede yanıt vermeye çalışıyoruz. Genellikle 24-48 saat içinde geri dönüş yapıyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                    <label for="university">Üniversite</label>
-                    <input list="universities" id="university" name="university" required placeholder="Seçiniz...">
+  <!-- About Club Section -->
+  <div class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>ArtTech Hakkında</h2>
+        <p>Teknolojiye ilgi duyan, üretmek isteyen öğrenciler için kurulmuş dinamik bir topluluğuz. Yeni nesil teknolojiler, robotik ve yazılım alanlarında projeler geliştiriyoruz.</p>
+        <p>Yarışmalara ve etkinliklere aktif katılım sağlayarak birlikte gelişiyor ve geleceğin mühendislerini yetiştiriyoruz.</p>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Aktif Üye</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Tamamlanan Proje</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Yarışma Katılımı</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-gallery">
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="/ses.jpg" alt="Ses Teknolojisi Projesi">
+            <div class="gallery-overlay">
+              <span>Ses Teknolojisi</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/skyclean.jpg" alt="SkyClean Projesi">
+            <div class="gallery-overlay">
+              <span>SkyClean</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/skyquard.jpg" alt="SkyGuard Projesi">
+            <div class="gallery-overlay">
+              <span>SkyGuard</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="/aerowave.jpg" alt="AeroWave Projesi">
+            <div class="gallery-overlay">
+              <span>AeroWave</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                    <label for="department">Bölüm</label>
-                    <input type="text" id="department" name="department" required>
-
-                    <datalist id="universities">
-                        <!-- Tüm üniversite listesi olduğu gibi korunuyor -->
-                            <option value="ABDULLAH GÜL ÜNİVERSİTESİ">
+  <!-- Universities Datalist -->
+  <datalist id="universities">
+    <option value="ABDULLAH GÜL ÜNİVERSİTESİ">
                         <option value="ACIBADEM MEHMET ALİ AYDINLAR ÜNİVERSİTESİ">
                         <option value="ADANA ALPARSLAN TÜRKEŞ BİLİM VE TEKNOLOJİ ÜNİVERSİTESİ">
                         <option value="ADIYAMAN ÜNİVERSİTESİ">
@@ -238,90 +423,7 @@
                         <option value="YILDIZ TEKNİK ÜNİVERSİTESİ">
                         <option value="YOZGAT BOZOK ÜNİVERSİTESİ">
                         <option value="YÜKSEK İHTİSAS ÜNİVERSİTESİ">
-                        <option value="ZONGULDAK BÜLENT ECEVİT ÜNİVERSİTESİ">
+    <option value="ZONGULDAK BÜLENT ECEVİT ÜNİVERSİTESİ">
+  </datalist>
 
-
-
-                    </datalist>
-
-                    <button type="submit">Üyelik Başvurusu Yap</button>
-                </form>
-            </div>
-
-            <!-- Yarışma Formu -->
-            <div class="form-card" id="yarisma">
-                <h2>Yarışma Başvurusu</h2>
-                <form action="https://formspree.io/f/xvgwnnoz" method="POST">
-                    <label for="projectName">Proje Adı</label>
-                    <input type="text" id="projectName" name="projectName" required>
-
-                    <label for="projectGoal">Proje Amacı</label>
-                    <textarea id="projectGoal" name="projectGoal" rows="2" required></textarea>
-
-                    <label for="description">Proje Açıklaması</label>
-                    <textarea id="description" name="description" rows="3" required></textarea>
-
-                    <label for="phone2">Telefon Numarası</label>
-                    <input type="tel" id="phone2" name="phone2" required>
-
-                    <label for="university2">Üniversite</label>
-                    <input list="universities" id="university2" name="university2" required placeholder="Seçiniz...">
-
-                    <label for="email2">E-posta</label>
-                    <input type="email" id="email2" name="email2" required>
-
-                    <button type="submit">Yarışmaya Başvur</button>
-                </form>
-            </div>
-
-            <!-- Öneri & Şikayet Formu (Artık yukarıda) -->
-            <div class="feedback-section-border feedback-form-inline">
-                <h2>Öneri & Şikayet</h2>
-                <form action="https://formspree.io/f/xvgwnnoz" method="POST">
-                    <label for="feedbackName">Ad Soyad</label>
-                    <input type="text" id="feedbackName" name="feedbackName" required>
-
-                    <label for="feedbackEmail">E-posta</label>
-                    <input type="email" id="feedbackEmail" name="feedbackEmail" required>
-
-                    <label for="feedbackMessage">Mesajınız</label>
-                    <textarea id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea>
-
-                    <button type="submit">Gönder</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Alt Satır: Artık sadece Kulüp Hakkında -->
-        <div class="bottom-row">
-            <div class="info-section-border">
-                <div class="info-section">
-                    <h2>Kulüp Hakkında</h2>
-                    <p>Teknolojiye ilgi duyan, üretmek isteyen öğrenciler için kurulmuş dinamik bir topluluğuz. 
-                    Yeni nesil teknolojiler, robotik ve yazılım alanlarında projeler geliştiriyoruz. Yarışmalara ve etkinliklere aktif katılım sağlayarak birlikte gelişiyor ve geleceğin mühendislerini yetiştiriyoruz.</p>
-
-                    <!-- Slayt Gösterimi -->
-                    <div class="slider">
-                        <div class="slides">
-                            <img src="/ses.jpg" alt="Test Resim">
-                            <img src="/skyclean.jpg" alt="Proje 2">
-                            <img src="/skyquard.jpg" alt="Proje 3">
-                            <img src="/aerowave.jpg" alt="Proje 4">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Feedback Yazısı -->
-        <div class="feedback-text">
-            <p>Değerli Üye Adaylarımız ve Üyelerimiz, sizlerin görüşleri bizim için çok değerli! 
-            Kulübümüzü daha iyi bir hale getirebilmemiz için öneri ve şikayetlerinizi paylaşmanız büyük önem taşıyor. 
-            Fikirleriniz sayesinde etkinliklerimizi, projelerimizi ve genel deneyiminizi sürekli geliştirebiliriz. 
-            Lütfen düşüncelerinizi bizimle paylaşmaktan çekinmeyin – her bir öneri bizim için kıymetlidir.</p>
-        </div>
-
-    </div>
-
-</body>
-</html>
+</div>
