@@ -48,9 +48,8 @@
                 <p class="role">{{ member.title }}</p>
             </div>
         </div>
-
-        <div class="team-row member-row">
-            <div class="team-card" *ngFor="let member of team.slice(9, 17)">
+<div class="team-row member-row">
+  <div class="team-card" *ngFor="let member of team.slice(9)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
