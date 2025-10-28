@@ -1,7 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-layout',
   standalone: true,
@@ -18,11 +19,24 @@ export class Layout implements OnInit{
   }private scrollThreshold = 50; 
 private isScrolled = false;
 private isMobileMenuOpen = false;
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   
     this.checkScrollPosition();
+    
+    // Route değişikliklerinde sayfanın başına scroll yap
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      setTimeout(() => {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          this.scrollToFragment(fragment);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }, 100);
+    });
   }
     @HostListener('document:scroll', ['$event'])
   onDocumentScroll(event: any): void {
@@ -46,6 +60,15 @@ onMenuLinkClick(): void {
 }
 onLogoClick(): void {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+private scrollToFragment(fragment: string): void {
+  const element = document.getElementById(fragment);
+  if (element) {
+    const navbarHeight = 80; // Navbar yüksekliği
+    const elementPosition = element.offsetTop - navbarHeight;
+    window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+  }
 }
 
 

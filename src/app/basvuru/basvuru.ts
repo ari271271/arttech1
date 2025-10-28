@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,10 +11,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class Basvuru implements OnInit {
   
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.initializeFormAnimations();
+    
+    // Fragment varsa o bölüme scroll yap
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => {
+          this.scrollToSection(fragment);
+        }, 500);
+      }
+    });
   }
 
   private initializeFormAnimations(): void {
@@ -93,7 +102,9 @@ export class Basvuru implements OnInit {
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 80; // Navbar yüksekliği
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
     }
   }
 }
