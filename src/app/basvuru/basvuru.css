@@ -29,23 +29,28 @@ body {
 
 /* Form Kartları ve Bilgi Alanı için Genel Stil */
 .form-card,
-.info-section-border {
+.info-section-border,
+.feedback-section-border { /* feedback-section-border da eklendi */
     flex: 1 1 300px;
     background: #fff;
     padding: 30px;
     border-radius: 12px;
+    position: relative; /* z-index için gerekli */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-top: 3px solid #240a61;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s; /* z-index transition kaldırıldı */
     min-height: 400px;
     overflow: visible !important;
+    width: 150px;
 }
+
 
 .form-card:hover,
 .info-section-border:hover,
 .feedback-section-border:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    z-index: 10; 
 }
 
 /* Form Stilleri */
@@ -141,7 +146,7 @@ body {
 /* --- Slayt Alanı - Fotolar daha küçük ve estetik --- */
 .slider {
     width: 100%;
-    height: fit-content;
+    height: 300px; /* Sabit yükseklik korunuyor */
     overflow: hidden;
     border-radius: 10px;
     margin-top: 15px;
@@ -152,33 +157,35 @@ body {
 
 .slides {
     display: flex;
-    width: 400%;
-    animation: slideAnimation 16s infinite;
+    width: 100%; /* Tüm fotoğraflar yan yana sığacak */
     align-items: center;
+    height: 100%;
 }
 
 .slides img {
-    width: 20%;           /* Küçültüldü */
-    height: auto;
-    object-fit: cover;     /* Dolgun ve düzgün görünüm */
+    width: 25%; 
+    height: 100%;
+    /* YENİ EKLEME: Tüm görsellerin aynı en boy oranında olmasını sağlar */
+    aspect-ratio: 16/9; /* Veya 1/1, 4/3 gibi istediğiniz oranı ayarlayabilirsiniz */
+    /* DEĞİŞTİRİLDİ: Kutuyu tam doldurmak için cover kullanıldı (kesilmeler olabilir) */
+    object-fit: cover; 
     max-width: 100%;
     display: block;
     background: #fff;
     border-radius: 10px;
+    position: relative; /* z-index için gerekli */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover geçişleri */
 }
 
-/* Slider animasyonu */
-@keyframes slideAnimation {
-    0% { transform: translateX(0%); }
-    20% { transform: translateX(0%); }
-    25% { transform: translateX(-25%); }
-    45% { transform: translateX(-25%); }
-    50% { transform: translateX(-50%); }
-    70% { transform: translateX(-50%); }
-    75% { transform: translateX(-75%); }
-    95% { transform: translateX(-75%); }
-    100% { transform: translateX(0%); }
+.slides img:hover {
+    transform: scale(1.05); /* Üzerine gelince biraz büyüsün */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Daha belirgin gölge */
+    z-index: 10; /* Ön plana çıksın */
 }
+
+/* Slider animasyonu tamamen kaldırıldı */
+/* @keyframes slideAnimation { ... } */
+
 
 /* --- Alt Satır (Tek Eleman İçin Düzenleme) --- */
 .bottom-row {
@@ -196,10 +203,10 @@ body {
 }
 
 .feedback-section-border {
-    background: #fff; 
+    background: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-top: 3px solid #240a61;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -214,12 +221,13 @@ body {
     color: #222;
     line-height: 1.6;
     font-size: 15px;
-    border: 3px solid #240a61; 
+    border: 3px solid #240a61;
     border-left: 6px solid #18063a;
     margin-top: 30px;
 }
 
 /* --- Mobil Görünüm --- */
+
 @media screen and (max-width: 1050px) {
     .top-row {
         justify-content: space-around;
@@ -237,12 +245,14 @@ body {
         gap: 30px;
     }
     .form-card, .info-section-border, .feedback-form-inline, .feedback-section-border {
-        flex: 1 1 100%; 
+        flex: 1 1 100%;
         min-width: unset;
         max-width: 100%;
         padding: 20px;
     }
+    /* Mobilde her satırda sadece bir görsel göstermek için genişlik %100 yapıldı */
     .slides img {
-        width: 50%;   /* Mobilde daha küçük, yan yana iki resim */
+        width: 100%; 
+        aspect-ratio: 16/9; /* Mobilde de aynı en boy oranı */
     }
 }
