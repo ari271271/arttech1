@@ -6,6 +6,7 @@ import { Proje } from './proje/proje';
 import { Yarismalar } from './yarismalar/yarismalar'; 
 import { Hakkimizda } from './hakkimizda/hakkimizda';
 import { Hedefler } from './hedefler/hedefler';
+import { Iletisim } from './iletisim/iletisim';
 export const routes: Routes = [
   {
     path: '',
@@ -18,6 +19,7 @@ export const routes: Routes = [
       { path: 'yarismalar', component: Yarismalar },
       {path: 'hakkimizda', component: Hakkimizda},
       {path: 'hedefler',component: Hedefler},
+      {path: 'iletisim', component: Iletisim},
  { path: '**', redirectTo: '', pathMatch: 'full' } 
 
 

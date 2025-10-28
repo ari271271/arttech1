@@ -13,7 +13,9 @@ export class Yarismalar {
   scrollToSection(sectionId: string) {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 120; // Navbar yüksekliği
+      const sectionPosition = section.offsetTop - navbarHeight;
+      window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
     }
   }
 
