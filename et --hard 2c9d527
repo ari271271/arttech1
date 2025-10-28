@@ -1,0 +1,52 @@
+[33mdaad2d7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: pull: Fast-forward
+[33m2c9d527[m HEAD@{1}: pull: Fast-forward
+[33me77f569[m HEAD@{2}: pull: Fast-forward
+[33m8d694d8[m HEAD@{3}: commit: hakkımızdaki yeri ekleme
+[33m0b09773[m HEAD@{4}: commit (merge): hakkımızdaki yeri ekleme
+[33me62f202[m HEAD@{5}: commit: hakkımızdaki yeri ekleme
+[33m901a47a[m HEAD@{6}: commit: hakkımızdaki yeri ekleme
+[33md1b9d10[m HEAD@{7}: pull: Fast-forward
+[33mfc84eff[m HEAD@{8}: pull: Fast-forward
+[33m4f91cfd[m HEAD@{9}: commit: loading düzeltme
+[33mffbce14[m HEAD@{10}: commit: loading düzeltme
+[33mf5032fa[m HEAD@{11}: pull: Fast-forward
+[33m1bd4abb[m HEAD@{12}: pull: Fast-forward
+[33me397ede[m HEAD@{13}: pull: Fast-forward
+[33m22612f9[m HEAD@{14}: pull: Fast-forward
+[33mfe4b53e[m HEAD@{15}: commit: silme
+[33m84fc6e6[m HEAD@{16}: commit: ekleme
+[33mb2bb836[m HEAD@{17}: commit: yarışmalar düzenleme
+[33mfb29866[m HEAD@{18}: pull: Fast-forward
+[33m3f9b88f[m HEAD@{19}: commit: .
+[33m786d782[m HEAD@{20}: commit: .
+[33me12af4a[m HEAD@{21}: commit: .
+[33mdf91f84[m HEAD@{22}: commit: .
+[33m24f0c46[m HEAD@{23}: reset: moving to origin/main
+[33m54057ee[m HEAD@{24}: commit: ...
+[33mda07cef[m HEAD@{25}: pull: Fast-forward
+[33m5a41e20[m HEAD@{26}: commit: .
+[33me86c099[m HEAD@{27}: pull: Fast-forward
+[33mbc54fbf[m HEAD@{28}: pull: Fast-forward
+[33m6bb2d14[m HEAD@{29}: pull: Fast-forward
+[33mf65b58a[m HEAD@{30}: commit: layout kısmını ekleme yapma
+[33mf3e7b35[m HEAD@{31}: pull: Fast-forward
+[33m8364e31[m HEAD@{32}: pull: Fast-forward
+[33mfb8105d[m HEAD@{33}: pull: Fast-forward
+[33m101c152[m HEAD@{34}: pull: Fast-forward
+[33m5bf90bb[m HEAD@{35}: commit: yeni ekleme
+[33m28836dc[m HEAD@{36}: pull: Fast-forward
+[33m4ba10c5[m HEAD@{37}: pull: Fast-forward
+[33me45fc42[m HEAD@{38}: commit: ekleme
+[33m6db36a4[m HEAD@{39}: pull: Fast-forward
+[33m0a0ad0e[m HEAD@{40}: pull: Fast-forward
+[33mf07fa4c[m HEAD@{41}: commit: ekleme
+[33m5acc29e[m HEAD@{42}: commit: hakkımızda klasörü
+[33m7048e77[m HEAD@{43}: pull: Fast-forward
+[33m9a731f5[m HEAD@{44}: pull: Fast-forward
+[33m03771f4[m HEAD@{45}: pull: Fast-forward
+[33mb057f77[m HEAD@{46}: pull: Fast-forward
+[33m8a5743f[m HEAD@{47}: commit: home page
+[33mce30b95[m HEAD@{48}: Branch: renamed refs/heads/main to refs/heads/main
+[33mce30b95[m HEAD@{50}: commit: dosya ekleme
+[33mb179f12[m HEAD@{51}: Branch: renamed refs/heads/master to refs/heads/main
+[33mb179f12[m HEAD@{53}: commit (initial): initial commit
