@@ -26,7 +26,7 @@ export class Hakkimizda {   team = [
   { name: "Büşra", title: "Hatay Temsilcisi", photo: "/Busra.jpeg" },
   { name: "Ezel", title: "Laboratuvar Destek Üyesi", photo: "/Ezel.jpeg" },
   { name: "Bedriye", title: "Elektrik-Elektronik Proje Asistanı", photo: "/Bedriye.jpeg" },
-  { name: "Yağmur", title: "Insan kaynakları", photo: "/yagmur.jpeg" }
+  { name: "Yağmur", title: "Insan kaynakları", photo: "/Yagmur.jpeg" }
 ];
 onImageError(event: Event) {
   const imgElement = event.target as HTMLImageElement;
