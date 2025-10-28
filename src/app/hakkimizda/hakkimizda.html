@@ -1,13 +1,43 @@
-<div class="team-section">
-  <h1>Ekibimiz</h1>
-  <p class="subtitle">ArtTech'i geleceğe taşıyan güçlü kadro</p>
+<!-- BAŞLIK VE ALT YAZI KAPSAYICISI -->
+<div class="team-header">
+    <h1>EKİBİMİZ</h1>
+    <p class="subtitle">ArtTech'i geleceğe taşıyan güçlü kadro</p>
+</div>
 
-  <div class="team-grid">
-    <div class="team-card" *ngFor="let member of team">
-      <img [src]="member.photo"  (error)="onImageError($event)"  [alt]="member.name" class="team-photo" />
-      <h3>{{ member.name }}</h3>
-      <p class="role">{{ member.title }}</p>
-   
+<!-- team-section ARTIK SADECE KARTLARI İÇEREN ANA KUTUDUR -->
+<div class="team-section">
+    <div class="team-hierarchy">
+
+        <div class="team-row executive-row">
+            <div class="team-card team-ceo">
+                <img [src]="team[0].photo" (error)="onImageError($event)" [alt]="team[0].name" class="team-photo" />
+                <h3>{{ team[0].name }}</h3>
+                <p class="role">{{ team[0].title }}</p>
+            </div>
+        </div>
+
+        <div class="team-row director-row">
+            <div class="team-card" *ngFor="let member of team.slice(1, 4)">
+                <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
+                <h3>{{ member.name }}</h3>
+                <p class="role">{{ member.title }}</p>
+            </div>
+        </div>
+        
+        <div class="team-row leader-row">
+            <div class="team-card" *ngFor="let member of team.slice(4, 9)">
+                <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
+                <h3>{{ member.name }}</h3>
+                <p class="role">{{ member.title }}</p>
+            </div>
+        </div>
+
+        <div class="team-row member-row">
+            <div class="team-card" *ngFor="let member of team.slice(7, 15)">
+                <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
+                <h3>{{ member.name }}</h3>
+                <p class="role">{{ member.title }}</p>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
