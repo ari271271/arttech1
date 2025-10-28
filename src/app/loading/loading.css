@@ -22,9 +22,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #fff;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   z-index: 1000;
-  transition: opacity 1.5s ease, visibility 1.5s ease;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 1s ease;
 }
 
 .loading-screen.hidden {
@@ -43,15 +45,16 @@ body {
 
 .particle {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
   background-image: url('/arttech.jpg');
-  background-size: 240px 120px;
+  background-size: 300px 150px;
   opacity: 0;
-  box-shadow: 0 0 15px rgba(0, 0, 80, 0.3), 0 0 25px rgba(0, 0, 120, 0.5);
+  box-shadow: 0 0 20px rgba(36, 10, 97, 0.4), 0 0 35px rgba(100, 14, 14, 0.3);
   will-change: top, left, transform;
-  transition: top 1.2s ease, left 1.2s ease, transform 0.8s ease-out, box-shadow 0.5s ease-in-out;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(36, 10, 97, 0.2);
 }
 
 .particle.visible {
@@ -63,7 +66,7 @@ body {
 }
 
 .particle.assembled.jump {
-  animation: jumpRotate 0.6s ease forwards infinite, glowPulse 1s ease-in-out infinite;
+  animation: jumpRotate 0.8s ease-in-out infinite, glowPulse 1.5s ease-in-out infinite;
 }
 
 /* Animasyonlar */
@@ -84,10 +87,12 @@ body {
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(0, 0, 100, 0.4), 0 0 25px rgba(0, 0, 150, 0.5);
+    box-shadow: 0 0 20px rgba(36, 10, 97, 0.4), 0 0 35px rgba(100, 14, 14, 0.3);
+    transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 25px rgba(0, 0, 150, 0.7), 0 0 35px rgba(0, 0, 200, 0.6);
+    box-shadow: 0 0 30px rgba(36, 10, 97, 0.6), 0 0 50px rgba(100, 14, 14, 0.5);
+    transform: scale(1.05);
   }
 }
 
@@ -226,14 +231,18 @@ body {
 
 /* Loading text konumu ve animasyonu */
 .loading-text {
-  margin-top: 0; /* Üst boşluğu kaldırıyoruz */
-  font-weight: bold;
-  font-size: 3rem; /* Yazıyı biraz daha büyütüyoruz */
-  letter-spacing: 0.2em;
+  margin-top: 2rem;
+  font-weight: 800;
+  font-size: 4rem;
+  letter-spacing: 0.3em;
   opacity: 0;
-  color: #001f4d;
-  transition: opacity 1s, transform 1s ease-in-out; /* Opaklık ve hareket animasyonu ekledik */
-  transform: translateY(-80px); /* Yazıyı daha yukarıya aldık */
+  background: linear-gradient(135deg, #240a61, #640e0e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.8s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-50px);
+  text-shadow: 0 5px 15px rgba(36, 10, 97, 0.3);
 }
 
 /* Animasyon başladıktan sonra yazıyı göster */
@@ -281,15 +290,15 @@ body {
 @keyframes letterPop {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px) scale(0.5);
   }
   50% {
     opacity: 1;
-    transform: translateY(-10px);
+    transform: translateY(-15px) scale(1.1);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
