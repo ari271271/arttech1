@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Hakkimizda {   team = [
     { name: "BAYRAM BALA", title: "Topluluk Danışmanımız ", photo: "/BayramBala.jpeg" },
-    { name: "IPEK ATIK", title: "Proje Danışmanımız ", photo: "/BayramBala.jpeg" },
+    { name: "IPEK ATIK", title: "Proje Danışmanımız ", photo: "/IPEK ATIK.jpeg" },
   { name: "Yunus Ethem TAŞ", title: "CEO (Chief Executive Officer)", photo: "/Yunus.jpeg" },
   { name: "Nursezen SAĞDIÇ", title: "COO (Chief Operating Officer)", photo: "/Nursezen.jpeg" },
   { name: "Sena BULUT", title: "Finans Direktörü", photo: "/Sena.jpeg" },
