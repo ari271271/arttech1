@@ -17,7 +17,7 @@ export class Hakkimizda {   team = [
   { name: "Sena BULUT", title: "Finans Direktörü", photo: "/Sena.jpeg" },
   { name: "Eda GÖZLÜKLÜ", title: "Endüstriyel Süreç ve Raporlama Koordinatörü", photo: "/Eda.jpeg" },
   { name: "Ezgi GEGEZ", title: "Sosyal Medya Sorumlusu", photo: "/Ezgi.jpeg" },
-  { name: "Sidra AĞAOĞLU", title: "Sosyal Medya Sorumlusu", photo: "/Sidra.jpg" },
+  { name: "Sidra AĞAOĞLU", title: "Sosyal Medya Sorumlusu", photo: "/Sidra.jpeg" },
   { name: "Ahmet ADNAN MANAF", title: "Yazılım Geliştirici & Teknik Destek", photo: "/Ahmet.jpeg" },
   { name: "Zemzem BOYLUĞ", title: "Yazılım Kaptanı", photo: "/Zemzem.jpeg" },
   { name: "Fehmi SEZER", title: "Elektronik Kaptanı", photo: "/Fehmi.jpeg" },
