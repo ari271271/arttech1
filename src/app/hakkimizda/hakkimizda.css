@@ -1,339 +1,43 @@
-/* --- MİSYON VE VİZYON BÖLÜMÜ --- */
-.mission-vision-section {
-    padding: 60px 30px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    margin-bottom: 50px;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(36, 10, 97, 0.15);
-    position: relative;
-    overflow: hidden;
-    border: 4px solid rgba(36, 10, 97, 0.2);
+.mission-vision-section{padding:60px 30px;background:linear-gradient(135deg,#fff,#f8f9fa);margin-bottom:50px;border-radius:25px;box-shadow:0 20px 50px rgba(36,10,97,.15);position:relative;overflow:hidden;border:4px solid rgba(36,10,97,.2)}
+.mission-vision-section::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#240a61,#640e0e,#240a61);z-index:1;box-shadow:0 2px 10px rgba(36,10,97,.3)}
+.mission-vision-container{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1000px;margin:0 auto}
+.mission-section,.vision-section{padding:35px;background:#fff;border-radius:20px;box-shadow:0 12px 35px rgba(36,10,97,.12);text-align:center;transition:all .4s ease;position:relative;overflow:hidden;border:1px solid rgba(36,10,97,.08)}
+.mission-section:hover,.vision-section:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(36,10,97,.2)}
+.mission-section h2,.vision-section h2{font-size:28px;font-weight:800;background:linear-gradient(135deg,#240a61,#640e0e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 20px;text-transform:uppercase;letter-spacing:1px}
+.mission-section p,.vision-section p{font-size:16px;line-height:1.7;color:#444;margin:0 0 15px;text-align:center;font-weight:500}
+.team-header{text-align:center;margin-bottom:50px}
+.team-header h1{font-size:48px;font-weight:900;background:linear-gradient(135deg,#240a61,#640e0e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 auto 15px;letter-spacing:1px;position:relative;display:inline-block;text-transform:uppercase}
+.team-header h1::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-12px;width:80px;height:4px;background:linear-gradient(90deg,#240a61,#640e0e);border-radius:2px}
+.team-header .subtitle{font-size:20px;color:#6a6a6a;margin:0;font-weight:500;font-style:italic;text-shadow:0 0 3px rgba(36,10,97,.5)}
+.team-section{padding:40px 20px;text-align:center;background:linear-gradient(135deg,#f8f9fa,#e9ecef);border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.08);margin-top:18px;position:relative;overflow:hidden}
+.team-hierarchy{display:flex;flex-direction:column;gap:30px;max-width:1200px;margin:0 auto}
+.team-row{display:flex;justify-content:center;flex-wrap:wrap;gap:25px}
+.team-ceo{transform:scale(1.03);box-shadow:0 15px 40px rgba(36,10,97,.4);border:1px solid #240a61}
+.team-card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.06);transition:all .3s ease;text-align:center;width:180px;overflow:hidden;position:relative;border:1px solid rgba(240,240,240,.8)}
+.team-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(36,10,97,.35)}
+.team-photo{width:120px;height:120px;object-fit:cover;border-radius:50%;border:3px solid #240a61;margin-bottom:12px;transition:all .3s ease}
+.team-card:hover .team-photo{transform:scale(1.08);border-color:#18063a}
+.team-card h3{font-size:18px;font-weight:700;color:#222;margin:0 0 5px}
+.team-card .role{font-size:12px;color:#240a61;font-weight:500;padding-top:8px;margin-top:8px;display:inline-block}
+@media (max-width:768px){
+.mission-vision-container{grid-template-columns:1fr;gap:20px}
+.mission-vision-section{padding:30px 15px;margin-bottom:25px}
+.mission-section,.vision-section{padding:20px}
+.mission-section h2,.vision-section h2{font-size:18px}
+.mission-section p,.vision-section p{font-size:13px;line-height:1.5}
+.team-header h1{font-size:36px}
+.team-row{flex-direction:column;align-items:center;gap:25px}
+.team-card{width:85%;max-width:280px}
 }
-
-.mission-vision-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, #240a61, #640e0e, #240a61);
-    z-index: 1;
-    box-shadow: 0 2px 10px rgba(36, 10, 97, 0.3);
-}
-
-.mission-vision-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.mission-section, .vision-section {
-    padding: 35px;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 12px 35px rgba(36, 10, 97, 0.12);
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(36, 10, 97, 0.08);
-}
-
-
-
-.mission-section:hover, .vision-section:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(36, 10, 97, 0.2);
-}
-
-
-
-.mission-section h2, .vision-section h2 {
-    font-size: 28px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #240a61, #640e0e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    margin-top: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.mission-section p, .vision-section p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #444;
-    margin: 0 0 15px 0;
-    text-align: center;
-    font-weight: 500;
-}
-
-.mission-section p:last-child, .vision-section p:last-child {
-    margin-bottom: 0;
-}
-
-/* --- BAŞLIK VE ALT YAZI KAPSAYICISI --- */
-.team-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.team-header h1 {
-    font-size: 48px;
-    font-weight: 900;
-    background: linear-gradient(135deg, #240a61, #640e0e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0 auto 15px;
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-    text-transform: uppercase;
-    text-shadow: none;
-}
-
-
-
-.team-header h1::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -12px;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #240a61, #640e0e);
-    border-radius: 2px;
-    transition: width 0.4s ease;
-}
-
-.team-header h1:hover::after {
-    width: 80px;
-}
-
-.team-header .subtitle {
-    font-size: 20px;
-    color: #6a6a6a;
-    margin: 0;
-    font-weight: 500;
-    font-style: italic;
-    text-shadow: 0 0 3px rgba(36,10,97,0.5); /* Alt yazıya hafif parlaklık */
-}
-
-/* --- EKİP BÖLÜMÜ STİLLERİ: YENİ HİYERARŞİK TASARIM --- */
-.team-section {
-    padding: 40px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    margin-top: 18px;
-    position: relative;
-    overflow: hidden;
-}
-
-
-
-.team-hierarchy {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 0;
-}
-
-.team-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 0;
-    border-bottom: none;
-}
-
-.executive-row {
-    padding: 0;
-    margin: 0;
-    border-bottom: none;
-}
-
-.team-ceo {
-    transform: scale(1.03);
-    box-shadow: 0 15px 40px rgba(36, 10, 97, 0.4);
-    border: 1px solid #240a61;
-    margin-top: 0;
-}
-
-.team-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    text-align: center;
-    width: 180px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(240, 240, 240, 0.8);
-}
-
-
-
-.team-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(36, 10, 97, 0.35); 
-}
-
-.team-photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #240a61;
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-}
-
-.team-card:hover .team-photo {
-    transform: scale(1.08);
-    border-color: #18063a;
-}
-
-.team-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #222;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.team-card .role {
-    font-size: 12px;
-    color: #240a61;
-    font-weight: 500;
-    padding-top: 8px;
-    margin-top: 8px;
-    display: inline-block;
-}
-
-/* --- Tablet Uyumluluk --- */
-@media (max-width: 992px) {
-    .mission-vision-container {
-        gap: 25px;
-    }
-    
-    .team-row {
-        gap: 20px;
-    }
-    
-    .team-card {
-        width: 180px;
-    }
-    
-    .team-photo {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-/* --- Mobil Uyumluluk --- */
-@media (max-width: 768px) {
-    .mission-vision-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .mission-vision-section {
-        padding: 30px 15px;
-        margin-bottom: 25px;
-    }
-    
-    .mission-section, .vision-section {
-        padding: 20px;
-    }
-    
-
-    
-    .mission-section h2, .vision-section h2 {
-        font-size: 18px;
-    }
-    
-    .mission-section p, .vision-section p {
-        font-size: 13px;
-        line-height: 1.5;
-    }
-    
-    .team-header h1 {
-        font-size: 36px;
-    }
-    
-    .team-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
-    
-    .team-card {
-        width: 85%;
-        max-width: 280px;
-    }
-    
-    .team-photo {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-/* --- Küçük Mobil Uyumluluk --- */
-@media (max-width: 480px) {
-    .mission-vision-section {
-        padding: 25px 10px;
-        margin-bottom: 20px;
-    }
-    
-    .mission-section, .vision-section {
-        padding: 15px;
-    }
-    
-    .mission-section h2, .vision-section h2 {
-        font-size: 16px;
-    }
-    
-    .mission-section p, .vision-section p {
-        font-size: 12px;
-    }
-    
-    .team-header h1 {
-        font-size: 28px;
-    }
-    
-    .team-header .subtitle {
-        font-size: 16px;
-    }
-    
-    .team-card {
-        width: 90%;
-        max-width: 250px;
-        padding: 20px;
-    }
-    
-    .team-photo {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .team-card h3 {
-        font-size: 18px;
-    }
-    
-    .team-card .role {
-        font-size: 12px;
-    }
+@media (max-width:480px){
+.mission-vision-section{padding:25px 10px;margin-bottom:20px}
+.mission-section,.vision-section{padding:15px}
+.mission-section h2,.vision-section h2{font-size:16px}
+.mission-section p,.vision-section p{font-size:12px}
+.team-header h1{font-size:28px}
+.team-header .subtitle{font-size:16px}
+.team-card{width:90%;max-width:250px;padding:20px}
+.team-photo{width:100px;height:100px}
+.team-card h3{font-size:18px}
+.team-card .role{font-size:12px}
 }
