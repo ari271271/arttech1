@@ -20,27 +20,30 @@
                     <h3>Üyelik Başvurusu</h3>
                     <p>Kulübümüze katılın ve teknoloji dünyasında yerinizi alın.</p>
                 </div>
-                <form class="application-form" action="https://formspree.io/f/xzzybbyy" method="POST" (submit)="onSubmit($event, 'membership')">
+                <form class="application-form" action="https://formspree.io/f/mdkyoojz" method="POST">
+                    <input type="hidden" name="_subject" value="ArtTech Yeni Üyelik Başvurusu">
                     <input type="hidden" name="form_type" value="membership">
+                    <input type="text" name="_gotcha" style="display:none"> 
+
                     <div class="form-group">
                         <label for="fullname">Ad Soyad *</label>
-                        <input type="text" id="fullname" name="fullname" required placeholder="Adınız ve soyadınız">
+                        <input type="text" id="fullname" name="Ad_Soyad" required placeholder="Adınız ve soyadınız">
                     </div>
                     <div class="form-group">
                         <label for="email">E-posta *</label>
-                        <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+                        <input type="email" id="email" name="_replyto" required placeholder="ornek@email.com"> 
                     </div>
                     <div class="form-group">
                         <label for="phone">Telefon Numarası *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="0555 123 45 67">
+                        <input type="tel" id="phone" name="Telefon_Numarasi" required placeholder="0555 123 45 67">
                     </div>
                     <div class="form-group">
                         <label for="university">Üniversite *</label>
-                        <input list="universities" id="university" name="university" required placeholder="Üniversitenizi seçin...">
+                        <input list="universities" id="university" name="Universite" required placeholder="Üniversitenizi seçin...">
                     </div>
                     <div class="form-group">
                         <label for="department">Bölüm *</label>
-                        <input type="text" id="department" name="department" required placeholder="Bölümünüz">
+                        <input type="text" id="department" name="Bolum" required placeholder="Bölümünüz">
                     </div>
                     <button type="submit" class="submit-btn membership-btn">
                         <i class="fas fa-paper-plane"></i> Üyelik Başvurusu Yap
@@ -56,31 +59,34 @@
                     <h3>Yarışma Başvurusu</h3>
                     <p>Projenizle yarışmalara katılın ve yeteneklerinizi sergileyin.</p>
                 </div>
-                <form class="application-form" action="https://formspree.io/f/xzzybbyy" method="POST" (submit)="onSubmit($event, 'competition')">
+                <form class="application-form" action="https://formspree.io/f/mdkyoojz" method="POST">
+                    <input type="hidden" name="_subject" value="ArtTech Yeni Yarışma Başvurusu">
                     <input type="hidden" name="form_type" value="competition">
+                    <input type="text" name="_gotcha" style="display:none"> 
+
                     <div class="form-group">
                         <label for="projectName">Proje Adı *</label>
-                        <input type="text" id="projectName" name="projectName" required placeholder="Projenizin adı">
+                        <input type="text" id="projectName" name="Proje_Adi" required placeholder="Projenizin adı">
                     </div>
                     <div class="form-group">
                         <label for="projectGoal">Proje Amacı *</label>
-                        <textarea id="projectGoal" name="projectGoal" rows="3" required placeholder="Projenizin amacını kısaca açıklayın..."></textarea>
+                        <textarea id="projectGoal" name="Proje_Amaci" rows="3" required placeholder="Projenizin amacını kısaca açıklayın..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="description">Proje Açıklaması *</label>
-                        <textarea id="description" name="description" rows="4" required placeholder="Projenizi detaylı olarak açıklayın..."></textarea>
+                        <textarea id="description" name="Proje_Aciklamasi" rows="4" required placeholder="Projenizi detaylı olarak açıklayın..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="phone2">Telefon Numarası *</label>
-                        <input type="tel" id="phone2" name="phone2" required placeholder="0555 123 45 67">
+                        <input type="tel" id="phone2" name="Telefon_Numarasi" required placeholder="0555 123 45 67">
                     </div>
                     <div class="form-group">
                         <label for="university2">Üniversite *</label>
-                        <input list="universities" id="university2" name="university2" required placeholder="Üniversitenizi seçin...">
+                        <input list="universities" id="university2" name="Universite" required placeholder="Üniversitenizi seçin...">
                     </div>
                     <div class="form-group">
                         <label for="email2">E-posta *</label>
-                        <input type="email" id="email2" name="email2" required placeholder="ornek@email.com">
+                        <input type="email" id="email2" name="_replyto" required placeholder="ornek@email.com">
                     </div>
                     <button type="submit" class="submit-btn competition-btn">
                         <i class="fas fa-rocket"></i> Yarışmaya Başvur
@@ -97,21 +103,24 @@
         </div>
         <div class="feedback-container">
             <div class="feedback-form-wrapper">
-                <form class="feedback-form" action="https://formspree.io/f/xzzybbyy" method="POST" (submit)="onSubmit($event, 'feedback')">
+                <form class="feedback-form" action="https://formspree.io/f/mdkyoojz" method="POST">
+                    <input type="hidden" name="_subject" value="ArtTech Öneri ve Şikayet">
                     <input type="hidden" name="form_type" value="feedback">
+                    <input type="text" name="_gotcha" style="display:none"> 
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="feedbackName">Ad Soyad *</label>
-                            <input type="text" id="feedbackName" name="feedbackName" required placeholder="Adınız ve soyadınız">
+                            <input type="text" id="feedbackName" name="Ad_Soyad" required placeholder="Adınız ve soyadınız">
                         </div>
                         <div class="form-group">
                             <label for="feedbackEmail">E-posta *</label>
-                            <input type="email" id="feedbackEmail" name="feedbackEmail" required placeholder="ornek@email.com">
+                            <input type="email" id="feedbackEmail" name="_replyto" required placeholder="ornek@email.com">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="feedbackMessage">Mesajınız *</label>
-                        <textarea id="feedbackMessage" name="feedbackMessage" rows="5" required placeholder="Önerinizi veya şikayetinizi detaylı olarak yazın..."></textarea>
+                        <textarea id="feedbackMessage" name="Mesaj" rows="5" required placeholder="Önerinizi veya şikayetinizi detaylı olarak yazın..."></textarea>
                     </div>
                     <button type="submit" class="submit-btn feedback-btn">
                         <i class="fas fa-paper-plane"></i> Mesajı Gönder
@@ -191,6 +200,7 @@
         <option value="AFYON KOCATEPE ÜNİVERSİTESİ">
         <option value="AFYONKARAHİSAR SAĞLIK BİLİMLERİ ÜNİVERSİTESİ">
         <option value="AĞRI İBRAHİM ÇEÇEN ÜNİVERSİTESİ">
+        <option value="AHİ EVRAN ÜNİVERSİTESİ">
         <option value="AKDENİZ ÜNİVERSİTESİ">
         <option value="AKSARAY ÜNİVERSİTESİ">
         <option value="ALANYA ALAADDİN KEYKUBAT ÜNİVERSİTESİ">
@@ -198,6 +208,7 @@
         <option value="ALTINBAŞ ÜNİVERSİTESİ">
         <option value="AMASYA ÜNİVERSİTESİ">
         <option value="ANADOLU ÜNİVERSİTESİ">
+        <option value="ANKA TEKNOLOJİ ÜNİVERSİTESİ">
         <option value="ANKARA BİLİM ÜNİVERSİTESİ">
         <option value="ANKARA HACI BAYRAM VELİ ÜNİVERSİTESİ">
         <option value="ANKARA MEDİPOL ÜNİVERSİTESİ">
@@ -205,11 +216,9 @@
         <option value="ANKARA SOSYAL BİLİMLER ÜNİVERSİTESİ">
         <option value="ANKARA ÜNİVERSİTESİ">
         <option value="ANKARA YILDIRIM BEYAZIT ÜNİVERSİTESİ">
-        <option value="ANTALYA BELEK ÜNİVERSİTESİ">
         <option value="ANTALYA BİLİM ÜNİVERSİTESİ">
         <option value="ARDAHAN ÜNİVERSİTESİ">
         <option value="ARTVİN ÇORUH ÜNİVERSİTESİ">
-        <option value="ATAŞEHİR ADIGÜZEL MESLEK YÜKSEKOKULU">
         <option value="ATATÜRK ÜNİVERSİTESİ">
         <option value="ATILIM ÜNİVERSİTESİ">
         <option value="AVRASYA ÜNİVERSİTESİ">
@@ -221,25 +230,22 @@
         <option value="BAŞKENT ÜNİVERSİTESİ">
         <option value="BATMAN ÜNİVERSİTESİ">
         <option value="BAYBURT ÜNİVERSİTESİ">
+        <option value="BEYKENT ÜNİVERSİTESİ">
         <option value="BEYKOZ ÜNİVERSİTESİ">
         <option value="BEZM-İ ÂLEM VAKIF ÜNİVERSİTESİ">
         <option value="BİLECİK ŞEYH EDEBALİ ÜNİVERSİTESİ">
         <option value="BİNGÖL ÜNİVERSİTESİ">
-        <option value="BİRUNİ ÜNİVERSİTESİ">
         <option value="BİTLİS EREN ÜNİVERSİTESİ">
         <option value="BOĞAZİÇİ ÜNİVERSİTESİ">
         <option value="BOLU ABANT İZZET BAYSAL ÜNİVERSİTESİ">
         <option value="BURDUR MEHMET AKİF ERSOY ÜNİVERSİTESİ">
         <option value="BURSA TEKNİK ÜNİVERSİTESİ">
         <option value="BURSA ULUDAĞ ÜNİVERSİTESİ">
-        <option value="ÇAĞ ÜNİVERSİTESİ">
         <option value="ÇANAKKALE ONSEKİZ MART ÜNİVERSİTESİ">
-        <option value="ÇANKAYA ÜNİVERSİTESİ">
         <option value="ÇANKIRI KARATEKİN ÜNİVERSİTESİ">
         <option value="ÇUKUROVA ÜNİVERSİTESİ">
-        <option value="DEMİROĞLU BİLİM ÜNİVERSİTESİ">
         <option value="DİCLE ÜNİVERSİTESİ">
-        <option value="DOĞUŞ ÜNİVERSİTESİ">
+        <option value="DOĞU AKDENİZ ÜNİVERSİTESİ">
         <option value="DOKUZ EYLÜL ÜNİVERSİTESİ">
         <option value="DÜZCE ÜNİVERSİTESİ">
         <option value="EGE ÜNİVERSİTESİ">
@@ -248,7 +254,6 @@
         <option value="ERZURUM TEKNİK ÜNİVERSİTESİ">
         <option value="ESKİŞEHİR OSMANGAZİ ÜNİVERSİTESİ">
         <option value="ESKİŞEHİR TEKNİK ÜNİVERSİTESİ">
-        <option value="FATİH SULTAN MEHMET VAKIF ÜNİVERSİTESİ">
         <option value="FENERBAHÇE ÜNİVERSİTESİ">
         <option value="FIRAT ÜNİVERSİTESİ">
         <option value="GALATASARAY ÜNİVERSİTESİ">
@@ -262,56 +267,36 @@
         <option value="HAKKARİ ÜNİVERSİTESİ">
         <option value="HALİÇ ÜNİVERSİTESİ">
         <option value="HARRAN ÜNİVERSİTESİ">
-        <option value="HASAN KALYONCU ÜNİVERSİTESİ">
         <option value="HATAY MUSTAFA KEMAL ÜNİVERSİTESİ">
         <option value="HİTİT ÜNİVERSİTESİ">
         <option value="IĞDIR ÜNİVERSİTESİ">
-        <option value="ISPARTA UYGULAMALI BİLİMLER ÜNİVERSİTESİ">
         <option value="IŞIK ÜNİVERSİTESİ">
-        <option value="İBN HALDUN ÜNİVERSİTESİ">
         <option value="İHSAN DOĞRAMACI BİLKENT ÜNİVERSİTESİ">
         <option value="İNÖNÜ ÜNİVERSİTESİ">
         <option value="İSKENDERUN TEKNİK ÜNİVERSİTESİ">
-        <option value="İSTANBUL 29 MAYIS ÜNİVERSİTESİ">
+        <option value="İSPARTA UYGULAMALI BİLİMLER ÜNİVERSİTESİ">
         <option value="İSTANBUL AREL ÜNİVERSİTESİ">
-        <option value="İSTANBUL ATLAS ÜNİVERSİTESİ">
         <option value="İSTANBUL AYDIN ÜNİVERSİTESİ">
-        <option value="İSTANBUL BEYKENT ÜNİVERSİTESİ">
         <option value="İSTANBUL BİLGİ ÜNİVERSİTESİ">
         <option value="İSTANBUL ESENYURT ÜNİVERSİTESİ">
-        <option value="İSTANBUL GALATA ÜNİVERSİTESİ">
         <option value="İSTANBUL GEDİK ÜNİVERSİTESİ">
         <option value="İSTANBUL GELİŞİM ÜNİVERSİTESİ">
-        <option value="İSTANBUL KENT ÜNİVERSİTESİ">
         <option value="İSTANBUL KÜLTÜR ÜNİVERSİTESİ">
         <option value="İSTANBUL MEDENİYET ÜNİVERSİTESİ">
-        <option value="İSTANBUL MEDİPOL ÜNİVERSİTESİ">
-        <option value="İSTANBUL NİŞANTAŞI ÜNİVERSİTESİ">
         <option value="İSTANBUL OKAN ÜNİVERSİTESİ">
-        <option value="İSTANBUL RUMELİ ÜNİVERSİTESİ">
         <option value="İSTANBUL SABAHATTİN ZAİM ÜNİVERSİTESİ">
-        <option value="İSTANBUL SAĞLIK VE SOSYAL BİLİMLER MESLEK YÜKSEKOKULU">
-        <option value="İSTANBUL SAĞLIK VE TEKNOLOJİ ÜNİVERSİTESİ">
-        <option value="İSTANBUL ŞİŞLİ MESLEK YÜKSEKOKULU">
         <option value="İSTANBUL TEKNİK ÜNİVERSİTESİ">
         <option value="İSTANBUL TİCARET ÜNİVERSİTESİ">
-        <option value="İSTANBUL TOPKAPI ÜNİVERSİTESİ">
         <option value="İSTANBUL ÜNİVERSİTESİ">
         <option value="İSTANBUL ÜNİVERSİTESİ-CERRAHPAŞA">
-        <option value="İSTANBUL YENİ YÜZYIL ÜNİVERSİTESİ">
-        <option value="İSTİNYE ÜNİVERSİTESİ">
         <option value="İZMİR BAKIRÇAY ÜNİVERSİTESİ">
         <option value="İZMİR DEMOKRASİ ÜNİVERSİTESİ">
         <option value="İZMİR EKONOMİ ÜNİVERSİTESİ">
         <option value="İZMİR KATİP ÇELEBİ ÜNİVERSİTESİ">
-        <option value="İZMİR KAVRAM MESLEK YÜKSEKOKULU">
-        <option value="İZMİR TINAZTEPE ÜNİVERSİTESİ">
         <option value="İZMİR YÜKSEK TEKNOLOJİ ENSTİTÜSÜ">
         <option value="KADİR HAS ÜNİVERSİTESİ">
         <option value="KAFKAS ÜNİVERSİTESİ">
-        <option value="KAHRAMANMARAŞ İSTİKLAL ÜNİVERSİTESİ">
         <option value="KAHRAMANMARAŞ SÜTÇÜ İMAM ÜNİVERSİTESİ">
-        <option value="KAPADOKYA ÜNİVERSİTESİ">
         <option value="KARABÜK ÜNİVERSİTESİ">
         <option value="KARADENİZ TEKNİK ÜNİVERSİTESİ">
         <option value="KARAMANOĞLU MEHMETBEY ÜNİVERSİTESİ">
@@ -321,73 +306,44 @@
         <option value="KIRKLARELİ ÜNİVERSİTESİ">
         <option value="KIRŞEHİR AHİ EVRAN ÜNİVERSİTESİ">
         <option value="KİLİS 7 ARALIK ÜNİVERSİTESİ">
-        <option value="KOCAELİ SAĞLIK VE TEKNOLOJİ ÜNİVERSİTESİ">
         <option value="KOCAELİ ÜNİVERSİTESİ">
-        <option value="KOÇ ÜNİVERSİTESİ">
-        <option value="KONYA GIDA VE TARIM ÜNİVERSİTESİ">
         <option value="KONYA TEKNİK ÜNİVERSİTESİ">
         <option value="KTO KARATAY ÜNİVERSİTESİ">
         <option value="KÜTAHYA DUMLUPINAR ÜNİVERSİTESİ">
         <option value="KÜTAHYA SAĞLIK BİLİMLERİ ÜNİVERSİTESİ">
-        <option value="LOKMAN HEKİM ÜNİVERSİTESİ">
-        <option value="MALATYA TURGUT ÖZAL ÜNİVERSİTESİ">
         <option value="MALTEPE ÜNİVERSİTESİ">
         <option value="MANİSA CELÂL BAYAR ÜNİVERSİTESİ">
-        <option value="MARDİN ARTUKLU ÜNİVERSİTESİ">
-        <option value="MARMARA ÜNİVERSİTESİ">
-        <option value="MEF ÜNİVERSİTESİ">
         <option value="MERSİN ÜNİVERSİTESİ">
         <option value="MİMAR SİNAN GÜZEL SANATLAR ÜNİVERSİTESİ">
-        <option value="MUDANYA ÜNİVERSİTESİ">
         <option value="MUĞLA SITKI KOÇMAN ÜNİVERSİTESİ">
         <option value="MUNZUR ÜNİVERSİTESİ">
-        <option value="MUŞ ALPARSLAN ÜNİVERSİTESİ">
         <option value="NECMETTİN ERBAKAN ÜNİVERSİTESİ">
-        <option value="NEVŞEHİR HACI BEKTAŞ VELİ ÜNİVERSİTESİ">
         <option value="NİĞDE ÖMER HALİSDEMİR ÜNİVERSİTESİ">
-        <option value="NUH NACİ YAZGAN ÜNİVERSİTESİ">
         <option value="ONDOKUZ MAYIS ÜNİVERSİTESİ">
         <option value="ORDU ÜNİVERSİTESİ">
         <option value="ORTA DOĞU TEKNİK ÜNİVERSİTESİ">
-        <option value="OSMANİYE KORKUT ATA ÜNİVERSİTESİ">
         <option value="OSTİM TEKNİK ÜNİVERSİTESİ">
-        <option value="ÖZYEĞİN ÜNİVERSİTESİ">
         <option value="PAMUKKALE ÜNİVERSİTESİ">
-        <option value="PİRİ REİS ÜNİVERSİTESİ">
         <option value="RECEP TAYYİP ERDOĞAN ÜNİVERSİTESİ">
-        <option value="SABANCI ÜNİVERSİTESİ">
-        <option value="SAĞLIK BİLİMLERİ ÜNİVERSİTESİ">
         <option value="SAKARYA UYGULAMALI BİLİMLER ÜNİVERSİTESİ">
         <option value="SAKARYA ÜNİVERSİTESİ">
         <option value="SAMSUN ÜNİVERSİTESİ">
-        <option value="SANKO ÜNİVERSİTESİ">
         <option value="SELÇUK ÜNİVERSİTESİ">
         <option value="SİİRT ÜNİVERSİTESİ">
         <option value="SİNOP ÜNİVERSİTESİ">
-        <option value="SİVAS BİLİM VE TEKNOLOJİ ÜNİVERSİTESİ">
-        <option value="SİVAS CUMHURİYET ÜNİVERSİTESİ">
         <option value="SÜLEYMAN DEMİREL ÜNİVERSİTESİ">
         <option value="ŞIRNAK ÜNİVERSİTESİ">
-        <option value="TARSUS ÜNİVERSİTESİ">
-        <option value="TED ÜNİVERSİTESİ">
         <option value="TEKİRDAĞ NAMIK KEMAL ÜNİVERSİTESİ">
         <option value="TOBB EKONOMİ VE TEKNOLOJİ ÜNİVERSİTESİ">
-        <option value="TOKAT GAZİOSMANPAŞA ÜNİVERSİTESİ">
-        <option value="TOROS ÜNİVERSİTESİ">
-        <option value="TRABZON ÜNİVERSİTESİ">
         <option value="TRAKYA ÜNİVERSİTESİ">
         <option value="TÜRK HAVA KURUMU ÜNİVERSİTESİ">
-        <option value="TÜRK-ALMAN ÜNİVERSİTESİ">
         <option value="UFUK ÜNİVERSİTESİ">
         <option value="UŞAK ÜNİVERSİTESİ">
         <option value="ÜSKÜDAR ÜNİVERSİTESİ">
-        <option value="VAN YÜZÜNCÜ YIL ÜNİVERSİTESİ">
-        <option value="YALOVA ÜNİVERSİTESİ">
-        <option value="YAŞAR ÜNİVERSİTESİ">
         <option value="YEDİTEPE ÜNİVERSİTESİ">
         <option value="YILDIZ TEKNİK ÜNİVERSİTESİ">
-        <option value="YOZGAT BOZOK ÜNİVERSİTESİ">
         <option value="YÜKSEK İHTİSAS ÜNİVERSİTESİ">
         <option value="ZONGULDAK BÜLENT ECEVİT ÜNİVERSİTESİ">
+        <option value="BAŞKA BİR ÜNİVERSİTE (Listede yoksa burayı seçin)">
     </datalist>
 </div>
