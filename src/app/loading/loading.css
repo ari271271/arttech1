@@ -1,385 +1,72 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;height:100vh;background:#fff;overflow:hidden}
+.loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;background:linear-gradient(135deg,#f8f9fa,#e9ecef);z-index:1000;opacity:1;visibility:visible;transition:opacity 1s ease,visibility 1s ease}
+.loading-screen.hidden{opacity:0;visibility:hidden}
+.particles-container{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+.particle{position:absolute;width:50px;height:50px;border-radius:10px;background-image:url('/arttech.jpg');background-size:300px 150px;opacity:0;box-shadow:0 0 20px rgba(36,10,97,.4),0 0 35px rgba(100,14,14,.3);transition:all .8s ease;border:2px solid rgba(36,10,97,.2)}
+.particle.visible{opacity:1}
+.particle.assembled{transform:translateY(0)}
+.particle.assembled.jump{animation:jumpRotate .8s ease-in-out infinite,glowPulse 1.5s ease-in-out infinite}
+@keyframes jumpRotate{
+0%{transform:translateY(0) rotate(0deg)}
+30%{transform:translateY(-12px) rotate(8deg)}
+60%{transform:translateY(-6px) rotate(-4deg)}
+100%{transform:translateY(0) rotate(0deg)}
 }
-
-body {
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  background: #fff;
-  overflow: hidden;
+@keyframes glowPulse{
+0%,100%{box-shadow:0 0 20px rgba(36,10,97,.4),0 0 35px rgba(100,14,14,.3);transform:scale(1)}
+50%{box-shadow:0 0 30px rgba(36,10,97,.6),0 0 50px rgba(100,14,14,.5);transform:scale(1.05)}
 }
-
-/* LOADING SCREEN */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  z-index: 1000;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 1s ease, visibility 1s ease;
+.particle-1{top:10%;left:5%;background-position:0 0}
+.particle-2{top:15%;right:8%;background-position:-40px 0}
+.particle-3{top:25%;left:12%;background-position:-80px 0}
+.particle-4{top:35%;right:15%;background-position:-120px 0}
+.particle-5{bottom:30%;left:10%;background-position:-160px 0}
+.particle-6{bottom:25%;right:12%;background-position:-200px 0}
+.particle-7{top:45%;left:3%;background-position:0 -40px}
+.particle-8{top:55%;right:5%;background-position:-40px -40px}
+.particle-9{bottom:15%;left:20%;background-position:-80px -40px}
+.particle-10{bottom:10%;right:18%;background-position:-120px -40px}
+.particle-11{top:20%;left:25%;background-position:-160px -40px}
+.particle-12{top:60%;right:25%;background-position:-200px -40px}
+.particle-1.assembled{top:calc(50% - 60px);left:calc(50% - 120px)}
+.particle-2.assembled{top:calc(50% - 60px);left:calc(50% - 80px)}
+.particle-3.assembled{top:calc(50% - 60px);left:calc(50% - 40px)}
+.particle-4.assembled{top:calc(50% - 60px);left:calc(50% + 0px)}
+.particle-5.assembled{top:calc(50% - 60px);left:calc(50% + 40px)}
+.particle-6.assembled{top:calc(50% - 60px);left:calc(50% + 80px)}
+.particle-7.assembled{top:calc(50% - 20px);left:calc(50% - 120px)}
+.particle-8.assembled{top:calc(50% - 20px);left:calc(50% - 80px)}
+.particle-9.assembled{top:calc(50% - 20px);left:calc(50% - 40px)}
+.particle-10.assembled{top:calc(50% - 20px);left:calc(50% + 0px)}
+.particle-11.assembled{top:calc(50% - 20px);left:calc(50% + 40px)}
+.particle-12.assembled{top:calc(50% - 20px);left:calc(50% + 80px)}
+.loading-text{margin-top:2rem;font-weight:800;font-size:4rem;letter-spacing:.3em;opacity:0;background:linear-gradient(135deg,#240a61,#640e0e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:opacity .8s,transform .8s ease;transform:translateY(-50px);text-shadow:0 5px 15px rgba(36,10,97,.3)}
+.loading-text.show{opacity:1;transform:translateY(0)}
+.loading-text span{display:inline-block;opacity:0;animation:letterPop .6s forwards}
+.loading-text span:nth-child(1){animation-delay:.1s}
+.loading-text span:nth-child(2){animation-delay:.2s}
+.loading-text span:nth-child(3){animation-delay:.3s}
+.loading-text span:nth-child(4){animation-delay:.4s}
+.loading-text span:nth-child(5){animation-delay:.5s}
+.loading-text span:nth-child(6){animation-delay:.6s}
+.loading-text span:nth-child(7){animation-delay:.7s}
+@keyframes letterPop{
+0%{opacity:0;transform:translateY(50px) scale(.5)}
+50%{opacity:1;transform:translateY(-15px) scale(1.1)}
+100%{opacity:1;transform:translateY(0) scale(1)}
 }
-
-.loading-screen.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.particles-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.particle {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  background-image: url('/arttech.jpg');
-  background-size: 300px 150px;
-  opacity: 0;
-  box-shadow: 0 0 20px rgba(36, 10, 97, 0.4), 0 0 35px rgba(100, 14, 14, 0.3);
-  will-change: top, left, transform;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid rgba(36, 10, 97, 0.2);
-}
-
-.particle.visible {
-  opacity: 1;
-}
-
-.particle.assembled {
-  transform: translateY(0);
-}
-
-.particle.assembled.jump {
-  animation: jumpRotate 0.8s ease-in-out infinite, glowPulse 1.5s ease-in-out infinite;
-}
-
-/* Animasyonlar */
-@keyframes jumpRotate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  30% {
-    transform: translateY(-12px) rotate(8deg);
-  }
-  60% {
-    transform: translateY(-6px) rotate(-4deg);
-  }
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-}
-
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(36, 10, 97, 0.4), 0 0 35px rgba(100, 14, 14, 0.3);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(36, 10, 97, 0.6), 0 0 50px rgba(100, 14, 14, 0.5);
-    transform: scale(1.05);
-  }
-}
-
-/* Başlangıç ve birleşme pozisyonları */
-.particle-1 {
-  top: 10%;
-  left: 5%;
-  background-position: 0 0;
-}
-
-.particle-2 {
-  top: 15%;
-  right: 8%;
-  background-position: -40px 0;
-}
-
-.particle-3 {
-  top: 25%;
-  left: 12%;
-  background-position: -80px 0;
-}
-
-.particle-4 {
-  top: 35%;
-  right: 15%;
-  background-position: -120px 0;
-}
-
-.particle-5 {
-  bottom: 30%;
-  left: 10%;
-  background-position: -160px 0;
-}
-
-.particle-6 {
-  bottom: 25%;
-  right: 12%;
-  background-position: -200px 0;
-}
-
-.particle-7 {
-  top: 45%;
-  left: 3%;
-  background-position: 0 -40px;
-}
-
-.particle-8 {
-  top: 55%;
-  right: 5%;
-  background-position: -40px -40px;
-}
-
-.particle-9 {
-  bottom: 15%;
-  left: 20%;
-  background-position: -80px -40px;
-}
-
-.particle-10 {
-  bottom: 10%;
-  right: 18%;
-  background-position: -120px -40px;
-}
-
-.particle-11 {
-  top: 20%;
-  left: 25%;
-  background-position: -160px -40px;
-}
-
-.particle-12 {
-  top: 60%;
-  right: 25%;
-  background-position: -200px -40px;
-}
-
-.particle-1.assembled {
-  top: calc(50% - 60px);
-  left: calc(50% - 120px);
-}
-
-.particle-2.assembled {
-  top: calc(50% - 60px);
-  left: calc(50% - 80px);
-}
-
-.particle-3.assembled {
-  top: calc(50% - 60px);
-  left: calc(50% - 40px);
-}
-
-.particle-4.assembled {
-  top: calc(50% - 60px);
-  left: calc(50% + 0px);
-}
-
-.particle-5.assembled {
-  top: calc(50% - 60px);
-  left: calc(50% + 40px);
-}
-
-.particle-6.assembled {
-  top: calc(50% - 60px);
-  left: calc(50% + 80px);
-}
-
-.particle-7.assembled {
-  top: calc(50% - 20px);
-  left: calc(50% - 120px);
-}
-
-.particle-8.assembled {
-  top: calc(50% - 20px);
-  left: calc(50% - 80px);
-}
-
-.particle-9.assembled {
-  top: calc(50% - 20px);
-  left: calc(50% - 40px);
-}
-
-.particle-10.assembled {
-  top: calc(50% - 20px);
-  left: calc(50% + 0px);
-}
-
-.particle-11.assembled {
-  top: calc(50% - 20px);
-  left: calc(50% + 40px);
-}
-
-.particle-12.assembled {
-  top: calc(50% - 20px);
-  left: calc(50% + 80px);
-}
-
-/* Loading text konumu ve animasyonu */
-.loading-text {
-  margin-top: 2rem;
-  font-weight: 800;
-  font-size: 4rem;
-  letter-spacing: 0.3em;
-  opacity: 0;
-  background: linear-gradient(135deg, #240a61, #640e0e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: opacity 0.8s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(-50px);
-  text-shadow: 0 5px 15px rgba(36, 10, 97, 0.3);
-}
-
-/* Animasyon başladıktan sonra yazıyı göster */
-.loading-text.show {
-  opacity: 1;
-  transform: translateY(0); /* Yazıyı normal pozisyona getir */
-}
-
-/* Her bir harf için animasyon */
-.loading-text span {
-  display: inline-block;
-  opacity: 0;
-  animation: letterPop 0.6s forwards; /* Harflerin pop animasyonu */
-}
-
-.loading-text span:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.loading-text span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.loading-text span:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.loading-text span:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.loading-text span:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-.loading-text span:nth-child(6) {
-  animation-delay: 0.6s;
-}
-
-.loading-text span:nth-child(7) {
-  animation-delay: 0.7s;
-}
-
-/* Harf animasyonu (letterPop) */
-@keyframes letterPop {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) scale(0.5);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-15px) scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Main content */
-.main-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  background: #fff;
-  transition: opacity 1.5s;
-}
-
-.main-content.visible {
-  opacity: 1;
-}
-
-.container {
-  text-align: center;
-  max-width: 800px;
-  padding: 2rem;
-  color: #001f4d;
-}
-
-.final-logo {
-  width: 300px;
-  height: auto;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
-}
-
-p {
-  font-size: 1.4rem;
-  margin-top: 1.5rem;
-  line-height: 1.8;
-  color: #001f4d;
-}
-
-.cta-button {
-  background: linear-gradient(45deg, #001f4d, #003366);
-  border: none;
-  color: white;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(45deg, #003366, #001f4d);
-}
-
-@media (max-width: 768px) {
-  .particle {
-    width: 30px;
-    height: 30px;
-    background-size: 180px 90px;
-  }
-
-  .final-logo {
-    width: 250px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  .loading-text {
-    font-size: 1.5rem;
-  }
+.main-content{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;opacity:0;background:#fff;transition:opacity 1.5s}
+.main-content.visible{opacity:1}
+.container{text-align:center;max-width:800px;padding:2rem;color:#001f4d}
+.final-logo{width:300px;height:auto;margin-bottom:1rem;filter:drop-shadow(0 15px 30px rgba(0,0,0,.3))}
+p{font-size:1.4rem;margin-top:1.5rem;line-height:1.8;color:#001f4d}
+.cta-button{background:linear-gradient(45deg,#001f4d,#003366);border:none;color:#fff;padding:1rem 2.5rem;font-size:1.2rem;border-radius:50px;cursor:pointer;transition:all .3s ease;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.cta-button:hover{transform:scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.4);background:linear-gradient(45deg,#003366,#001f4d)}
+@media (max-width:768px){
+.particle{width:30px;height:30px;background-size:180px 90px}
+.final-logo{width:250px}
+h1{font-size:2rem}
+p{font-size:1.2rem}
+.loading-text{font-size:1.5rem}
 }
