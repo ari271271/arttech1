@@ -21,13 +21,13 @@ export class Hakkimizda {
         name: "Dr. Öğr. Üyesi Bayram BALA", 
         title: "Topluluk Danışmanımız ", 
         photo: "/BayramBala.jpeg", 
-        dialogInfo: "Akademik derinliği ve vizyoner yaklaşımıyla ArtTech'in bilimsel yol haritasını çizen hocamızdır. Topluluğun her projesinde kaliteyi ve etik değerleri ön planda tutarak, gençlerin potansiyelini maksimum düzeyde kullanmalarına rehberlik eder." 
+        dialogInfo: "Akademik derinliği ve vizyoner yaklaşımıyla ArtTech'in bilimsel yol haritasını belirleyen değerli hocamızdır. Topluluğun her projesinde kaliteyi ve etik değerleri ön planda tutarak, gençlerin potansiyellerini en üst düzeye çıkarmalarına rehberlik etmektedir." 
     },
     { 
         name: "Doç. Dr. Ipek ATIK", 
         title: "Proje Danışmanımız ", 
         photo: "/IpekATIK.jpeg", 
-        dialogInfo: "Teknolojik inovasyonlar ve proje yönetimi konusundaki uzmanlığıyla ArtTech projelerine yön vermektedir. Yaratıcı fikirlerin somut, uygulanabilir ve sürdürülebilir projelere dönüşmesi için ekip üyelerimize ilham kaynağı olmaktadır." 
+        dialogInfo: "Teknolojik inovasyonlar ve proje yönetimi alanındaki derin uzmanlığıyla ArtTech projelerine yön vermektedir. Yaratıcı fikirlerin somut, uygulanabilir ve sürdürülebilir projelere dönüşmesi sürecinde ekip üyelerine ilham vererek, onların potansiyellerini en üst düzeye çıkarmalarına katkı sağlamaktadır." 
     },
     { 
         name: "Yunus Ethem TAŞ", 
