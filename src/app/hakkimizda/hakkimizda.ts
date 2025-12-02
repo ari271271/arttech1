@@ -11,9 +11,11 @@ import { CommonModule } from '@angular/common';
 })
 export class Hakkimizda {
   
+  // Dialog (Diyalog) değişkenleri - Yerel taahhüdünüzden korundu
   isDialogOpen: boolean = false;
   selectedMember: any = null;
 
+  // EKİP ÜYELERİ LİSTESİ (İstenmeyen üyeler: Sidra, Fehmi, Bedriye, Bumin çıkarıldı)
   team = [
     { 
         name: "Dr. Öğr. Üyesi Bayram BALA", 
@@ -34,7 +36,6 @@ export class Hakkimizda {
         dialogInfo: "ArtTech'in kurucusu ve lideri olarak, sanat ve teknolojiyi birleştirme vizyonuyla hareket etmektedir. Ekibin motivasyonunu en üst seviyede tutarak, şirketin global hedeflere ulaşması için stratejik kararlar alır ve yenilikçi bir çalışma kültürü oluşturur." 
     },
     { 
-        // GÜNCELLENDİ
         name: "Nursezen SAĞDIÇ", 
         title: "Başkan Yardımcısı", 
         photo: "/Nursezen.jpeg", 
@@ -53,26 +54,18 @@ export class Hakkimizda {
         dialogInfo: "Projelerin endüstriyel standartlara uygunluğunu ve süreçlerin şeffaflığını sağlamaktan sorumludur. Detaylı raporlama ve sürekli iyileştirme prensipleriyle ArtTech projelerinin profesyonel kalitesini ve verimliliğini maksimize eder." 
     },
     { 
-        // YENİ ÜYE EKLENDİ (Fotoğraf ismi varsayımsaldır)
         name: "Ahmet Eren Ebe", 
         title: "Sponsorluk İlişkileri Yöneticisi", 
         photo: "/AhmetEren.jpeg", 
         dialogInfo: "Gaziantep İslam Bilim ve Teknoloji Üniversitesi Elektrik-Elektronik Mühendisliği 1. Sınıf Öğrencisiyim. ArtTech Bünyesinde Sponsorluk İlişkileri Yöneticisi Olarak Görev Yapmaktayım. Görevim Bizim Projelerimizi En Doğru Şekilde Temsil Edip Sponsorlarla Sürekli İletişimde Olan, Onlara İhtiyaçlarımızı, İlerlememizi Ve Vizyonumuzu Aktaran Kişiyim. Ekip Arkadaşlarım Sahada Çalışırken, Bende Dışarıda Ekibin Sesi Oluyorum. Bu Rolde, Güven Ve Profesyonelliği Yansıtarak, Fırsatları Takip Etmek Ve Güçlü İş Birlikleri Kurmak Benim Görevimdir."
     },
     { 
-        // GÜNCELLENDİ
         name: "Ezgi GEGEZ", 
         title: "Sosyal Medya Koordinatörü", 
         photo: "/Ezgi.jpeg", 
         dialogInfo: "Gaziantep İslam Bilim ve Teknoloji Üniversitesi, 3. sınıf Endüstri Mühendisliği öğrencisiyim. Kendimi her alanda geliştirmeyi hedefliyor ve bu doğrultuda çeşitli alanlarda çaba sarf ediyorum. Şu anda ArtTech topluluğunda Sosyal Medya Koordinatörü olarak görev alıyorum. İçerik üretimi ve fotoğrafçılıkla ilgileniyor, yaratıcı projelerde aktif rol almayı seviyorum. Bu süreçte, hem kişisel hem de profesyonel anlamda kendimi daha da ileriye taşımayı amaçlıyorum." 
     },
-   
-    { 
-        name: "Sidra AĞAOĞLU", 
-        title: "Sosyal Medya Sorumlusu", 
-        photo: "/Sidra.jpeg", 
-        dialogInfo: "Topluluğun sosyal medya varlığını güçlendiren yaratıcı ekibin bir parçasıdır. Özgün yaklaşımlarla ArtTech'in vizyonunu dijital platformlara taşır ve topluluk üyeleriyle güçlü bağlar kurar." 
-    },
+    // Sidra AĞAOĞLU ÇIKARILDI
     { 
         name: "Ahmet ADNAN MANAF", 
         title: "Yazılım Geliştirici & Teknik Destek", 
@@ -85,22 +78,9 @@ export class Hakkimizda {
         photo: "/Zemzem.jpeg", 
         dialogInfo: "Yazılım ekibinin lideri olarak, kodlama standartlarını belirler ve teknik mimariye yön verir. Ekip üyelerinin gelişimine odaklanarak, ArtTech'in tüm yazılım çözümlerinin en yüksek kalitede olmasını sağlar." 
     },
+    // Fehmi SEZER ÇIKARILDI
+    // Bumin Kağan DOĞAN ÇIKARILDI
     { 
-        name: "Fehmi SEZER", 
-        title: "Elektronik Kaptanı", 
-        photo: "/Fehmi.jpeg", 
-        dialogInfo: "Elektronik ve donanım projelerinin teknik yöneticisidir. İnovatif devre tasarımları ve sistem entegrasyonu konusundaki bilgisiyle, ArtTech'in fiziki projelerinin başarısında kritik rol oynar." 
-    },
-    { 
-        name: "Bumin Kağan DOĞAN", 
-        title: "Mekanik Kaptanı", 
-        photo: "/Bumin.jpeg", 
-        dialogInfo: "Mekanik tasarım ve üretim süreçlerini yönetir. 3D modelleme ve prototipleme konusunda yetkinliğiyle, ArtTech'in projelerine sağlam ve estetik mekanik çözümler sunar." 
-    },
-    
-   
-    { 
-        // GÜNCELLENDİ
         name: "Muhammed Orhan YAŞAR", 
         title: "Elektronik Asistanı (Elektronik Mühendisliği Öğrencisi)", 
         photo: "/Orhan.jpeg", 
@@ -119,19 +99,12 @@ export class Hakkimizda {
         dialogInfo: "ArtTech'i Hatay bölgesinde temsil eder ve yerel etkinlikleri organize eder. Bölgesel projelerde ArtTech'in vizyonunu ve misyonunu yayarak topluluğun etki alanını genişletir." 
     },
     { 
-        // GÜNCELLENDİ
         name: "Ezel ILHAN", 
         title: "Laboratuvar Destek Üyesi", 
         photo: "/Ezel.jpeg", 
         dialogInfo: "Gaziantep İslam Bilim ve Teknoloji Üniversitesi Tıbbi Laboratuvar Teknikleri bölümünde öğrenim görmekteyim ve Art Tech'te Laboratuvar Destek Üyesi olarak görev alıyorum. Laboratuvar ortamında teknik bilgi ve pratiklerimle destek sunuyorum. Ayrıca döngüsel ekonomi alanındaki bilgi birikimimi gençlerle yapılan çalışmalarda paylaşarak sürdürülebilir farkındalık oluşmasına katkı sağlıyorum. Enerjim ve motivasyonumla bulunduğum her ekibe değer katmayı hedefliyorum." 
     },
-    
-    { 
-        name: "Bedriye TATLI", 
-        title: "Elektrik-Elektronik Proje Asistanı", 
-        photo: "/Bedriye.jpeg", 
-        dialogInfo: "Elektrik-elektronik projelerinde aktif rol alır ve ekip üyelerine destek verir. Öğrenme odaklı yaklaşımıyla ekibe taze bir enerji katar." 
-    },
+    // Bedriye TATLI ÇIKARILDI
     { 
         name: "Yağmur ÇINAR", 
         title: "Insan kaynakları", 
@@ -144,8 +117,9 @@ export class Hakkimizda {
         photo: "/Merve.jpeg", 
         dialogInfo: "Topluluğun ana projelerinin zamanında ve bütçe dahilinde tamamlanmasını sağlar. Mükemmel organizasyon ve iletişim becerileriyle proje ekiplerini başarıya ulaştırır." 
     }
-];
+  ];
 
+  // Resim yüklenemediğinde varsayılan resmi gösteren fonksiyon
   onImageError(event: Event) {
     const imgElement = event.target as HTMLImageElement;
     imgElement.src = '/varsayilan.jpg';
