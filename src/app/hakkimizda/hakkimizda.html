@@ -25,16 +25,17 @@
 <div class="team-section">
     <div class="team-hierarchy">
 
-        <div class="team-row executive-row">
-            <div class="team-card team-ceo">
-                <img [src]="team[0].photo" (error)="onImageError($event)" [alt]="team[0].name" class="team-photo" />
-                <h3>{{ team[0].name }}</h3>
-                <p class="role">{{ team[0].title }}</p>
-            </div>
-        </div>
+     <div class="team-row executive-row">
+  <div class="team-card team-ceo" *ngFor="let member of team.slice(0, 2)">
+    <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
+    <h3>{{ member.name }}</h3>
+    <p class="role">{{ member.title }}</p>
+  </div>
+</div>
+
 
         <div class="team-row director-row">
-            <div class="team-card" *ngFor="let member of team.slice(1, 4)">
+            <div class="team-card" *ngFor="let member of team.slice(2, 5)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
@@ -42,14 +43,14 @@
         </div>
         
         <div class="team-row leader-row">
-            <div class="team-card" *ngFor="let member of team.slice(4, 9)">
+            <div class="team-card" *ngFor="let member of team.slice(5, 10)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
             </div>
         </div>
 <div class="team-row member-row">
-  <div class="team-card" *ngFor="let member of team.slice(9)">
+  <div class="team-card" *ngFor="let member of team.slice(10)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
