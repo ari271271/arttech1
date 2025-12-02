@@ -1,4 +1,3 @@
-<!-- MİSYON VE VİZYON BÖLÜMÜ -->
 <div class="mission-vision-section">
     <div class="mission-vision-container">
         <div class="mission-section">
@@ -15,18 +14,16 @@
     </div>
 </div>
 
-<!-- BAŞLIK VE ALT YAZI KAPSAYICISI -->
 <div class="team-header">
     <h1>EKİBİMİZ</h1>
     <p class="subtitle">ArtTech'i geleceğe taşıyan güçlü kadro</p>
 </div>
 
-<!-- team-section ARTIK SADECE KARTLARI İÇEREN ANA KUTUDUR -->
 <div class="team-section">
     <div class="team-hierarchy">
 
      <div class="team-row executive-row">
-  <div class="team-card team-ceo" *ngFor="let member of team.slice(0, 2)">
+  <div class="team-card team-ceo" *ngFor="let member of team.slice(0, 2)" (click)="openDialog(member)">
     <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
     <h3>{{ member.name }}</h3>
     <p class="role">{{ member.title }}</p>
@@ -35,7 +32,7 @@
 
 
         <div class="team-row director-row">
-            <div class="team-card" *ngFor="let member of team.slice(2, 5)">
+            <div class="team-card" *ngFor="let member of team.slice(2, 6)" (click)="openDialog(member)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
@@ -43,18 +40,30 @@
         </div>
         
         <div class="team-row leader-row">
-            <div class="team-card" *ngFor="let member of team.slice(5, 10)">
+            <div class="team-card" *ngFor="let member of team.slice(6, 11)" (click)="openDialog(member)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
             </div>
         </div>
 <div class="team-row member-row">
-  <div class="team-card" *ngFor="let member of team.slice(10)">
+  <div class="team-card" *ngFor="let member of team.slice(11)" (click)="openDialog(member)">
                 <img [src]="member.photo" (error)="onImageError($event)" [alt]="member.name" class="team-photo" />
                 <h3>{{ member.name }}</h3>
                 <p class="role">{{ member.title }}</p>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="member-dialog-overlay" *ngIf="isDialogOpen" (click)="closeDialog()">
+    <div class="member-dialog" *ngIf="selectedMember" (click)="$event.stopPropagation()">
+        <button class="dialog-close-btn" (click)="closeDialog()">×</button>
+        <img [src]="selectedMember.photo" [alt]="selectedMember.name" class="dialog-photo" />
+        <h2 class="dialog-name">{{ selectedMember.name }}</h2>
+        <p class="dialog-role">{{ selectedMember.title }}</p>
+        <div class="dialog-info">
+            <p>{{ selectedMember.dialogInfo }}</p>
         </div>
     </div>
 </div>
