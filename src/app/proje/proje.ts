@@ -62,7 +62,7 @@ export class Proje implements AfterViewInit {
       id: 4,
       title: 'SKYGUARD',
       description: 'SkyGuard, yenilenebilir enerjiyle çalışan yapay zeka destekli gözetleme sistemiyle orman yangınlarını erken tespit eden akıllı bir çevre koruma çözümüdür. Termal kameralar, duman sensörleri ve makine öğrenmesi algoritmaları kullanarak yangın riskini önceden tespit eder ve otomatik alarm sistemleri ile hızlı müdahale sağlar.',
-      imageUrl: 'skyquard_image.jpg',
+      imageUrl: 'skyguard.jpg',
       category: 'Çevre Koruma',
       tags: ['Yapay Zeka', 'Yangın Tespiti', 'Gözetleme', 'Erken Uyarı'],
       status: 'planning',
