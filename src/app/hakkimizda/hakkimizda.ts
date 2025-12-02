@@ -39,7 +39,7 @@ export class Hakkimizda {
         name: "Nursezen SAĞDIÇ", 
         title: "Başkan Yardımcısı", 
         photo: "/Nursezen.jpeg", 
-        dialogInfo: "Gaziantep İslâm Bilim ve Teknoloji Üniversitesi Endüstri Mühendisliği öğrencisiyim. ArtTech’te Başkan Yardımcısı olarak görev almaktayım. Şirket ve topluluğumuzun operasyonel süreçlerini yönetiyor, verimliliği arttırmak ve sürdürülebilir büyümeyi desteklemek adına stratejik çalışmalar yürütüyorum. ." 
+        dialogInfo: "Gaziantep İslâm Bilim ve Teknoloji Üniversitesi Endüstri Mühendisliği öğrencisiyim. ArtTech’te Başkan Yardımcısı olarak görev almaktayım. Şirket ve topluluğumuzun operasyonel süreçlerini yönetiyor, verimliliği arttırmak ve sürdürülebilir büyümeyi desteklemek adına stratejik çalışmalar yürütüyorum." 
     },
     { 
         name: "Sena BULUT", 
