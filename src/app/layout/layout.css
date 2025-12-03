@@ -60,7 +60,7 @@ header {
 .logo-linkgibtu {
   width: 90px;
   height: 90px;
-  background: url('/gibtü.jpg') center/cover no-repeat;
+  background: url('/gibtu.jpg') center/cover no-repeat;
   border-radius: 50%;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   order: 1; /* Sağ tarafa yerleştir */
