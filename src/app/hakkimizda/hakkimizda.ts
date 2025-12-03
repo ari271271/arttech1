@@ -31,7 +31,7 @@ export class Hakkimizda {
     },
     { 
         name: "Yunus Ethem TAŞ", 
-        title: "ArtTech Şirket ve Topluluk Başkanı", 
+        title: "Topluluk Başkanı", 
         photo: "/Yunus.jpeg", 
         dialogInfo: "Gaziantep İslâm Bilim Ve Teknoloji Üniversitesi Elektrik Elektronik Mühendisliği öğrencisiyim. ArtTech Şirket ve Topluluk Başkanı olarak sanat ve teknolojiyi birleştirme vizyonuyla hareket etmektedir. Ekibin motivasyonunu en üst seviyede tutarak, şirket ve topluluğun global hedeflere ulaşması için stratejik kararlar alır ve yenilikçi bir çalışma kültürü oluşturur." 
     },
