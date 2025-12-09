@@ -54,7 +54,7 @@ export class Hakkimizda {
         dialogInfo: "Gaziantep İslâm Bilim Ve Teknoloji Üniversitesi Endüstri Mühendisliği öğrencisiyim. ArtTech'te projelerin endüstriyel standartlara uygunluğunu ve süreçlerin şeffaflığını sağlamaktan sorumluyumdur. Detaylı raporlama ve sürekli iyileştirme prensipleriyle ArtTech projelerinin profesyonel kalitesini ve verimliliğini maksimize ederim." 
     },
     { 
-        name: "Ahmet Eren Ebe", 
+        name: "Ahmet Eren EBE", 
         title: "Sponsorluk İlişkileri Yöneticisi", 
         photo: "/AhmetEren.jpeg", 
         dialogInfo: "Gaziantep İslâm Bilim Ve Teknoloji Üniversitesi Elektrik Elektronik Mühendisliği öğrencisiyim. ArtTech'te sponsorluk İlişkileri Yöneticisi Olarak Görev Yapmaktayım. Görevim Bizim Projelerimizi En Doğru Şekilde Temsil Edip Sponsorlarla Sürekli İletişimde Olan, Onlara İhtiyaçlarımızı, İlerlememizi Ve Vizyonumuzu Aktaran Kişiyim. Ekip Arkadaşlarım Sahada Çalışırken, Bende Dışarıda Ekibin Sesi Oluyorum."
