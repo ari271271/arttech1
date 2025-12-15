@@ -22,7 +22,7 @@ export class Hakkimizda {
         title: "Topluluk Danışmanımız ", 
         photo: "/BayramBala.jpeg", 
         dialogInfo: "Akademik derinliği ve vizyoner yaklaşımıyla ArtTech'in bilimsel yol haritasını belirleyen değerli hocamızdır. Topluluğun her projesinde kaliteyi ve etik değerleri ön planda tutarak, gençlerin potansiyellerini en üst düzeye çıkarmalarına rehberlik etmektedir." 
-    },
+    }, 
     { 
         name: "Doç. Dr. Ipek ATIK", 
         title: "Proje Danışmanımız ", 
