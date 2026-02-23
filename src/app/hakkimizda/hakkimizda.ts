@@ -18,10 +18,10 @@ export class Hakkimizda {
   // EKİP ÜYELERİ LİSTESİ (İstenmeyen üyeler: Sidra, Fehmi, Bedriye, Bumin çıkarıldı)
   team = [
     { 
-        name: "Dr. Öğr. Üyesi Bayram BALA", 
+        name: "Prof. Dr. Ahmet Ayhan KOYUNCU ", 
         title: "Topluluk Danışmanımız ", 
-        photo: "/BayramBala.jpeg", 
-        dialogInfo: "Akademik derinliği ve vizyoner yaklaşımıyla ArtTech'in bilimsel yol haritasını belirleyen değerli hocamızdır. Topluluğun her projesinde kaliteyi ve etik değerleri ön planda tutarak, gençlerin potansiyellerini en üst düzeye çıkarmalarına rehberlik etmektedir." 
+        photo: "", 
+        dialogInfo: "Bilimsel birikimi ve stratejik öngörüsüyle topluluğumuza yön veren, ArtTech’in akademik pusulası niteliğindeki değerli danışmanımızdır. Çalışmalarımızda nitelik, etik sorumluluk ve yenilikçi düşünceyi esas alarak gençlerin yetkin bireyler olarak gelişim göstermelerine güçlü bir zemin hazırlamaktadır.." 
     }, 
     { 
         name: "Doç. Dr. Ipek ATIK", 
@@ -68,17 +68,17 @@ export class Hakkimizda {
     // Sidra AĞAOĞLU ÇIKARILDI
     { 
         name: "Ahmet ADNAN MANAF", 
-        title: "Yazılım Geliştirici & Teknik Destek", 
+        title: "Yazılım Kaptanı", 
         photo: "/Ahmet.jpeg", 
         dialogInfo: "Gaziantep İslam Bilim ve Teknoloji Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. ArtTech'te yazılım projelerinde teknik uzmanlık sağlıyor ve ekibe destek oluyorum. Karşılaştığımız teknik zorluklara pratik ve yenilikçi çözümler getirerek projelerin sorunsuz bir şekilde ilerlemesini sağlıyorum." 
     },
-    { 
-        name: "Zemzem BOYLUĞ", 
-        title: "Yazılım Kaptanı", 
-        photo: "/Zemzem.jpeg", 
-        dialogInfo: "Gaziantep İslam Bilim ve Teknoloji Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. ArtTech'te yazılım ekibinin lideri olarak, kodlama standartlarını belirliyor ve teknik mimariyi şekillendiriyorum. Ekip üyelerinin gelişimine odaklanarak, ArtTech'in yazılım çözümlerinin en yüksek kaliteye ulaşmasını sağlıyorum." 
+    // zemzem boyluğ ÇIKARILDI
+      { 
+        name: "Fehmi SEZER", 
+        title: "Elektronik Kaptanı", 
+        photo: "/Fehmi.jpeg", 
+        dialogInfo: "Gaziantep İslam Bilim ve Teknoloji Üniversitesi Elektrik-Elektronik Mühendisliği öğrencisiyim. ArtTech bünyesinde Elektronik Kaptanı olarak görev yapmaktayım. Elektronik devre tasarımı, sistem analizi, otomasyon teknolojileri ile İHA ve SİHA sistemleri alanlarında aktif olarak çalışıyor; mühendislik vizyonumu liderlik anlayışıyla birleştirerek projelere yön veriyorum. Akademik bilgi birikimimi saha deneyimiyle harmanlayarak yenilikçi, sürdürülebilir ve yüksek verimlilik odaklı çözümler üretmeyi hedefliyorum." 
     },
-    // Fehmi SEZER ÇIKARILDI
     // Bumin Kağan DOĞAN ÇIKARILDI
     { 
         name: "Muhammed Orhan YAŞAR", 
@@ -86,31 +86,16 @@ export class Hakkimizda {
         photo: "/Orhan.jpeg", 
         dialogInfo: "Gaziantep İslam Bilim Ve Teknoloji Üniversitesi Elektrik Elektronik Mühendisliği öğrencisiyim. ArtTech'te Elektronik Asistanı olarak görev yapmaktayım. Elektronik devre tasarımı, sistem analizi ve otomasyon teknolojileri üzerine çalışıyor; mühendislik alanındaki akademik bilgilerimi sahadaki uygulamalarla birleştirerek projelere katkı sağlamayı hedefliyorum." 
     },
-    { 
-        name: "Mustafa YILDIRIMER", 
-        title: "Elektrik-Elektronik Destek Uzmanı", 
-        photo: "/Mustafa.jpeg", 
-        dialogInfo: " Gaziantep İslam Bilim Ve Teknoloji Üniversitesi Elektrik Elektronik Mühendisliği öğrencisiyim. ArtTech'te özel elektrik ve elektronik konularda derinlemesine destek sağlar. Karmaşık teknik sorunları çözme yeteneği ile projelere teknik güvenilirlik katarım." 
-    },
+    //mustafa yıldırımer ÇIKARILDI
     { 
         name: "Büşra KURT", 
         title: "Hatay Temsilcisi", 
         photo: "/Busra.jpeg", 
         dialogInfo: "İskenderun Teknik Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. ArtTech Hatay Temsilcisi olarak, topluluğumuzun bölgede daha fazla görünür olmasına katkı sağlamaya çalışıyorum. Bölgesel projelerde, ArtTech'in vizyonunu ve misyonunu benimseyerek topluluğumuzun etki alanını genişletiyorum." 
     },
-    { 
-        name: "Ezel ILHAN", 
-        title: "Laboratuvar Destek Üyesi", 
-        photo: "/Ezel.jpeg", 
-        dialogInfo: "Gaziantep İslam Bilim Ve Teknoloji Üniversitesi Tıbbi Laboratuvar Teknikleri öğrencisiyim. ArtTech'te Laboratuvar Destek Üyesi olarak görev alıyorum. Laboratuvar ortamında teknik bilgi ve pratiklerimle destek sunuyorum. ." 
-    },
+    // ezel ilhan ÇIKARILDI 
     // Bedriye TATLI ÇIKARILDI
-    { 
-        name: "Yağmur ÇINAR", 
-        title: "Insan kaynakları", 
-        photo: "/Yagmur.jpeg", 
-        dialogInfo: "Gaziantep İslam Bilim ve Teknoloji Üniversitesi Elektrik Elektronik Mühendisliği öğrencisiyim. ArtTech'te insan kaynakları süreçlerini yönetiyor, yeni üye alımı ve ekip motivasyonuyla ilgileniyorum. ArtTech'in güçlü ve uyumlu bir ekibe sahip olması için stratejik çalışmalar yürütüyorum." 
-    },
+    // yağmur çınar ÇIKARILDI
     { 
         name: "Merve AKYÜZ", 
         title: "Proje Müdürü", 
